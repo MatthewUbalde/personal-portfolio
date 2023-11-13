@@ -1,6 +1,7 @@
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export const routeChange = (routePath: string) => {
-  const path: string = "/personal-portfolio/" ;+ routePath;
-  redirect(path);
+export const RouteChange = (routePath: string) => {
+  const navigate = useNavigate();
+  const path: string = "/personal-portfolio/" + routePath;
+  navigate(path);
 }

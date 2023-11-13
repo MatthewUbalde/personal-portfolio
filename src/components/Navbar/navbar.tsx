@@ -14,7 +14,7 @@ function Navbar({ sectionType, sectionSwitchTo, sections }: Props) {
       <div className="seekNavMenu">
         <SwitchContentBtn
           sectionName={sectionType}
-          whereTo={sectionSwitchTo}
+          routePath={sectionSwitchTo}
         />
       </div>
       <div className="desktopMenu">

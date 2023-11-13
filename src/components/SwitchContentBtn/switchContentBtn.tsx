@@ -1,8 +1,8 @@
-import { routeChange } from "../../utils/routeChange";
+import { useNavigate } from "react-router-dom";
 import "./switchContentBtn.css";
 
 interface Props {
-  whereTo: 'dev' | 'art';
+  routePath: 'dev' | 'art';
   sectionName?: "dev" | "art";
 }
 
@@ -12,11 +12,17 @@ function sectionMsg(type: string | undefined) {
   else return '';
 }
 
-function SwitchContentBtn({ whereTo, sectionName }: Props) {
+function SwitchContentBtn({ routePath, sectionName }: Props) {
+  const navigate = useNavigate();
+  const routeChange = () => {
+    const path: string = "/personal-portfolio/" + routePath;
+    navigate(path);
+  }
+  
   return (
     <div className="switch-content">
       {sectionMsg(sectionName)}
-      <button onClick={() => routeChange(whereTo)} className="switch-content-btn">
+      <button onClick={routeChange} className="switch-content-btn">
         Switch
       </button>
     </div>

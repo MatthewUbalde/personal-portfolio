@@ -5,7 +5,7 @@ import './previewSection.css'
 function PreviewSection() {
   return (
     <section className="preview-section">
-        <PagePreview pageHref="dev" backgroundPath={MintImg}>
+        <PagePreview routePath="dev" backgroundPath={MintImg}>
           <h2>Web Development</h2>
           <ul>
             <li>C/C++, C#, Java</li>
@@ -14,7 +14,7 @@ function PreviewSection() {
             <li>MySQL</li>
           </ul>
         </PagePreview>
-        <PagePreview pageHref="art" backgroundPath={MintImg}>
+        <PagePreview routePath="art" backgroundPath={MintImg}>
           <h2>Artistic Skills</h2>
           <ul>
             <li>Used Krita</li>
