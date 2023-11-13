@@ -1,4 +1,3 @@
-import Banner from '../../components/Banner/banner'
 import Navbar from '../../components/Navbar/navbar'
 import TextArea from '../../components/TextArea/textarea'
 import GallerySection from '../../components/Gallery/gallerySection'
@@ -19,7 +18,6 @@ function ArtPage() {
         </section>
         
         <GallerySection id='examples' thumbnails={data}/>
-        <Banner status="construction"/>
     </div>
   )
 }

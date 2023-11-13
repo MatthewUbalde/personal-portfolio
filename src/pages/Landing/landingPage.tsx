@@ -1,4 +1,3 @@
-import Banner from "../../components/Banner/banner";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 import MintImg from '/assets/mint-big.png'
 import "./landingPage.css";
@@ -14,7 +13,6 @@ function App() {
         <p>Feel free to check both of them!</p>
       </SpotlightSection>
       <PreviewSection/>
-      <Banner status="construction" />
     </div>
   );
 }

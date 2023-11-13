@@ -1,4 +1,3 @@
-import Banner from "../../components/Banner/banner";
 import Navbar from "../../components/Navbar/navbar";
 import GallerySection from "../../components/Gallery/gallerySection";
 import TextArea from "../../components/TextArea/textarea";
@@ -40,8 +39,6 @@ function DevPage() {
           <p>My contacts can be found here:</p>
         </TextArea>
       </section>
-
-      <Banner status="construction"/>
     </div>
   );
 }
