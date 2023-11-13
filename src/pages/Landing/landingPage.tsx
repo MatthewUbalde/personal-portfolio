@@ -3,7 +3,7 @@ import SpotlightSection from "../../components/SpotlightSection/spotlightSection
 import PagePreview from "../../components/PagePreview/pagePreview";
 
 import MintImg from '/assets/mint-big.png'
-import "./App.css";
+import "./landingPage.css";
 
 function App() {
   return (
