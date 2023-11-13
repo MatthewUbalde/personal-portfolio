@@ -21,6 +21,14 @@ body {
     color: white;
 }
 
+h2, ul {
+    margin: 0.5rem 0;
+}
+
+h3 {
+    margin: 0;
+}
+
 img {
     object-fit: cover;
 }
