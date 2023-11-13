@@ -1,0 +1,19 @@
+{
+  "thumbnails": [
+    {
+      "title": "React",
+      "imgPath": "./assets/mint-big.png",
+      "altImg": "React logo"
+    },
+    {
+      "title": "Vue",
+      "imgPath": "./assets/mint-big.png",
+      "altImg": "Vue logo" 
+    },
+    {
+      "title": "Bootstrap",
+      "imgPath": "./assets/mint-big.png",
+      "altImg": "Bootstrap logo"
+    }
+  ]
+}
