@@ -1,10 +1,10 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Banner from './components/Banner/banner.tsx'
 import Landing from './pages/Landing/landingPage.tsx'
 import DevPage from './pages/Dev/devPage.tsx'
 import ArtPage from './pages/Art/artPage.tsx'
-import Banner from './components/Banner/banner.tsx'
 import './index.css'
 
 const router = createBrowserRouter([

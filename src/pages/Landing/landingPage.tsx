@@ -1,7 +1,7 @@
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
+import PreviewSection from "../../sections/PreviewSection/previewSection";
 import MintImg from '/assets/mint-big.png'
 import "./landingPage.css";
-import PreviewSection from "../../sections/PreviewSection/previewSection";
 
 function App() {
   return (

@@ -1,4 +1,3 @@
-import React from 'react'
 import PagePreview from '../../components/PagePreview/pagePreview'
 import MintImg from '/assets/mint-big.png'
 import './previewSection.css'
