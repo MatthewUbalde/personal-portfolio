@@ -5,7 +5,7 @@ import './previewSection.css'
 function PreviewSection() {
   return (
     <section className="preview-section">
-        <PagePreview routePath="" backgroundPath={MintImg}>
+        <PagePreview routePath="web" backgroundPath={MintImg}>
           <h2>Web Development</h2>
           <h3>Frontend</h3>
           <ul>
