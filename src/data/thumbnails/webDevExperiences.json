@@ -1,5 +1,5 @@
 {
-  "thumbnails": [
+  "frontendThumbnails": [
     {
       "title": "React",
       "imgPath": "./assets/mint-big.png",
@@ -14,6 +14,18 @@
       "title": "Bootstrap",
       "imgPath": "./assets/mint-big.png",
       "altImg": "Bootstrap logo"
+    }
+  ],
+  "backendThumbnails": [
+    {
+      "title": "ASP.NET C#",
+      "imgPath": "./assets/mint-big.png",
+      "altImg": "C# logo" 
+    },
+    {
+      "title": "MySQL",
+      "imgPath": "./assets/mint-big.png",
+      "altImg": "MySQL logo"
     }
   ]
 }
