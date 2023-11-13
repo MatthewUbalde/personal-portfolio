@@ -21,6 +21,10 @@ body {
     color: white;
 }
 
+p {
+    margin: 0.5rem 0;
+}
+
 h2, ul {
     margin: 0.5rem 0;
 }
