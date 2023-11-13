@@ -6,9 +6,9 @@ import PreviewSection from "../../sections/PreviewSection/previewSection";
 
 import Data from "../../data/devPageThumbnails.json"
 import MintImg from "/assets/mint-big.png"
-import "./devPage.css";
+import "./webPage.css";
 
-function DevPage() {
+function WebPage() {
   const thumbnailData: Array<ThumbnailData> = Data.thumbnails
 
   return (
@@ -45,4 +45,4 @@ function DevPage() {
   );
 }
 
-export default DevPage;
+export default WebPage;

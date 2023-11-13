@@ -3,9 +3,9 @@ import PreviewSection from "../../sections/PreviewSection/previewSection";
 import MintImg from '/assets/mint-big.png'
 import "./landingPage.css";
 
-function App() {
+function LandingPage() {
   return (
-    <div className="App">
+    <div className="landing-page">
       <SpotlightSection backgroundImgPath={MintImg} backgroundImgAlt="Big picture of me">
         <h1>Matthew Ubalde</h1>
         <p>I'm a programmer with some experience in Web, Software, and Game Development. Constantly learning new things.</p>
@@ -17,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default LandingPage;
