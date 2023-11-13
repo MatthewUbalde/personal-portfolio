@@ -31,31 +31,34 @@
   transition: transform 0.1s, filter 0.5s;
 }
 
+.page-preview-placeholder {
+  width: auto;
+  height: 0; /*To make the background fill in the entire div*/
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 3;
+}
+
 .page-preview-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
-  height: 0; /*To make the background fill in the entire div*/
 
-  position: relative;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -25%);
+  width: 100% - 2rem;
 
-  z-index: 3;
+  background-color: #1912348a;
+  padding: 1rem;
+  margin: 1rem;
 
   text-align: center;
-  border: none;
-}
-
-.page-preview-container h2,
-.page-preview-container p,
-.page-preview-container ul {
-  background-color: #00000099;
-  padding: 1rem;
+  border-radius: 4px;
 }
 
 .page-preview-container ul {
   list-style: none;
+  padding: 0;
 }

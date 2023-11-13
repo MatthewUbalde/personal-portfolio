@@ -18,7 +18,9 @@ function PagePreview({ children, pageHref, backgroundPath }: Props) {
 
   return (
     <div onClick={routeChange} className="page-preview">
-      <div className="page-preview-container">{children}</div>
+      <div className="page-preview-placeholder">
+        <div className="page-preview-container">{children}</div>
+      </div>
       <div
         className="page-preview-bg"
         style={{ backgroundImage: `url(${backgroundPath})` }}
