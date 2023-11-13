@@ -5,7 +5,7 @@ import "./pagePreview.css";
 
 interface Props {
   children?: ReactNode;
-  routePath: string;
+  routePath?: string;
   backgroundPath: string;
 }
 
@@ -19,10 +19,13 @@ function PagePreview({ children, routePath, backgroundPath }: Props) {
   return (
     <div onClick={routeChange} className="page-preview">
       <div className="page-preview-placeholder">
-        <div className="page-preview-container">{children}</div>
+        <div className="page-preview-container">
+          {!routePath && <h3>Not available!!</h3>}
+          {children}
+        </div>
       </div>
       <div
-        className="page-preview-bg"
+        className={"page-preview-bg " + (routePath ? '' : "page-preview-construction")}
         style={{ backgroundImage: `url(${backgroundPath})` }}
       />
     </div>

@@ -5,7 +5,7 @@ import './previewSection.css'
 function PreviewSection() {
   return (
     <section className="preview-section">
-        <PagePreview routePath="web" backgroundPath={MintImg}>
+        <PagePreview routePath="" backgroundPath={MintImg}>
           <h2>Web Development</h2>
           <h3>Frontend</h3>
           <ul>
@@ -18,7 +18,14 @@ function PreviewSection() {
             <li>React</li>
           </ul>
         </PagePreview>
-        <PagePreview routePath="dev" backgroundPath={MintImg}>
+        <PagePreview routePath="" backgroundPath={MintImg}>
+          <h2>Game Development</h2>
+          <ul>
+            <li>Godot</li>
+            <li>Unity</li>
+          </ul>
+        </PagePreview>
+        <PagePreview routePath="" backgroundPath={MintImg}>
           <h2>Software Development</h2>
           <ul>
             <li>C/C++, C#, Java</li>
@@ -26,14 +33,7 @@ function PreviewSection() {
             <li>MySQL</li>
           </ul>
         </PagePreview>
-        <PagePreview routePath="game" backgroundPath={MintImg}>
-          <h2>Game Development</h2>
-          <ul>
-            <li>Godot</li>
-            <li>Unity</li>
-          </ul>
-        </PagePreview>
-        <PagePreview routePath="art" backgroundPath={MintImg}>
+        <PagePreview routePath="" backgroundPath={MintImg}>
           <h2>Artistic Skills</h2>
           <ul>
             <li>Used Krita</li>
