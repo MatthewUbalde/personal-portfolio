@@ -1,0 +1,15 @@
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.gallery-thumbnail {
+    margin: 1rem 0.5rem;
+}

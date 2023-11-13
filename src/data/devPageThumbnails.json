@@ -1,0 +1,34 @@
+{
+  "thumbnails": [
+    {
+      "title": "Testing",
+      "imgPath": "./assets/mint-big.png",
+      "altImg": "lorem Ispum",
+      "link": "idk"
+    },
+    {
+      "title": "Lorem Ispum",
+      "imgPath": "lorem Ispum",
+      "altImg": "lorem Ispum",
+      "link": "idk"
+    },
+    {
+      "title": "Lorem Ispum",
+      "imgPath": "lorem Ispum",
+      "altImg": "lorem Ispum",
+      "link": "idk"
+    },
+    {
+      "title": "Lorem Ispum",
+      "imgPath": "lorem Ispum",
+      "altImg": "lorem Ispum",
+      "link": "idk"
+    },
+    {
+      "title": "Lorem Ispum",
+      "imgPath": "lorem Ispum",
+      "altImg": "lorem Ispum",
+      "link": "idk"
+    }
+  ]
+}

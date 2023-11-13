@@ -1,0 +1,61 @@
+.page-preview {
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.page-preview-bg {
+  /* the background will be set as a inline style */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  height: 100%;
+
+  transform: scale(1);
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
+
+  transition: transform 0.25s, filter 0.25s;
+}
+
+.page-preview:hover .page-preview-bg {
+  transform: scale(1.25);
+
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+
+  transition: transform 0.1s, filter 0.5s;
+}
+
+.page-preview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  height: 0; /*To make the background fill in the entire div*/
+
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+
+  z-index: 3;
+
+  text-align: center;
+  border: none;
+}
+
+.page-preview-container h2,
+.page-preview-container p,
+.page-preview-container ul {
+  background-color: #00000099;
+  padding: 1rem;
+}
+
+.page-preview-container ul {
+  list-style: none;
+}

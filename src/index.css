@@ -1,0 +1,26 @@
+nav, div {
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #2c3664, #191234, #2c3664);
+    background-color: #2c3664;
+    margin: 0;
+
+    font-size: 24px;
+
+    overflow: hidden;
+    overflow-y: auto;
+
+    color: white;
+}
+
+img {
+    object-fit: cover;
+}
