@@ -1,4 +1,4 @@
-import { useNavigate, NavigateFunction } from "react-router-dom";
+import { routeChange } from "../../utils/routeChange";
 import "./switchContentBtn.css";
 
 interface Props {
@@ -13,17 +13,10 @@ function sectionMsg(type: string | undefined) {
 }
 
 function SwitchContentBtn({ whereTo, sectionName }: Props) {
-  const navigate: NavigateFunction = useNavigate();
-
-  const routeChange = () => {
-    const path: string = "/personal-portfolio/" + whereTo;
-    navigate(path);
-  };
-
   return (
     <div className="switch-content">
       {sectionMsg(sectionName)}
-      <button onClick={routeChange} className="switch-content-btn">
+      <button onClick={() => routeChange(whereTo)} className="switch-content-btn">
         Switch
       </button>
     </div>
