@@ -1,11 +1,12 @@
 import Navbar from "../../components/Navbar/navbar";
 import GallerySection from "../../components/Gallery/gallerySection";
 import TextArea from "../../components/TextArea/textarea";
+import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
+import PreviewSection from "../../sections/PreviewSection/previewSection";
 
 import Data from "../../data/devPageThumbnails.json"
 import MintImg from "/assets/mint-big.png"
 import "./devPage.css";
-import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 
 function DevPage() {
   const thumbnailData: Array<ThumbnailData> = Data.thumbnails
@@ -39,6 +40,7 @@ function DevPage() {
           <p>My contacts can be found here:</p>
         </TextArea>
       </section>
+      <PreviewSection/>
     </div>
   );
 }

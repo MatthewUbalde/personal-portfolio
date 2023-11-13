@@ -7,10 +7,10 @@
   border-top: 4px solid black;
 }
 
-.preview-section .page-preview:first-child {
-  border-right: 2px solid black;
+.preview-section .page-preview {
+  border-right: 4px solid black;
 }
 
 .preview-section .page-preview:last-child {
-  border-left: 2px solid black;
+  border-right: none;
 }
