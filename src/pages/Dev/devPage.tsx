@@ -1,9 +1,9 @@
 import Banner from "../../components/Banner/banner";
 import Navbar from "../../components/Navbar/navbar";
 import GallerySection from "../../components/Gallery/gallerySection";
-import TextArea from "../../components/TextArea/textArea";
+import TextArea from "../../components/TextArea/textarea";
 
-import Data from "../../assets/devPageThumbnails.json"
+import Data from "../../data/devPageThumbnails.json"
 import MintImg from "/assets/mint-big.png"
 import "./devPage.css";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";

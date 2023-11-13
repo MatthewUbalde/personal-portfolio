@@ -1,6 +1,6 @@
 import Banner from '../../components/Banner/banner'
 import Navbar from '../../components/Navbar/navbar'
-import TextArea from '../../components/TextArea/textArea'
+import TextArea from '../../components/TextArea/textarea'
 import GallerySection from '../../components/Gallery/gallerySection'
 import Data from "../../data/devPageThumbnails.json"
 import "./artPage.css"
