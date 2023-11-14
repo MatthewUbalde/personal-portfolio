@@ -8,6 +8,7 @@ import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
 import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
 import MintImg from "/assets/mint-big.png";
 import "./webPage.css";
+import "../page.css";
 
 function WebPage() {
   const websiteData: Array<ThumbnailData> = WebsiteThumbnails.thumbnails;
@@ -17,7 +18,7 @@ function WebPage() {
     WebThumbnails.backendThumbnails;
 
   return (
-    <div id="web-page">
+    <div id="web-page" className="page">
       <Navbar
         sections={["Intro", "Experiences", "Examples", "Contacts"]}
         sectionType="dev"

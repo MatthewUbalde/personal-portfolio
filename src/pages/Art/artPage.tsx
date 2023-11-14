@@ -4,12 +4,13 @@ import GallerySection from "../../components/Gallery/gallerySection";
 import Data from "../../data/devPageThumbnails.json";
 import PreviewSection from "../../sections/PreviewSection/previewSection";
 import "./artPage.css";
+import "../page.css";
 
 function ArtPage() {
   const data: Array<ThumbnailData> = Data.thumbnails;
 
   return (
-    <div id="art-page">
+    <div id="art-page"className="page">
       <Navbar
         sections={["Intro", "Examples"]}
         sectionType="art"
