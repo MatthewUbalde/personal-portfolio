@@ -11,10 +11,16 @@
 
     background-color: rgba(54, 101, 172, 0.616);
     z-index: 3;
+
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.1s, opacity 0.1s;
 }
 
 .banner:hover {
     opacity: 0;
+    transform: translateY(2rem);
+    transition: transform 0.1s, opacity 0.1s;
 }
 
 p {
