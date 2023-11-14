@@ -1,11 +1,14 @@
+import EmailJS from "@emailjs/browser";
+import { emailjsKey, serviceId, receiveTemplateId } from "../../secret/secret";
+
 import { useForm } from "../../hooks/useForm/useForm";
 import "./contactForm.css";
 
 function ContactForm() {
   const initialState = {
+    from_name: "",
     email: "",
-    subject: "",
-    body: "",
+    message: "",
   };
 
   const { onInputChange, onTextareaChange, onSubmit, values } = useForm(
@@ -15,40 +18,51 @@ function ContactForm() {
 
   async function sendEmailCallback() {
     console.log(values);
+
+    EmailJS.send(
+      serviceId,
+      receiveTemplateId,
+      values,
+      emailjsKey
+    ).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   }
 
   return (
-    <section className="contact-form" id="contact">
-      <h1>Contact Me!</h1>
-      <form id="contact" onSubmit={onSubmit}>
-        <div className="field-container">
-          <input
-            name="email"
-            id="email"
-            type="email"
-            placeholder="Email"
-            onChange={onInputChange}
-            required
-          />
-          <input
-            name="subject"
-            id="subject"
-            type="text"
-            placeholder="Subject"
-            onChange={onInputChange}
-            required
-          />
-          <textarea
-            name="body"
-            id="body"
-            placeholder="Body"
-            onChange={onTextareaChange}
-            required
-          />
-        </div>
-        <button type="submit">Send</button>
-      </form>
-    </section>
+    <form id="contact" className='contact-form' onSubmit={onSubmit}>
+      <div className="field-container">
+        <input
+          name="from_name"
+          id="from_name"
+          type="text"
+          placeholder="Name"
+          onChange={onInputChange}
+          required
+        />
+        <input
+          name="email"
+          id="email"
+          type="email"
+          placeholder="Email"
+          onChange={onInputChange}
+          required
+        />
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Message"
+          onChange={onTextareaChange}
+          required
+        />
+      </div>
+      <button type="submit">Send</button>
+    </form>
   );
 }
 
