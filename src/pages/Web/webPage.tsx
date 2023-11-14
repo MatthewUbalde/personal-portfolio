@@ -46,9 +46,9 @@ function WebPage() {
 
       <section id="experiences">
         <h2>Frontend Experiences</h2>
-        <GallerySection thumbnails={frontendThumbnails} thumbnailType="logo"/>
+        <GallerySection src={frontendThumbnails} type="logo"/>
         <h2>Backend Experiences</h2>
-        <GallerySection thumbnails={backendThumbnails} thumbnailType="logo"/>
+        <GallerySection src={backendThumbnails} type="logo"/>
       </section>
 
       <TextSection position='middle' align="center">
@@ -70,7 +70,7 @@ function WebPage() {
 
       <section id="socials">
         <h2>Socials</h2>
-        <GallerySection thumbnails={socialThumbnails} thumbnailType="logo"/>
+        <GallerySection src={socialThumbnails} type="logo"/>
       </section>
 
       <PreviewSection id='others'/>

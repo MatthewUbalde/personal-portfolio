@@ -1,34 +1,34 @@
 {
   "frontendThumbnails": [
     {
-      "title": "React (Beginner)",
+      "title": "React - Beginner",
       "imgPath": "./assets/react.svg",
       "altImg": "React logo"
     },
     {
-      "title": "Vite (Beginner)",
+      "title": "Vite - Beginner",
       "imgPath": "./assets/vite.svg",
       "altImg": "Vite logo"
     },
     {
-      "title": "Vue (Beginner)",
+      "title": "Vue - Beginner",
       "imgPath": "./assets/vue.svg",
       "altImg": "Vue logo" 
     },
     {
-      "title": "Bootstrap (Beginner)",
+      "title": "Bootstrap - Beginner",
       "imgPath": "./assets/bootstrap.svg",
       "altImg": "Bootstrap logo"
     }
   ],
   "backendThumbnails": [
     {
-      "title": "ASP.NET C# (Beginner)",
+      "title": "ASP.NET C# - Beginner",
       "imgPath": "./assets/aspnet.svg",
       "altImg": "C# logo" 
     },
     {
-      "title": "MySQL (Beginner)",
+      "title": "MySQL - Beginner",
       "imgPath": "./assets/mysql.svg",
       "altImg": "MySQL logo"
     }

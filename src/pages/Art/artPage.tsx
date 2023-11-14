@@ -25,7 +25,7 @@ function ArtPage() {
         </p>
         <p>This place is currently in working progress!</p>
       </TextSection>
-      <GallerySection id="examples" thumbnails={data} />
+      <GallerySection id="examples" src={data} />
       <PreviewSection id='others'/>
     </div>
   );

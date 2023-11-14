@@ -2,7 +2,7 @@ import "./thumbnail.css";
 
 function Thumbnail({ title, imgPath, altImg, link }: ThumbnailData) {
   return (
-    <div className="gallery-thumbnail">
+    <div className="thumbnail-container">
       <a href={link} className="thumbnail" rel="noopener" target="_blank">
         <img src={imgPath} alt={altImg} />
       </a>

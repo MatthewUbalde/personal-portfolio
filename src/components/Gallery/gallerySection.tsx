@@ -5,13 +5,13 @@ import "./gallerySection.css";
 interface Props {
   id?: string;
   children?: ReactNode;
-  thumbnails: Array<ThumbnailData>;
-  thumbnailType?: 'auto' | 'display' | 'logo';
+  src?: Array<ThumbnailData>;
+  type?: 'auto' | 'display' | 'logo';
 }
 
-function GallerySection({id, children, thumbnails, thumbnailType}: Props) {
+function GallerySection({id, children, src, type}: Props) {
 
-  if (thumbnails.length == 0)
+  if (!src)
   {
     return (
       <section id={id} className="gallery">
@@ -21,9 +21,9 @@ function GallerySection({id, children, thumbnails, thumbnailType}: Props) {
   }
 
   return (
-    <section id={id} className={"gallery thumbnail-" + thumbnailType}>
+    <section id={id} className={"gallery gallery-" + type}>
       {children}
-      {thumbnails.map((items, index) => (
+      {src.map((items, index) => (
         <Thumbnail
           title={items.title}
           imgPath={items.imgPath}
