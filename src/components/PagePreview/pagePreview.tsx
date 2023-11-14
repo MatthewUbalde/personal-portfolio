@@ -26,10 +26,6 @@ function PagePreview({ children, routePath, bgImgPath, bgImgAlt }: Props) {
         <div className="page-preview-container">{children}</div>
       </div>
       <img className="page-preview-bg" src={bgImgPath} alt={bgImgAlt} />
-      {/* <div
-        className="page-preview-bg"
-        style={{ backgroundImage: `url(${backgroundPath})` }}
-      /> */}
     </div>
   );
 }
