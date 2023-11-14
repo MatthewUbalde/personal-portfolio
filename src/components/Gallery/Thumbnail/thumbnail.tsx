@@ -3,7 +3,7 @@ import "./thumbnail.css"
 function Thumbnail({title, imgPath, altImg, link}: ThumbnailData) {
   return (
     <div className='gallery-thumbnail'>
-        <a href={link}>
+        <a href={link} className='thumbnail'>
             <img src={imgPath} alt={altImg}/>
         </a>
         {title && <h3>{title}</h3> }

@@ -25,8 +25,18 @@
   transform: scale(0.9);
   transition: transform 0.1s;
 }
+
+.thumbnail-logo .thumbnail {
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnail-display .thumbnail {
   width: 100%;
   height: 60%;
+}
+
+.gallery-thumbnail a {
   overflow: hidden;
 }
 
