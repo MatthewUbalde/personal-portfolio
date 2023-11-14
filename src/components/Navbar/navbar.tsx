@@ -1,22 +1,13 @@
 import { Link } from "react-scroll";
-import SwitchContentBtn from "../SwitchContentBtn/switchContentBtn";
 import "../Navbar/navbar.css";
 
 interface Props {
-  sectionType: "dev" | "art";
-  sectionSwitchTo: "dev" | "art";
   sections?: Array<string>;
 }
 
-function Navbar({ sectionType, sectionSwitchTo, sections }: Props) {
+function Navbar({sections }: Props) {
   return (
     <nav>
-      <div className="seekNavMenu">
-        <SwitchContentBtn
-          sectionName={sectionType}
-          routePath={sectionSwitchTo}
-        />
-      </div>
       <div className="desktopMenu">
         {sections?.map((value, index) => (
           <Link
