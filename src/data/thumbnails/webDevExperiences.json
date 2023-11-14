@@ -1,30 +1,35 @@
 {
   "frontendThumbnails": [
     {
-      "title": "React",
-      "imgPath": "./assets/mint-big.png",
+      "title": "React (Beginner)",
+      "imgPath": "./assets/react.svg",
       "altImg": "React logo"
     },
     {
-      "title": "Vue",
-      "imgPath": "./assets/mint-big.png",
+      "title": "Vite (Beginner)",
+      "imgPath": "./assets/vite.svg",
+      "altImg": "Vite logo"
+    },
+    {
+      "title": "Vue (Beginner)",
+      "imgPath": "./assets/vue.svg",
       "altImg": "Vue logo" 
     },
     {
-      "title": "Bootstrap",
-      "imgPath": "./assets/mint-big.png",
+      "title": "Bootstrap (Beginner)",
+      "imgPath": "./assets/bootstrap.svg",
       "altImg": "Bootstrap logo"
     }
   ],
   "backendThumbnails": [
     {
-      "title": "ASP.NET C#",
-      "imgPath": "./assets/mint-big.png",
+      "title": "ASP.NET C# (Beginner)",
+      "imgPath": "./assets/aspnet.svg",
       "altImg": "C# logo" 
     },
     {
-      "title": "MySQL",
-      "imgPath": "./assets/mint-big.png",
+      "title": "MySQL (Beginner)",
+      "imgPath": "./assets/mysql.svg",
       "altImg": "MySQL logo"
     }
   ]

@@ -4,7 +4,7 @@ import TextSection from "../../components/TextSection/textSection";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 import PreviewSection from "../../sections/PreviewSection/previewSection";
 
-import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
+// import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
 import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
 import MintImg from "/assets/mint-big.png";
 import "./webPage.css";
@@ -12,7 +12,7 @@ import "../page.css";
 import ContactForm from "../../components/ContactForm/contactForm";
 
 function WebPage() {
-  const websiteData: Array<ThumbnailData> = WebsiteThumbnails.thumbnails;
+  // const websiteData: Array<ThumbnailData> = WebsiteThumbnails.thumbnails;
   const frontendThumbnails: Array<ThumbnailData> =
     WebThumbnails.frontendThumbnails;
   const backendThumbnails: Array<ThumbnailData> =
@@ -21,7 +21,7 @@ function WebPage() {
   return (
     <div id="web-page" className="page">
       <Navbar
-        sections={["Intro", "Experiences", "Examples", "Contacts", "Others"]}
+        sections={["Intro", "Experiences", "Contacts", "Others"]}
       />
 
       <SpotlightSection
@@ -38,13 +38,14 @@ function WebPage() {
           I have some experiences in using <b>Vue</b> and <b>React</b> frameworks to
           create websites like this.
         </p>
+        <p>Currently looking for an intership!</p>
       </SpotlightSection>
 
       <section id="experiences">
-        <h2>Frontend Experience</h2>
-        <GallerySection thumbnails={frontendThumbnails}/>
-        <h2>Backend Experience</h2>
-        <GallerySection thumbnails={backendThumbnails}/>
+        <h2>Frontend Experiences</h2>
+        <GallerySection thumbnails={frontendThumbnails} thumbnailType="logo"/>
+        <h2>Backend Experiences</h2>
+        <GallerySection thumbnails={backendThumbnails} thumbnailType="logo"/>
       </section>
 
       <TextSection position='middle' align="center">
@@ -53,11 +54,12 @@ function WebPage() {
           And I'll always learn and strive for perfection as I grow deeper as a web developer.
         </p>
       </TextSection>
-      <GallerySection id="examples" thumbnails={websiteData}>
+      
+      {/* <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
           <h2>Here are applications (or websites) I have created so far in React</h2>
         </div>
-      </GallerySection>
+      </GallerySection> */}
 
       <section id="contacts">
         <ContactForm/>
