@@ -1,7 +1,6 @@
 .spotlight-section {
   display: flex;
   justify-content: space-around;
-  height: auto;
   overflow: hidden;
 
   padding: 1rem;
@@ -13,9 +12,8 @@
   align-items: start;
   justify-content: center;
 
-  width: 25%;
+  width: 30%;
   text-align: left;
-  padding-left: 1rem;
 }
 
 .spotlight-description h1 {
@@ -23,9 +21,6 @@
 }
 
 .spotlight-section img {
-  position: relative;
-  right: 0;
-  top: 0;
-  width: 50%;
+  width: 60%;
   max-width: 80vw;
 }

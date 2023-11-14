@@ -17,7 +17,7 @@ function WebPage() {
     WebThumbnails.backendThumbnails;
 
   return (
-    <div id="dev-page">
+    <div id="web-page">
       <Navbar
         sections={["Intro", "Experiences", "Examples", "Contacts"]}
         sectionType="dev"
@@ -25,7 +25,7 @@ function WebPage() {
       />
 
       <SpotlightSection
-        id="meet"
+        id="intro"
         backgroundImgPath={MintImg}
         backgroundImgAlt="Picture of Mint"
       >
@@ -40,17 +40,18 @@ function WebPage() {
         </p>
       </SpotlightSection>
 
-      <GallerySection id="experiences" thumbnails={frontendThumbnails}>
-        <div className="gallery-text-container">
-          <h2>Frontend Experience</h2>
-        </div>
-      </GallerySection>
-
-      <GallerySection id="experiences" thumbnails={backendThumbnails}>
-        <div className="gallery-text-container">
-          <h2>Backend Experience</h2>
-        </div>
-      </GallerySection>
+      <section id="experiences">
+        <GallerySection thumbnails={frontendThumbnails}>
+          <div className="gallery-text-container">
+            <h2>Frontend Experience</h2>
+          </div>
+        </GallerySection>
+        <GallerySection thumbnails={backendThumbnails}>
+          <div className="gallery-text-container">
+            <h2>Backend Experience</h2>
+          </div>
+        </GallerySection>
+      </section>
 
       <TextArea align="center">
         <h1>This website is created in React</h1>
@@ -62,7 +63,7 @@ function WebPage() {
 
       <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
-          <h2>Here are a applications (or websites) created with React</h2>
+          <h2>Here are applications (or websites) I have created with React</h2>
         </div>
       </GallerySection>
 
