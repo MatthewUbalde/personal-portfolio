@@ -1,0 +1,45 @@
+.text-element {
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    
+    height: auto;
+    width: 100%;
+    margin: 0 1rem;
+}
+
+.text-element-no-title p {
+    font-size: 1.75rem;
+    margin: 1rem 0;
+}
+
+.text-element h1 {
+    margin-bottom: 0;
+}
+
+.text-element-left {
+    text-align: left;
+}
+
+.text-element-right {
+    text-align: right;
+    align-items: right;
+}
+
+.text-element-center {
+    text-align: center;
+    align-items: center;
+}
+
+.text-element-top {
+    justify-content: start;
+}
+
+.text-element-middle {
+    justify-content: center;
+}
+
+.text-element-bottom {
+    justify-content: end;
+}

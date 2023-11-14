@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar/navbar";
-import TextArea from "../../components/TextArea/textarea";
+import TextSection from "../../components/TextSection/textSection";
 import GallerySection from "../../components/Gallery/gallerySection";
 import Data from "../../data/devPageThumbnails.json";
 import PreviewSection from "../../sections/PreviewSection/previewSection";
@@ -10,25 +10,21 @@ function ArtPage() {
   const data: Array<ThumbnailData> = Data.thumbnails;
 
   return (
-    <div id="art-page"className="page">
-      <Navbar
-        sections={["Intro", "Examples"]}
-      />
-      <section id="intro">
-        <TextArea align="center">
-          <p>
-            Hello everyone! My art portfolio can also be found through{" "}
-            <a
-              href="https://www.artstation.com/fish_with_headphones"
-              rel="noopener"
-              target="_blank"
-            >
-              here!
-            </a>
-          </p>
-          <p>This place is currently in working progress!</p>
-        </TextArea>
-      </section>
+    <div id="art-page" className="page">
+      <Navbar sections={["Intro", "Examples"]} />
+      <TextSection id="intro" align="center">
+        <p>
+          Hello everyone! My art portfolio can also be found through{" "}
+          <a
+            href="https://www.artstation.com/fish_with_headphones"
+            rel="noopener"
+            target="_blank"
+          >
+            here!
+          </a>
+        </p>
+        <p>This place is currently in working progress!</p>
+      </TextSection>
 
       <GallerySection id="examples" thumbnails={data} />
       <PreviewSection />

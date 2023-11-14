@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar/navbar";
 import GallerySection from "../../components/Gallery/gallerySection";
-import TextArea from "../../components/TextArea/textarea";
+import TextSection from "../../components/TextSection/textSection";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 import PreviewSection from "../../sections/PreviewSection/previewSection";
 
@@ -53,12 +53,13 @@ function WebPage() {
         </GallerySection>
       </section>
 
-      <TextArea align="center">
+      <TextSection align="center">
         <h1>This website is created in React</h1>
         <p>
           And I'll always learn and strive for perfection as I grow deeper as a web developer.
         </p>
-      </TextArea>
+      </TextSection>
+
       <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
           <h2>Here are applications (or websites) I have created so far in React</h2>
@@ -69,9 +70,10 @@ function WebPage() {
         <ContactForm/>
       </section>
 
-      <TextArea align="center">
+      <TextSection align="center">
         <h1>You should check out my other works as well!</h1>
-      </TextArea>
+      </TextSection>
+      
       <PreviewSection />
     </div>
   );
