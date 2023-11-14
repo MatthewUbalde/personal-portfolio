@@ -8,7 +8,17 @@ interface Props {
   thumbnails: Array<ThumbnailData>;
 }
 
-function GallerySection({id, children, thumbnails }: Props) {
+function GallerySection({id, children, thumbnails}: Props) {
+
+  if (thumbnails.length == 0)
+  {
+    return (
+      <section id={id} className="gallery">
+        {children}
+      </section>
+    )
+  }
+
   return (
     <section id={id} className="gallery">
       {children}
