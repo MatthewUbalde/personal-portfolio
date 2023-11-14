@@ -25,10 +25,3 @@
     height: 70vh;
     margin: 1rem 0.5rem;
 }
-
-.thumbnail-logo .gallery-thumbnail {
-    width: calc(25% - 2rem);
-    height: 25%;
-    padding: 1rem;
-    margin: 1rem 0.5rem;
-}

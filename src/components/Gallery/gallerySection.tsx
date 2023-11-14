@@ -6,10 +6,9 @@ interface Props {
   id?: string;
   children?: ReactNode;
   thumbnails: Array<ThumbnailData>;
-  thumbnailType?: 'auto' | 'display' | 'logo';
 }
 
-function GallerySection({id, children, thumbnails, thumbnailType}: Props) {
+function GallerySection({id, children, thumbnails}: Props) {
 
   if (thumbnails.length == 0)
   {
@@ -21,7 +20,7 @@ function GallerySection({id, children, thumbnails, thumbnailType}: Props) {
   }
 
   return (
-    <section id={id} className={"gallery thumbnail-" + thumbnailType}>
+    <section id={id} className="gallery">
       {children}
       {thumbnails.map((items, index) => (
         <Thumbnail
