@@ -36,10 +36,8 @@ function PreviewSection() {
         <PagePreview routePath="" backgroundPath={MintImg}>
           <h2>Artistic Skills</h2>
           <ul>
-            <li>Used Krita</li>
-            <li>Basic understanding in 3D Modelling</li>
-            <li>Used Blender</li>
-            <li>Basic understanding in Illustrations</li>
+            <li>Used Krita at a Intermiedate Level</li>
+            <li>Used Blender at a Basic Level</li>
           </ul>
         </PagePreview>
     </section>
