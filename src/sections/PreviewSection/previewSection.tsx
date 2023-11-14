@@ -5,7 +5,7 @@ import './previewSection.css'
 function PreviewSection() {
   return (
     <section className="preview-section">
-        <PagePreview routePath="web" backgroundPath={MintImg}>
+        <PagePreview routePath="web" bgImgPath={MintImg} bgImgAlt='Web Development Background'>
           <h2>Web Development</h2>
           <h3>Frontend</h3>
           <ul>
@@ -18,14 +18,14 @@ function PreviewSection() {
             <li>React</li>
           </ul>
         </PagePreview>
-        <PagePreview routePath="" backgroundPath={MintImg}>
+        <PagePreview routePath="" bgImgPath={MintImg} bgImgAlt='Game Development Background'>
           <h2>Game Development</h2>
           <ul>
             <li>Godot</li>
             <li>Unity</li>
           </ul>
         </PagePreview>
-        <PagePreview routePath="" backgroundPath={MintImg}>
+        <PagePreview routePath="" bgImgPath={MintImg} bgImgAlt='Software Development Background'>
           <h2>Software Development</h2>
           <ul>
             <li>C/C++, C#, Java</li>
@@ -33,7 +33,7 @@ function PreviewSection() {
             <li>MySQL</li>
           </ul>
         </PagePreview>
-        <PagePreview routePath="" backgroundPath={MintImg}>
+        <PagePreview routePath="" bgImgPath={MintImg} bgImgAlt='Artistic Skills Background'>
           <h2>Artistic Skills</h2>
           <ul>
             <li>Used Krita at a Intermiedate Level</li>

@@ -6,15 +6,6 @@
 }
 
 .page-preview-bg {
-  /* the background will be set as a inline style */
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  width: 100%;
-  height: 100%;
-
   transform: scale(1);
   -webkit-filter: blur(8px);
   filter: blur(8px);
