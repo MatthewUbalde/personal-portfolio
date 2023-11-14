@@ -4,14 +4,17 @@ import TextArea from "../../components/TextArea/textarea";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 import PreviewSection from "../../sections/PreviewSection/previewSection";
 
-import Data from "../../data/devPageThumbnails.json";
+import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
 import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
 import MintImg from "/assets/mint-big.png";
 import "./webPage.css";
 
 function WebPage() {
-  const thumbnailData: Array<ThumbnailData> = Data.thumbnails;
-  const frontendThumbnails: Array<ThumbnailData> = WebThumbnails.frontendThumbnails;
+  const websiteData: Array<ThumbnailData> = WebsiteThumbnails.thumbnails;
+  const frontendThumbnails: Array<ThumbnailData> =
+    WebThumbnails.frontendThumbnails;
+  const backendThumbnails: Array<ThumbnailData> =
+    WebThumbnails.backendThumbnails;
 
   return (
     <div id="dev-page">
@@ -26,38 +29,53 @@ function WebPage() {
         backgroundImgPath={MintImg}
         backgroundImgAlt="Picture of Mint"
       >
-        <h1>Web Development</h1>
+        <h1>Matthew Ubalde</h1>
+        <p>
+          I'm a student at Fanshawe's College, Computer Programming and
+          Analysis program.
+        </p>
         <p>
           I have experience in using <b>Vue</b> and <b>React</b> frameworks to
-          create websites like this
+          create websites like this.
         </p>
       </SpotlightSection>
-      
+
       <GallerySection id="experiences" thumbnails={frontendThumbnails}>
         <div className="gallery-text-container">
           <h2>Frontend Experience</h2>
-          <p>Here are my </p>
         </div>
       </GallerySection>
 
-      <section id="intro">
-        <TextArea align="center">
-          <h1>This website is created in React</h1>
-          <p>
-            This is my first website that I've created in React, and here is how I've learned so far in creating this website.
-          </p>
-        </TextArea>
-      </section>
+      <GallerySection id="experiences" thumbnails={backendThumbnails}>
+        <div className="gallery-text-container">
+          <h2>Backend Experience</h2>
+        </div>
+      </GallerySection>
 
-      <GallerySection id="examples" thumbnails={thumbnailData}>
-        <h2>The many projects that I've made.</h2>
+      <TextArea align="center">
+        <h1>This website is created in React</h1>
+        <p>
+          This is my first website that I've created in React, and here is how
+          I've learned so far in creating this website.
+        </p>
+      </TextArea>
+
+      <GallerySection id="examples" thumbnails={websiteData}>
+        <div className="gallery-text-container">
+          <h2>Here are a applications (or websites) created with React</h2>
+        </div>
       </GallerySection>
 
       <section id="contacts">
         <TextArea align="center">
-          <p>My contacts can be found here:</p>
+          <h1>You can contact me through here!</h1>
+          {/*Insert Contact form*/}
         </TextArea>
       </section>
+
+      <TextArea align="center">
+        <h1>You should check out my other works as well!</h1>
+      </TextArea>
       <PreviewSection />
     </div>
   );
