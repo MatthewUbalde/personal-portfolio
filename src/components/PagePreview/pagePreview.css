@@ -56,6 +56,15 @@
 
   text-align: center;
   border-radius: 4px;
+
+  transform: scale(0.75);
+  transition: transform 0.2s;
+}
+
+.page-preview:hover .page-preview-container
+{
+  transform: scale(1);
+  transition: transform 0.2s;
 }
 
 .page-preview-container ul {
