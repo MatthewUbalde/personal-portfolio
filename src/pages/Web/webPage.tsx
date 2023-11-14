@@ -21,7 +21,7 @@ function WebPage() {
   return (
     <div id="web-page" className="page">
       <Navbar
-        sections={["Intro", "Experiences", "Examples", "Contacts"]}
+        sections={["Intro", "Experiences", "Examples", "Contacts", "Others"]}
       />
 
       <SpotlightSection
@@ -41,25 +41,18 @@ function WebPage() {
       </SpotlightSection>
 
       <section id="experiences">
-        <GallerySection thumbnails={frontendThumbnails}>
-          <div className="gallery-text-container">
-            <h2>Frontend Experience</h2>
-          </div>
-        </GallerySection>
-        <GallerySection thumbnails={backendThumbnails}>
-          <div className="gallery-text-container">
-            <h2>Backend Experience</h2>
-          </div>
-        </GallerySection>
+        <h2>Frontend Experience</h2>
+        <GallerySection thumbnails={frontendThumbnails}/>
+        <h2>Backend Experience</h2>
+        <GallerySection thumbnails={backendThumbnails}/>
       </section>
 
-      <TextSection align="center">
+      <TextSection position='middle' align="center">
         <h1>This website is created in React</h1>
         <p>
           And I'll always learn and strive for perfection as I grow deeper as a web developer.
         </p>
       </TextSection>
-
       <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
           <h2>Here are applications (or websites) I have created so far in React</h2>
@@ -70,11 +63,7 @@ function WebPage() {
         <ContactForm/>
       </section>
 
-      <TextSection align="center">
-        <h1>You should check out my other works as well!</h1>
-      </TextSection>
-      
-      <PreviewSection />
+      <PreviewSection id='others'/>
     </div>
   );
 }

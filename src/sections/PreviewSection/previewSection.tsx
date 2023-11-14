@@ -2,9 +2,13 @@ import PagePreview from '../../components/PagePreview/pagePreview'
 import MintImg from '/assets/mint-big.png'
 import './previewSection.css'
 
-function PreviewSection() {
+interface Props {
+  id?: string
+}
+
+function PreviewSection({id}: Props) {
   return (
-    <section className="preview-section">
+    <section id={id} className="preview-section">
         <PagePreview routePath="web" bgImgPath={MintImg} bgImgAlt='Web Development Background'>
           <h2>Web Development</h2>
           <h3>Frontend</h3>

@@ -11,7 +11,7 @@ function ArtPage() {
 
   return (
     <div id="art-page" className="page">
-      <Navbar sections={["Intro", "Examples"]} />
+      <Navbar sections={["Intro", "Examples", "Other", "Others"]} />
       <TextSection id="intro" align="center">
         <p>
           Hello everyone! My art portfolio can also be found through{" "}
@@ -25,9 +25,8 @@ function ArtPage() {
         </p>
         <p>This place is currently in working progress!</p>
       </TextSection>
-
       <GallerySection id="examples" thumbnails={data} />
-      <PreviewSection />
+      <PreviewSection id='others'/>
     </div>
   );
 }
