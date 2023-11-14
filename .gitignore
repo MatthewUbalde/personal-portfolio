@@ -127,4 +127,4 @@ dist
 .pnp.*
 
 # secret data
-.secret
+secret
