@@ -1,4 +1,5 @@
 import './gamePage.css'
+import "../page.css";
 
 function GamePage() {
   return (
