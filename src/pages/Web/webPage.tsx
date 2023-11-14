@@ -9,6 +9,7 @@ import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
 import MintImg from "/assets/mint-big.png";
 import "./webPage.css";
 import "../page.css";
+import ContactForm from "../../components/ContactForm/contactForm";
 
 function WebPage() {
   const websiteData: Array<ThumbnailData> = WebsiteThumbnails.thumbnails;
@@ -70,8 +71,8 @@ function WebPage() {
       <section id="contacts">
         <TextArea align="center">
           <h1>You can contact me through here!</h1>
-          {/*Insert Contact form*/}
         </TextArea>
+        <ContactForm/>
       </section>
 
       <TextArea align="center">

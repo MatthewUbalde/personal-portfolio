@@ -1,0 +1,20 @@
+.contact-form {
+}
+
+
+.contact-form input,
+.contact-form button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+
+  font-size: 1rem;
+}
+
+.contact-form input {
+  background-color: #2c3664;
+}
+
+.contact-form #body {
+  height: 35vh;
+}
