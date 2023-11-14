@@ -8,6 +8,8 @@ section {
     height: auto;
     overflow: hidden;
 
+    padding: 1rem 0;
+
     text-align: center;
 }
 

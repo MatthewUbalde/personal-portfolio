@@ -1,17 +1,18 @@
 .preview-section {
+  padding-bottom: 0;
+}
+
+.page-previews-container {
   display: flex;
   width: 100%;
   height: 80vh;
   justify-content:space-evenly;
-
-  border-top: 4px solid #1e102e;
-  border-bottom: 4px solid #1e102e;
 }
 
-.preview-section .page-preview {
+.page-previews-container .page-preview {
   border-right: 4px solid #1e102e;
 }
 
-.preview-section .page-preview:last-child {
+.page-previews-container .page-preview:last-child {
   border-right: none;
 }

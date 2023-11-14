@@ -26,10 +26,7 @@
   transition: transform 0.1s, filter 0.5s;
 }
 
-.page-preview-construction {
-  filter: grayscale()
-}
-
+.page-preview-construction,
 .page-preview:hover .page-preview-construction {
   filter: grayscale()
 }
