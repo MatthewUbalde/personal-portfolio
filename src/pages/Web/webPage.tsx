@@ -22,8 +22,6 @@ function WebPage() {
     <div id="web-page" className="page">
       <Navbar
         sections={["Intro", "Experiences", "Examples", "Contacts"]}
-        sectionType="dev"
-        sectionSwitchTo="art"
       />
 
       <SpotlightSection

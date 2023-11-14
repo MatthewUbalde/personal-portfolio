@@ -13,8 +13,6 @@ function ArtPage() {
     <div id="art-page"className="page">
       <Navbar
         sections={["Intro", "Examples"]}
-        sectionType="art"
-        sectionSwitchTo="dev"
       />
       <section id="intro">
         <TextArea align="center">
