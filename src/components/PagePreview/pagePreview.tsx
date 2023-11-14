@@ -21,11 +21,11 @@ function PagePreview({ children, routePath, bgImgPath, bgImgAlt }: Props) {
   if (!routePath) return <></>;
   
   return (
-    <div onClick={routeChange} className="page-preview">
+    <div onClick={routeChange} className="page-preview" style={{backgroundImage: `url(${bgImgPath})`}}>
       <div className="page-preview-placeholder">
         <div className="page-preview-container">{children}</div>
       </div>
-      <img className="page-preview-bg" src={bgImgPath} alt={bgImgAlt} />
+      {/* <img className="page-preview-bg" src={bgImgPath} alt={bgImgAlt} /> */}
     </div>
   );
 }

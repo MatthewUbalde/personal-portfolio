@@ -34,12 +34,7 @@
 .page-preview-placeholder {
   width: auto;
   height: 0; /*To make the background fill in the entire div*/
-
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  transform: translate(0, 15vw);
   z-index: 1;
 }
 
@@ -49,6 +44,7 @@
   justify-content: center;
 
   width: auto;
+  height: 60vh;
 
   background-color: #1912348a;
   padding: 1rem;

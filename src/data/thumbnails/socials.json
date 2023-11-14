@@ -1,0 +1,10 @@
+{
+  "thumbnails": [
+    {
+      "title": "Linkedin",
+      "imgPath": "./assets/linkedin.svg",
+      "altImg": "Linkedin Account Link",
+      "link": "https://www.linkedin.com/in/matthew-ubalde-171918252/"
+    }
+  ]
+}

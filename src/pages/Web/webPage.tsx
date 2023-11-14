@@ -3,13 +3,14 @@ import GallerySection from "../../components/Gallery/gallerySection";
 import TextSection from "../../components/TextSection/textSection";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 import PreviewSection from "../../sections/PreviewSection/previewSection";
+import ContactForm from "../../components/ContactForm/contactForm";
 
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
+import SocialThumbnails from "../../data/thumbnails/socials.json";
 import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
 import MintImg from "/assets/mint-big.png";
 import "./webPage.css";
 import "../page.css";
-import ContactForm from "../../components/ContactForm/contactForm";
 
 function WebPage() {
   // const websiteData: Array<ThumbnailData> = WebsiteThumbnails.thumbnails;
@@ -17,6 +18,8 @@ function WebPage() {
     WebThumbnails.frontendThumbnails;
   const backendThumbnails: Array<ThumbnailData> =
     WebThumbnails.backendThumbnails;
+  const socialThumbnails: Array<ThumbnailData> =
+    SocialThumbnails.thumbnails;
 
   return (
     <div id="web-page" className="page">
@@ -63,6 +66,11 @@ function WebPage() {
 
       <section id="contacts">
         <ContactForm/>
+      </section>
+
+      <section id="socials">
+        <h2>Socials</h2>
+        <GallerySection thumbnails={socialThumbnails} thumbnailType="logo"/>
       </section>
 
       <PreviewSection id='others'/>
