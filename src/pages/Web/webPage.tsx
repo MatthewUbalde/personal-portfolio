@@ -61,7 +61,6 @@ function WebPage() {
           And I'll always learn and strive for perfection as I grow deeper as a web developer.
         </p>
       </TextArea>
-
       <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
           <h2>Here are applications (or websites) I have created so far in React</h2>
@@ -69,9 +68,6 @@ function WebPage() {
       </GallerySection>
 
       <section id="contacts">
-        <TextArea align="center">
-          <h1>You can contact me through here!</h1>
-        </TextArea>
         <ContactForm/>
       </section>
 

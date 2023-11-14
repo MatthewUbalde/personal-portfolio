@@ -5,13 +5,17 @@
   width: 100%;
 }
 
+.contact-form h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
 .field-container {
   display: flex;
   flex-direction: column;
 
   width: 80vw;
 }
-
 
 .contact-form input,
 .contact-form textarea,
