@@ -35,7 +35,7 @@ function WebPage() {
           Analysis program.
         </p>
         <p>
-          I have experience in using <b>Vue</b> and <b>React</b> frameworks to
+          I have some experiences in using <b>Vue</b> and <b>React</b> frameworks to
           create websites like this.
         </p>
       </SpotlightSection>
@@ -56,14 +56,13 @@ function WebPage() {
       <TextArea align="center">
         <h1>This website is created in React</h1>
         <p>
-          This is my first website that I've created in React, and here is how
-          I've learned so far in creating this website.
+          And I'll always learn and strive for perfection as I grow deeper as a web developer.
         </p>
       </TextArea>
 
       <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
-          <h2>Here are applications (or websites) I have created with React</h2>
+          <h2>Here are applications (or websites) I have created so far in React</h2>
         </div>
       </GallerySection>
 
