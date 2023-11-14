@@ -1,5 +1,6 @@
 import PagePreview from "../../components/PagePreview/pagePreview";
 import MintImg from "/assets/mint-big.png";
+import WebImg from "/assets/web-dev-pic.jpg";
 import "./previewSection.css";
 
 interface Props {
@@ -13,7 +14,7 @@ function PreviewSection({ id }: Props) {
       <div className="page-previews-container">
         <PagePreview
           routePath="web"
-          bgImgPath={MintImg}
+          bgImgPath={WebImg}
           bgImgAlt="Web Development Background"
         >
           <h2>Web Development</h2>
