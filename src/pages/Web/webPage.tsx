@@ -65,6 +65,7 @@ function WebPage() {
       </GallerySection> */}
 
       <section id="contacts">
+        <h2>Contact Me</h2>
         <ContactForm/>
       </section>
 

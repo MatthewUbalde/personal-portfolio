@@ -15,6 +15,7 @@
   flex-direction: column;
   
   width: 80vw;
+  padding-bottom: 1rem;
 }
 
 .contact-form input,
