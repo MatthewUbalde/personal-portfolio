@@ -8,7 +8,7 @@ function ContactForm() {
     body: "",
   };
 
-  const { onChange, onSubmit, values } = useForm(
+  const { onInputChange, onTextareaChange, onSubmit, values } = useForm(
     sendEmailCallback,
     initialState
   );
@@ -25,7 +25,7 @@ function ContactForm() {
           id="email"
           type="email"
           placeholder="Email"
-          onChange={onChange}
+          onChange={onInputChange}
           required
         />
         <input
@@ -33,15 +33,14 @@ function ContactForm() {
           id="subject"
           type='text'
           placeholder="Subject"
-          onChange={onChange}
+          onChange={onInputChange}
           required
         />
-        <input
+        <textarea
           name="body"
           id="body"
-          type='text'
           placeholder="Body"
-          onChange={onChange}
+          onChange={onTextareaChange}
           required
         />
       </div>
