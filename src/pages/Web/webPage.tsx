@@ -2,8 +2,8 @@ import Navbar from "../../components/Navbar/navbar";
 import GallerySection from "../../components/Gallery/gallerySection";
 import TextSection from "../../components/TextSection/textSection";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
-import PreviewSection from "../../sections/PreviewSection/previewSection";
-import ContactForm from "../../components/ContactForm/contactForm";
+// import PreviewSection from "../../sections/PreviewSection/previewSection";
+// import ContactForm from "../../components/ContactForm/contactForm";
 
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
 import SocialThumbnails from "../../data/thumbnails/socials.json";
@@ -64,17 +64,17 @@ function WebPage() {
         </div>
       </GallerySection> */}
 
-      <section id="contacts">
+      {/* <section id="contacts">
         <h2>Contact Me</h2>
         <ContactForm/>
-      </section>
+      </section> */}
 
       <section id="socials">
         <h2>Socials</h2>
         <GallerySection src={socialThumbnails} type="logo"/>
       </section>
 
-      <PreviewSection id='others'/>
+      {/* <PreviewSection id='others'/> */}
     </div>
   );
 }
