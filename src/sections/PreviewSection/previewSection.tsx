@@ -20,13 +20,14 @@ function PreviewSection({ id }: Props) {
           <h2>Web Development</h2>
           <h3>Frontend</h3>
           <ul>
-            <li>ASP.NET with C#</li>
-            <li>MySQL</li>
+            <li>Vue</li>
+            <li>React</li>
+            <li>Boostrap</li>
           </ul>
           <h3>Backend</h3>
           <ul>
-            <li>Vue</li>
-            <li>React</li>
+            <li>ASP.NET with C#</li>
+            <li>MySQL</li>
           </ul>
         </PagePreview>
         <PagePreview
