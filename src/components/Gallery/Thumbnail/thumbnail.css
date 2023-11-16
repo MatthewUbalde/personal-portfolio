@@ -8,10 +8,8 @@
   padding: 1rem;
   
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
-  overflow: hidden;
-  
   transform: scale(1);
   transition: transform 0.5s;
 }
@@ -28,7 +26,7 @@
 
 .thumbnail-container img {
   width: 100%;
-  height: 100%;
+  overflow: visible;
 }
 
 .thumbnail-container h3 {
@@ -39,11 +37,9 @@
 .gallery-logo .thumbnail {
   width: 100%;
   height: 100%;
-  overflow: visible;
 }
 
 .gallery-display .thumbnail {
   width: 100%;
   height: 60%;
-  overflow: hidden;
 }
