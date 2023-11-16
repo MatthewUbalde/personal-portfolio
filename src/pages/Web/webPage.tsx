@@ -22,7 +22,7 @@ function WebPage() {
 
   return (
     <div id="web-page" className="page">
-      <Navbar sections={["Intro", "Experiences", "Socials"]} />
+      <Navbar sections={["Intro", "Socials", "Experiences", "Projects"]} />
 
       <SpotlightSection
         id="intro"
@@ -45,7 +45,7 @@ function WebPage() {
         <h2>Socials</h2>
         <GallerySection src={socialThumbnails} type="logo" />
       </section>
-      
+
       <section id="experiences">
         <h2>Frontend Experiences</h2>
         <GallerySection src={frontendThumbnails} type="logo" />
@@ -59,6 +59,11 @@ function WebPage() {
           And I'll always learn and strive for perfection as I grow deeper as a
           web developer.
         </p>
+      </TextSection>
+
+      <TextSection id='projects' position='middle' align='center'>
+        <h1>Projects</h1>
+        <p>No worthy projects to be shown just yet!</p>
       </TextSection>
 
       {/* <GallerySection id="examples" thumbnails={websiteData}>
