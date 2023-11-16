@@ -24,6 +24,7 @@
 .gallery-logo .thumbnail-container,
 .gallery-logo .gallery-text-container {
     width: calc(25% - 2rem);
+    max-width: 20rem;
 }
 
 .gallery-display .thumbnail-container,
