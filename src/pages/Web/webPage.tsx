@@ -18,14 +18,11 @@ function WebPage() {
     WebThumbnails.frontendThumbnails;
   const backendThumbnails: Array<ThumbnailData> =
     WebThumbnails.backendThumbnails;
-  const socialThumbnails: Array<ThumbnailData> =
-    SocialThumbnails.thumbnails;
+  const socialThumbnails: Array<ThumbnailData> = SocialThumbnails.thumbnails;
 
   return (
     <div id="web-page" className="page">
-      <Navbar
-        sections={["Intro", "Experiences", "Contacts", "Others"]}
-      />
+      <Navbar sections={["Intro", "Experiences", "Socials"]} />
 
       <SpotlightSection
         id="intro"
@@ -34,30 +31,36 @@ function WebPage() {
       >
         <h1>Matthew Ubalde</h1>
         <p>
-          I'm a student at Fanshawe's College, Computer Programming and
-          Analysis program.
+          I'm a student at Fanshawe's College, Computer Programming and Analysis
+          program.
         </p>
         <p>
-          I have some experiences in using <b>Vue</b> and <b>React</b> frameworks to
-          create websites like this.
+          I have some experiences in using <b>Vue</b> and <b>React</b>{" "}
+          frameworks to create websites like this.
         </p>
         <p>Currently looking for an intership!</p>
       </SpotlightSection>
 
+      <section id="socials">
+        <h2>Socials</h2>
+        <GallerySection src={socialThumbnails} type="logo" />
+      </section>
+      
       <section id="experiences">
         <h2>Frontend Experiences</h2>
-        <GallerySection src={frontendThumbnails} type="logo"/>
+        <GallerySection src={frontendThumbnails} type="logo" />
         <h2>Backend Experiences</h2>
-        <GallerySection src={backendThumbnails} type="logo"/>
+        <GallerySection src={backendThumbnails} type="logo" />
       </section>
 
-      <TextSection position='middle' align="center">
+      <TextSection position="middle" align="center">
         <h1>This website is created in React</h1>
         <p>
-          And I'll always learn and strive for perfection as I grow deeper as a web developer.
+          And I'll always learn and strive for perfection as I grow deeper as a
+          web developer.
         </p>
       </TextSection>
-      
+
       {/* <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
           <h2>Here are applications (or websites) I have created so far in React</h2>
@@ -68,11 +71,6 @@ function WebPage() {
         <h2>Contact Me</h2>
         <ContactForm/>
       </section> */}
-
-      <section id="socials">
-        <h2>Socials</h2>
-        <GallerySection src={socialThumbnails} type="logo"/>
-      </section>
 
       {/* <PreviewSection id='others'/> */}
     </div>
