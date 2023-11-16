@@ -8,7 +8,7 @@ import SpotlightSection from "../../components/SpotlightSection/spotlightSection
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
 import SocialThumbnails from "../../data/thumbnails/socials.json";
 import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
-import MintImg from "/assets/mint-big.png";
+import PortraitImg from '/assets/personal-portrait-portfolio.webp';
 import "./webPage.css";
 import "../page.css";
 
@@ -26,8 +26,8 @@ function WebPage() {
 
       <SpotlightSection
         id="intro"
-        backgroundImgPath={MintImg}
-        backgroundImgAlt="Picture of Mint"
+        backgroundImgPath={PortraitImg}
+        backgroundImgAlt="Picture of Matthew Ubalde"
       >
         <h1>Matthew Ubalde</h1>
         <p>
