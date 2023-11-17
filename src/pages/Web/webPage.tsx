@@ -31,14 +31,14 @@ function WebPage() {
       >
         <h1>Matthew Ubalde</h1>
         <p>
+          I have some experiences using <b>Vue</b> and <b>React</b>{" "}
+          frameworks to create websites like this.
+        </p>
+        <p>
           I'm a student at Fanshawe's College, Computer Programming and Analysis
           program.
         </p>
-        <p>
-          I have some experiences in using <b>Vue</b> and <b>React</b>{" "}
-          frameworks to create websites like this.
-        </p>
-        <p>Currently looking for an intership!</p>
+        <p><b>Currently looking for an intership!</b></p>
       </SpotlightSection>
 
       <section id="socials">
