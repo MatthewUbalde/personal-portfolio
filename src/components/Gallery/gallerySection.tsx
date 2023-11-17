@@ -14,14 +14,14 @@ function GallerySection({id, children, src, type}: Props) {
   if (!src)
   {
     return (
-      <section id={id} className="gallery">
+      <div id={id} className="gallery">
         {children}
-      </section>
+      </div>
     )
   }
 
   return (
-    <section id={id} className={"gallery gallery-" + type}>
+    <div id={id} className={"gallery gallery-" + type}>
       {children}
       {src.map((items, index) => (
         <Thumbnail
@@ -32,7 +32,7 @@ function GallerySection({id, children, src, type}: Props) {
           key={index.toString()}
         />
       ))}
-    </section>
+    </div>
   );
 }
 
