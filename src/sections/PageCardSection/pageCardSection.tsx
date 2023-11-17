@@ -10,7 +10,7 @@ interface Props {
 function PreviewSection({ id }: Props) {
   return (
     <section id={id} className="preview-section">
-      <h1>Other Works</h1>
+      <h1>Check it out!</h1>
       <div className="page-previews-container">
         <PageCard
           routePath="web"
@@ -42,7 +42,7 @@ function PreviewSection({ id }: Props) {
           </ul>
         </PageCard>
         <PageCard
-          routePath=""
+          routePath="software"
           bgImgPath={MintImg}
           bgImgAlt="Software Development Background"
         >

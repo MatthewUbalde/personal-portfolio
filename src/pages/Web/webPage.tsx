@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar/navbar";
 import GallerySection from "../../components/Gallery/gallerySection";
 import TextSection from "../../components/TextSection/textSection";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
-// import PreviewSection from "../../sections/PreviewSection/previewSection";
+import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 // import ContactForm from "../../components/ContactForm/contactForm";
 
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
@@ -13,7 +13,6 @@ import "./webPage.css";
 import "../page.css";
 
 function WebPage() {
-  // const websiteData: Array<ThumbnailData> = WebsiteThumbnails.thumbnails;
   const frontendThumbnails: Array<ThumbnailData> =
     WebThumbnails.frontendThumbnails;
   const backendThumbnails: Array<ThumbnailData> =
@@ -77,7 +76,7 @@ function WebPage() {
         <ContactForm/>
       </section> */}
 
-      {/* <PreviewSection id='others'/> */}
+      <PageCardSection id='others'/>
     </div>
   );
 }
