@@ -42,14 +42,14 @@ function WebPage() {
       </SpotlightSection>
 
       <section id="socials">
-        <h2>Socials</h2>
+        <h2>My Soical Accounts</h2>
         <GallerySection src={socialThumbnails} type="logo" />
       </section>
 
       <section id="experiences">
-        <h2>Frontend Experiences</h2>
+        <h2>Frontend</h2>
         <GallerySection src={frontendThumbnails} type="logo" />
-        <h2>Backend Experiences</h2>
+        <h2>Backend</h2>
         <GallerySection src={backendThumbnails} type="logo" />
       </section>
 
