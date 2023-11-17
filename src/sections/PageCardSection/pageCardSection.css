@@ -10,9 +10,9 @@
 }
 
 .page-previews-container .page-preview {
-  border-right: 4px solid #1e102e;
+  margin-right: 2vw;
 }
 
-.page-previews-container .page-preview:last-child {
-  border-right: none;
+.page-previews-container .page-preview:first-child {
+  margin-left: 2vw;
 }
