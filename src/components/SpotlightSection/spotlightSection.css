@@ -1,14 +1,11 @@
 .spotlight-section {
-  background-image: linear-gradient(to bottom, #2c3664, #240b50);
-  background-color: #2c3664;
-
   display: flex;
   justify-content: space-around;
   overflow: hidden;
 
   height: 80vh;
 
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .spotlight-description {
@@ -30,7 +27,8 @@
 }
 
 .spotlight-description h1 {
-  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .spotlight-section img {
