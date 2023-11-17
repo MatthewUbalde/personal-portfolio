@@ -18,7 +18,7 @@ nav {
 .desktopMenu {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 
     padding: 0 2rem;
 
@@ -26,10 +26,33 @@ nav {
     height: 100%;
 }
 
+.link, .link-active {
+    cursor: pointer;
+}
+
 .desktopMenu .link {
     color: grey;
     
     padding: 0 1rem;
+
+    font-weight: 200;
+
+    transition: color 0.25s;
+    transition: padding 0.1s, margin-bottom 0.5s;
+}
+
+.desktopMenu .link:hover {
+    color: lightgray;
+
+    font-weight: 300;
+
+    transition: color 0.25s;
+}
+
+.desktopMenu .link::selection {
+    color: white;
+
+    font-weight: 300;
 
     transition: color 0.25s;
     transition: padding 0.1s, margin-bottom 0.5s;
@@ -42,12 +65,17 @@ nav {
     padding: 0;
     
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 400;
     
     text-decoration-line: underline;
 
     transition: color 0.25s;
     transition: padding 0.1s, margin-bottom 0.1s;
+}
+
+.desktopMenu .link-active:hover {
+    color:white;
+    font-weight: 400;
 }
 
 @media screen and (min-width: 700px) {
