@@ -11,6 +11,7 @@ import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
 import PortraitImg from '/assets/portfolio-portrait.webp';
 import "./webPage.css";
 import "../page.css";
+import { useEffect } from "react";
 
 function WebPage() {
   const frontendThumbnails: Array<ThumbnailData> =
@@ -18,6 +19,11 @@ function WebPage() {
   const backendThumbnails: Array<ThumbnailData> =
     WebThumbnails.backendThumbnails;
   const socialThumbnails: Array<ThumbnailData> = SocialThumbnails.thumbnails;
+
+  // Set scroll to the very top!
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div id="web-page" className="page">

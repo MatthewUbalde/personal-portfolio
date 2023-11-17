@@ -8,10 +8,16 @@ import SoftwareExpThumbnails from '../../data/thumbnails/softwareExp.json'
 import SocialThumbnails from "../../data/thumbnails/socials.json";
 import PortraitImg from '/assets/portfolio-portrait.webp'
 import "../page.css";
+import { useEffect } from "react";
 
 function SoftwarePage() {
   const softwareExpThumbnails: Array<ThumbnailData> = SoftwareExpThumbnails.software
   const socialThumbnails: Array<ThumbnailData> = SocialThumbnails.thumbnails
+
+  // Set scroll to the very top!
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div id="web-page" className="page">
