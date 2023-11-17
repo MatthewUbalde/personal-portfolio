@@ -31,17 +31,6 @@ function PreviewSection({ id }: Props) {
           </ul>
         </PageCard>
         <PageCard
-          routePath=""
-          bgImgPath={MintImg}
-          bgImgAlt="Game Development Background"
-        >
-          <h2>Game Dev</h2>
-          <ul>
-            <li>Godot</li>
-            <li>Unity</li>
-          </ul>
-        </PageCard>
-        <PageCard
           routePath="software"
           bgImgPath={MintImg}
           bgImgAlt="Software Development Background"
@@ -51,6 +40,17 @@ function PreviewSection({ id }: Props) {
             <li>C/C++, C#, Java</li>
             <li>OpenGL</li>
             <li>MySQL</li>
+          </ul>
+        </PageCard>
+        <PageCard
+          routePath="game"
+          bgImgPath={MintImg}
+          bgImgAlt="Game Development Background"
+        >
+          <h2>Game Dev</h2>
+          <ul>
+            <li>Godot</li>
+            <li>Unity</li>
           </ul>
         </PageCard>
         <PageCard
