@@ -1,13 +1,13 @@
 {
   "thumbnails": [
     {
-      "title": "Linkedin",
+      "title": "",
       "imgPath": "./assets/linkedin.svg",
       "altImg": "Linkedin Account Link",
       "link": "https://www.linkedin.com/in/matthew-ubalde-171918252/"
     },
     {
-      "title": "Github",
+      "title": "",
       "imgPath": "./assets/github-mark-white.svg",
       "altImg": "Github Account Link",
       "link": "https://github.com/MatthewUbalde"
