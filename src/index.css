@@ -16,7 +16,7 @@ nav, div {
 }
 
 section {
-    background-image: linear-gradient(to bottom, #19123400, #191234);
+    background-image: linear-gradient(to top, #19123400, #191234);
     background-color: #191234;
 
     width: 100%;
