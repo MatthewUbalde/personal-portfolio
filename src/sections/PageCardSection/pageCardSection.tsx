@@ -17,7 +17,7 @@ function PreviewSection({ id }: Props) {
           bgImgPath={WebImg}
           bgImgAlt="Web Development Background"
         >
-          <h2>Web Development</h2>
+          <h2>Web Dev</h2>
           <h3>Frontend</h3>
           <ul>
             <li>Vue</li>
@@ -35,7 +35,7 @@ function PreviewSection({ id }: Props) {
           bgImgPath={MintImg}
           bgImgAlt="Game Development Background"
         >
-          <h2>Game Development</h2>
+          <h2>Game Dev</h2>
           <ul>
             <li>Godot</li>
             <li>Unity</li>
@@ -46,7 +46,7 @@ function PreviewSection({ id }: Props) {
           bgImgPath={MintImg}
           bgImgAlt="Software Development Background"
         >
-          <h2>Software Development</h2>
+          <h2>Software Dev</h2>
           <ul>
             <li>C/C++, C#, Java</li>
             <li>OpenGL</li>
