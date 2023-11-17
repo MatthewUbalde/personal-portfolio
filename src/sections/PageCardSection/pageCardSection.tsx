@@ -22,7 +22,7 @@ function PreviewSection({ id }: Props) {
           <ul>
             <li>Vue</li>
             <li>React</li>
-            <li>Boostrap</li>
+            <li>Bootstrap</li>
           </ul>
           <h3>Backend</h3>
           <ul>
