@@ -1,4 +1,4 @@
-import PagePreview from "../../components/PagePreview/pagePreview";
+import PageCard from "../../components/PageCard/pageCard";
 import MintImg from "/assets/mint-big.png";
 import WebImg from "/assets/web-dev-pic.jpg";
 import "./previewSection.css";
@@ -12,7 +12,7 @@ function PreviewSection({ id }: Props) {
     <section id={id} className="preview-section">
       <h1>Other Works</h1>
       <div className="page-previews-container">
-        <PagePreview
+        <PageCard
           routePath="web"
           bgImgPath={WebImg}
           bgImgAlt="Web Development Background"
@@ -29,8 +29,8 @@ function PreviewSection({ id }: Props) {
             <li>ASP.NET with C#</li>
             <li>MySQL</li>
           </ul>
-        </PagePreview>
-        <PagePreview
+        </PageCard>
+        <PageCard
           routePath=""
           bgImgPath={MintImg}
           bgImgAlt="Game Development Background"
@@ -40,8 +40,8 @@ function PreviewSection({ id }: Props) {
             <li>Godot</li>
             <li>Unity</li>
           </ul>
-        </PagePreview>
-        <PagePreview
+        </PageCard>
+        <PageCard
           routePath=""
           bgImgPath={MintImg}
           bgImgAlt="Software Development Background"
@@ -52,8 +52,8 @@ function PreviewSection({ id }: Props) {
             <li>OpenGL</li>
             <li>MySQL</li>
           </ul>
-        </PagePreview>
-        <PagePreview
+        </PageCard>
+        <PageCard
           routePath=""
           bgImgPath={MintImg}
           bgImgAlt="Artistic Skills Background"
@@ -63,7 +63,7 @@ function PreviewSection({ id }: Props) {
             <li>Used Krita at a Intermiedate Level</li>
             <li>Used Blender at a Basic Level</li>
           </ul>
-        </PagePreview>
+        </PageCard>
       </div>
     </section>
   );

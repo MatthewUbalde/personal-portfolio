@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./pagePreview.css";
+import "./pageCard.css";
 
 interface Props {
   children?: ReactNode;
