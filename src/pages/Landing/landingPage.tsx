@@ -1,6 +1,6 @@
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 import PageCardSection from "../../sections/PageCardSection/pageCardSection";
-import PotraitImg from '/assets/personal-portrait-portfolio.webp'
+import PotraitImg from '/assets/portfolio-portrait.webp'
 import "./landingPage.css";
 import "../page.css";
 

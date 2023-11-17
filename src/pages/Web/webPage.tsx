@@ -8,7 +8,7 @@ import SpotlightSection from "../../components/SpotlightSection/spotlightSection
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
 import SocialThumbnails from "../../data/thumbnails/socials.json";
 import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
-import PortraitImg from '/assets/personal-portrait-portfolio.webp';
+import PortraitImg from '/assets/portfolio-portrait.webp';
 import "./webPage.css";
 import "../page.css";
 
