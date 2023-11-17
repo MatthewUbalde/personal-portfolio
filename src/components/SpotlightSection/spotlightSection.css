@@ -1,4 +1,7 @@
 .spotlight-section {
+  background-image: linear-gradient(to bottom, #2c3664, #240b50);
+  background-color: #2c3664;
+
   display: flex;
   justify-content: space-around;
   overflow: hidden;
