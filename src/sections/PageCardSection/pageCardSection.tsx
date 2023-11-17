@@ -1,7 +1,7 @@
 import PageCard from "../../components/PageCard/pageCard";
 import MintImg from "/assets/mint-big.png";
 import WebImg from "/assets/web-dev-pic.jpg";
-import "./previewSection.css";
+import "./pageCardSection.css";
 
 interface Props {
   id?: string;

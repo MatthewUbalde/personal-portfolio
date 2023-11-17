@@ -1,5 +1,5 @@
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
-import PreviewSection from "../../sections/PreviewSection/previewSection";
+import PageCardSection from "../../sections/PageCardSection/pageCardSection";
 import PotraitImg from '/assets/personal-portrait-portfolio.webp'
 import "./landingPage.css";
 import "../page.css";
@@ -13,7 +13,7 @@ function LandingPage() {
         <p>I also been exploring in practicing drawing illustrations, 3D Modelling as a hobby.</p>
         <p>Feel free to check both of them!</p>
       </SpotlightSection>
-      <PreviewSection/>
+      <PageCardSection/>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar/navbar";
 import TextSection from "../../components/TextSection/textSection";
 import GallerySection from "../../components/Gallery/gallerySection";
 import Data from "../../data/devPageThumbnails.json";
-import PreviewSection from "../../sections/PreviewSection/previewSection";
+import PreviewSection from "../../sections/PageCardSection/pageCardSection";
 import "./artPage.css";
 import "../page.css";
 
