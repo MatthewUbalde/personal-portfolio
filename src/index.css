@@ -1,5 +1,4 @@
 body {
-    background-image: linear-gradient(to bottom, #2c3664, #191234, #2c3664);
     background-color: #2c3664;
     
     font-family: 'Josefin Sans', Calibri, sans-serif;
@@ -17,6 +16,9 @@ nav, div {
 }
 
 section {
+    background-image: linear-gradient(to bottom, #19123400, #191234);
+    background-color: #191234;
+
     width: 100%;
     min-height: 30vh;
     height: auto;
@@ -25,6 +27,14 @@ section {
     padding: 1rem 0;
 
     text-align: center;
+
+    background-position-y: bottom -100%;
+    transition: background 0.5s;
+}
+
+section:hover {
+    background-color: #2c3664;
+    transition: background 0.5s;
 }
 
 
