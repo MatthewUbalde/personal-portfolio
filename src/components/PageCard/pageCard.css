@@ -10,6 +10,8 @@
   height: 100%;
   border-radius: 4px;
 
+  min-width: 50vw;
+
   overflow: hidden;
 
   cursor: pointer;
