@@ -6,14 +6,14 @@
       "altImg": "React logo"
     },
     {
-      "title": "Vite - Beginner",
-      "imgPath": "./assets/vite.svg",
-      "altImg": "Vite logo"
-    },
-    {
       "title": "Vue - Beginner",
       "imgPath": "./assets/vue.svg",
       "altImg": "Vue logo" 
+    },
+    {
+      "title": "Vite - Beginner",
+      "imgPath": "./assets/vite.svg",
+      "altImg": "Vite logo"
     },
     {
       "title": "Bootstrap - Beginner",
