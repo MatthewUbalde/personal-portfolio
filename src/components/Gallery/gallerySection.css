@@ -34,7 +34,7 @@
     width: calc(60% - 2rem);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
     .gallery-logo .thumbnail-container,
     .gallery-text-container {
         width: calc(50% - 2rem);

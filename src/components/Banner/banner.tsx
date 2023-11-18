@@ -5,7 +5,7 @@ interface Props {
 }
 
 const defaultMsg: Array<string> = [
-  'The site is currently in construction, and does not reflect with the final product. Thank you for your understanding!',
+  'The site is currently in construction, and does not reflect the final product. Thank you for your understanding!',
   'Warning! This page is in construction! Thank you for your understanding!',
   'Notice! The site will be updated soon. Please keep that in mind'
 ]

@@ -63,7 +63,7 @@ function SoftwarePage() {
       </section> */}
 
       <PageCardSection id='others'/>
-      <Banner status="construction" />
+      <Banner status="warning" />
     </div>
   );
 }

@@ -15,8 +15,13 @@ function GamePage() {
   return (
     <div id="game-page" className="page">
       <Navbar sections={[]} />
+
+      <TextSection id='warning'>
+        <h1>This section will showcase some of my game development skills!</h1>
+      </TextSection>
+
       <PageCardSection id='others'/>
-      <Banner status="construction" />
+      <Banner status="warning" />
     </div>
   );
 }
