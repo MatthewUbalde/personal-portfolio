@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,9 +9,10 @@ interface Props {
   routePath?: string;
   bgImgPath?: string;
   bgImgAlt?: string;
+  isCurrent?: boolean;
 }
 
-function PagePreview({ children, routePath, bgImgPath, bgImgAlt }: Props) {
+function PagePreview({ children, routePath, bgImgPath, bgImgAlt, isCurrent }: Props) {
   
   const navigate = useNavigate();
   function routeChange() {
@@ -18,7 +20,7 @@ function PagePreview({ children, routePath, bgImgPath, bgImgAlt }: Props) {
     navigate(path);
   }
   
-  if (!routePath) return <></>;
+  if (!routePath || isCurrent) return <></>;
   
   return (
     <div onClick={routeChange} className="page-preview">

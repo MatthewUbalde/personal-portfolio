@@ -3,11 +3,14 @@ import MintImg from "/assets/mint-big.png";
 import WebImg from "/assets/web-dev-pic.jpg";
 import "./pageCardSection.css";
 
+import { useLocation } from 'react-router-dom'
+
 interface Props {
   id?: string;
 }
 
 function PreviewSection({ id }: Props) {
+  const location = useLocation();
   return (
     <section id={id} className="preview-section">
       <h1>Check it out!</h1>
@@ -16,6 +19,7 @@ function PreviewSection({ id }: Props) {
           routePath="web"
           bgImgPath={WebImg}
           bgImgAlt="Web Development Background"
+          isCurrent={location.pathname.includes('web')}
         >
           <h2>Web Dev</h2>
           <h3>Frontend</h3>
@@ -34,6 +38,7 @@ function PreviewSection({ id }: Props) {
           routePath="software"
           bgImgPath={MintImg}
           bgImgAlt="Software Development Background"
+          isCurrent={location.pathname.includes('software')}
         >
           <h2>Software Dev</h2>
           <ul>
@@ -46,6 +51,7 @@ function PreviewSection({ id }: Props) {
           routePath="game"
           bgImgPath={MintImg}
           bgImgAlt="Game Development Background"
+          isCurrent={location.pathname.includes('game')}
         >
           <h2>Game Dev</h2>
           <ul>
@@ -57,6 +63,7 @@ function PreviewSection({ id }: Props) {
           routePath=""
           bgImgPath={MintImg}
           bgImgAlt="Artistic Skills Background"
+          isCurrent={location.pathname.includes('art')}
         >
           <h2>Artistic Skills</h2>
           <ul>
