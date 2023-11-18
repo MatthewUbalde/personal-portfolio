@@ -1,5 +1,4 @@
 import PageCard from "../../components/PageCard/pageCard";
-import MintImg from "/assets/mint-big.png";
 import WebImg from "/assets/web-dev-pic.jpg";
 import "./pageCardSection.css";
 
@@ -36,8 +35,7 @@ function PreviewSection({ id }: Props) {
         </PageCard>
         <PageCard
           routePath="software"
-          bgImgPath={MintImg}
-          bgImgAlt="Software Development Background"
+          bgImgAlt=""
           isCurrent={location.pathname.includes('software')}
         >
           <h2>Software Dev</h2>
@@ -49,8 +47,7 @@ function PreviewSection({ id }: Props) {
         </PageCard>
         <PageCard
           routePath="game"
-          bgImgPath={MintImg}
-          bgImgAlt="Game Development Background"
+          bgImgAlt=""
           isCurrent={location.pathname.includes('game')}
         >
           <h2>Game Dev</h2>
@@ -61,8 +58,7 @@ function PreviewSection({ id }: Props) {
         </PageCard>
         <PageCard
           routePath=""
-          bgImgPath={MintImg}
-          bgImgAlt="Artistic Skills Background"
+          bgImgAlt=""
           isCurrent={location.pathname.includes('art')}
         >
           <h2>Artistic Skills</h2>
