@@ -40,3 +40,9 @@ p {
 .banner-noticed {
     background-color: rgba(236, 211, 128, 0.616);
 }
+
+@media screen and (max-width: 500px) {
+    .banner p {
+        font-size: 1.25rem;
+    }
+}
