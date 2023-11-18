@@ -8,10 +8,35 @@
   overflow-x: scroll;
 }
 
+.page-previews-container .page-preview:first-child {
+  margin-left: 2vw;
+}
+
 .page-previews-container .page-preview {
   margin-right: 2vw;
 }
 
-.page-previews-container .page-preview:first-child {
-  margin-left: 2vw;
+
+@media screen and (max-width: 750px)
+{
+  .page-previews-container {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    padding: 0 2vw;
+
+    height: auto;
+  }
+
+  .page-previews-container .page-preview:first-child {
+    margin-left: 0;
+    margin-top: 2vh;
+  }
+
+  .page-previews-container .page-preview {
+    margin-right: 0;
+    margin-bottom: 2vh;
+  }
+  
 }
