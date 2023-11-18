@@ -1,5 +1,7 @@
 import PageCard from "../../components/PageCard/pageCard";
 import WebImg from "/assets/web-dev-pic.jpg";
+import SoftwareImg from '/assets/software-dev-pic.jpg';
+import GameImg from '/assets/game-dev-pic.jpg';
 import "./pageCardSection.css";
 
 import { useLocation } from 'react-router-dom'
@@ -35,7 +37,8 @@ function PreviewSection({ id }: Props) {
         </PageCard>
         <PageCard
           routePath="software"
-          bgImgAlt=""
+          bgImgPath={SoftwareImg}
+          bgImgAlt="Software Development Background"
           isCurrent={location.pathname.includes('software')}
         >
           <h2>Software Dev</h2>
@@ -47,7 +50,8 @@ function PreviewSection({ id }: Props) {
         </PageCard>
         <PageCard
           routePath="game"
-          bgImgAlt=""
+          bgImgPath={GameImg}
+          bgImgAlt="Game Development Background"
           isCurrent={location.pathname.includes('game')}
         >
           <h2>Game Dev</h2>
