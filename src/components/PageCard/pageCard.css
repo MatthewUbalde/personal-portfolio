@@ -72,7 +72,9 @@
     height: 35%;
   }
 
-  .page-preview-body h3, ul, p {
+  .page-preview-body h3, 
+  .page-preview-body ul, 
+  .page-preview-body p {
     display: none;
   }
 }
