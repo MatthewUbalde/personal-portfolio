@@ -1,3 +1,4 @@
+import Banner from "../../components/Banner/banner";
 import Navbar from "../../components/Navbar/navbar";
 import TextSection from "../../components/TextSection/textSection";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
@@ -13,13 +14,9 @@ function GamePage() {
 
   return (
     <div id="game-page" className="page">
-      <Navbar sections={["Intro", "Socials", "Experiences", "Projects"]} />
-
-      <TextSection id='warning'>
-        <h1>This section of the site is still in working in progress!</h1>
-      </TextSection>
-
+      <Navbar sections={[]} />
       <PageCardSection id='others'/>
+      <Banner status="construction" />
     </div>
   );
 }

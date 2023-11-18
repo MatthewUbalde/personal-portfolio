@@ -27,7 +27,7 @@ function WebPage() {
 
   return (
     <div id="web-page" className="page">
-      <Navbar sections={["Intro", "Socials", "Experiences", "Projects"]} />
+      <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Others"]} />
 
       <SpotlightSection
         id="intro"

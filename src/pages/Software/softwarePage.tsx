@@ -9,6 +9,7 @@ import SocialThumbnails from "../../data/thumbnails/socials.json";
 import PortraitImg from '/assets/portfolio-portrait.webp'
 import "../page.css";
 import { useEffect } from "react";
+import Banner from "../../components/Banner/banner";
 
 function SoftwarePage() {
   const softwareExpThumbnails: Array<ThumbnailData> = SoftwareExpThumbnails.software
@@ -21,7 +22,7 @@ function SoftwarePage() {
 
   return (
     <div id="web-page" className="page">
-      <Navbar sections={["Intro", "Socials", "Experiences", "Projects"]} />
+      <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Others"]} />
 
       <SpotlightSection
         id="intro"
@@ -62,6 +63,7 @@ function SoftwarePage() {
       </section> */}
 
       <PageCardSection id='others'/>
+      <Banner status="construction" />
     </div>
   );
 }
