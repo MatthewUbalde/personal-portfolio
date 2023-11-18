@@ -3,13 +3,7 @@ import PageCardSection from "../../sections/PageCardSection/pageCardSection";
 import PotraitImg from '/assets/portfolio-portrait.webp'
 import "./landingPage.css";
 import "../page.css";
-
 function LandingPage() {
-  // Set scroll to the very top!
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <div className="landing-page">
       <SpotlightSection backgroundImgPath={PotraitImg} backgroundImgAlt="Big picture of me">
