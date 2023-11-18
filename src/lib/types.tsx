@@ -2,7 +2,7 @@
 type ThumbnailData =
 { 
   title?: string;
-  imgPath: string;
-  altImg: string;
+  imgPath?: string;
+  altImg?: string;
   link?: string;
 }
