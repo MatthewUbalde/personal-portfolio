@@ -8,9 +8,8 @@ function LandingPage() {
     <div className="landing-page">
       <SpotlightSection backgroundImgPath={PotraitImg} backgroundImgAlt="Big picture of me">
         <h1>Matthew Ubalde</h1>
-        <p>I'm a programmer with some experience in Web, Software, and Game Development. Constantly learning new things.</p>
-        <p>I also been exploring in practicing drawing illustrations, 3D Modelling as a hobby.</p>
-        <p>Feel free to check both of them!</p>
+        <p>I'm in <b>Fanshawe's Computer Programming and Analysis program</b> with some experience in Web, Software, and Game Development.</p>
+        <p>Highly recommend to check out my expereinces in <b>Web Development</b> first!</p>
       </SpotlightSection>
       <PageCardSection/>
     </div>
