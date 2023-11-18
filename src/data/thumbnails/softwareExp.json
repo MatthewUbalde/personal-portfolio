@@ -2,33 +2,33 @@
   "software": [
     {
       "title": "C++ - Intermediate",
-      "imgPath": "./assets/react.svg",
-      "altImg": "C++ Logo"
+      "imgPath": "",
+      "altImg": ""
     },
     {
       "title": "Java - Intermediate",
-      "imgPath": "./assets/react.svg",
-      "altImg": "Java Logo"
+      "imgPath": "",
+      "altImg": ""
     },
     {
       "title": "C# - Intermediate",
-      "imgPath": "./assets/react.svg",
-      "altImg": "C# Logo"
+      "imgPath": "",
+      "altImg": ""
     },
     {
       "title": "MySQL - Beginner",
       "imgPath": "./assets/mysql.svg",
-      "altImg": "C# Logo"
+      "altImg": "MySQL Logo"
     },
     {
       "title": "OpenGL - Beginner",
-      "imgPath": "./assets/react.svg",
-      "altImg": "OpenGL Logo"
+      "imgPath": "",
+      "altImg": ""
     },
     {
       "title": "Android Studio - Beginner",
-      "imgPath": "./assets/react.svg",
-      "altImg": "OpenGL Logo"
+      "imgPath": "",
+      "altImg": ""
     }
   ]
 }
