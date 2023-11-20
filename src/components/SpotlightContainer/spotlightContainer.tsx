@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import './spotlightSection.css'
+import './spotlightContainer.css'
 
 interface Props {
   id?: string;
