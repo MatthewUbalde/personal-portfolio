@@ -2,16 +2,16 @@ import {useState} from 'react'
 
 import React from 'react'
 
-export const useForm = (callback: any, initialState = {}) => {
+export const useForm = (callback: any, recaptchaResponse: any, initialState = {}) => {
   const [values, setValues] = useState(initialState);
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({...values, [event.target.name]:
+    setValues({...values, 'g-recaptcha-response': recaptchaResponse, [event.target.name]:
       event.target.value});
   };
 
   const onTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValues({...values, [event.target.name]:
+    setValues({...values, 'g-recaptcha-response': recaptchaResponse, [event.target.name]:
       event.target.value});
   };
 

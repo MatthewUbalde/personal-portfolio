@@ -2,6 +2,7 @@
 import EmailJS from "@emailjs/browser";
 import ReCAPTCHA from 'react-google-recaptcha'
 
+import { useState } from "react";
 import { useForm } from "../../hooks/useForm/useForm";
 import "./contactForm.css";
 
@@ -11,6 +12,9 @@ const emailjsKey: string = import.meta.env.VITE_EMAILJS_KEY;
 const recaptchaKey: string = import.meta.env.VITE_RECAPTHA_KEY;
 
 function ContactForm() {
+  const [emailSent, setEmailSent] = useState(false);
+  const [recaptchaResponse, setRecaptchaResponse] = useState();
+
   const initialState = {
     from_name: "",
     email: "",
@@ -19,12 +23,15 @@ function ContactForm() {
 
   const { onInputChange, onTextareaChange, onSubmit, values } = useForm(
     sendEmailCallback,
+    recaptchaResponse,
     initialState
   );
 
-  async function sendEmailCallback() {
-    console.log(values);
+  function recaptchaOnChange(value: any) {
+    setRecaptchaResponse(value);
+  }
 
+  async function sendEmailCallback() {
     EmailJS.send(
       emailjsServiceID,
       emailjsTemplateID,
@@ -38,10 +45,13 @@ function ContactForm() {
         console.log(error.text);
       }
     );
+
+    setEmailSent(true);
   }
 
   return (
     <form id="contact" className='contact-form' onSubmit={onSubmit}>
+      {emailSent && <p>Email has been sent! Will respond in 3 days!</p>}
       <div className="field-container">
         <input
           name="from_name"
@@ -69,6 +79,7 @@ function ContactForm() {
       </div>
       <ReCAPTCHA
         sitekey={recaptchaKey}
+        onChange={recaptchaOnChange}
       />
       <button type="submit">Send</button>
     </form>
