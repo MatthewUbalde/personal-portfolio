@@ -7,7 +7,7 @@ import "./artPage.css";
 import "../page.css";
 
 function ArtPage() {
-  const data: Array<ThumbnailData> = Data.thumbnails;
+  // const data: Array<ThumbnailData> = Data.thumbnails;
 
   return (
     <div id="art-page" className="page">
