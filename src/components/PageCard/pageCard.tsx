@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { RouteChange } from "../../utils/routeChange";
 import { useNavigate } from "react-router-dom";
 
 import "./pageCard.css";
@@ -12,17 +13,11 @@ interface Props {
 }
 
 function PagePreview({ children, routePath, bgImgPath, bgImgAlt, isCurrent }: Props) {
-  
   const navigate = useNavigate();
-  function routeChange() {
-    const path: string = "/personal-portfolio/" + routePath;
-    navigate(path);
-  }
-  
   if (!routePath || isCurrent) return <></>;
   
   return (
-    <div onClick={routeChange} className="page-preview">
+    <div onClick={() => {RouteChange(routePath, navigate)}} className="page-preview">
       <div className="page-preview-body">{children}</div>
       <img className="page-preview-bg" src={bgImgPath} alt={bgImgAlt} />
     </div>

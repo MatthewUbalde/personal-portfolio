@@ -1,7 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
 
-export const RouteChange = (routePath: string) => {
-  const navigate = useNavigate();
+export const RouteChange = (routePath: string | undefined, navigateHook: NavigateFunction) => {
+  //const navigate = useNavigate();
+  if (routePath === undefined)
+    return;
+
   const path: string = "/personal-portfolio/" + routePath;
-  navigate(path);
+  navigateHook(path);
 }
