@@ -60,7 +60,7 @@ function PreviewSection({ id }: Props) {
             <li>Unity</li>
           </ul>
         </PageCard>
-        <PageCard
+        {/* <PageCard
           routePath=""
           bgImgAlt=""
           isCurrent={location.pathname.includes('art')}
@@ -70,7 +70,7 @@ function PreviewSection({ id }: Props) {
             <li>Used Krita at a Intermiedate Level</li>
             <li>Used Blender at a Basic Level</li>
           </ul>
-        </PageCard>
+        </PageCard> */}
       </div>
     </section>
   );

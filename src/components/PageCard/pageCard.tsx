@@ -14,7 +14,7 @@ interface Props {
 
 function PagePreview({ children, routePath, bgImgPath, bgImgAlt, isCurrent }: Props) {
   const navigate = useNavigate();
-  if (!routePath || isCurrent) return <></>;
+  if (isCurrent) return <></>;
   
   return (
     <div onClick={() => {RouteChange(routePath, navigate)}} className="page-preview">
