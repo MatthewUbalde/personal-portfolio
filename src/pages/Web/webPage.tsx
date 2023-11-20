@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar/navbar";
-import GallerySection from "../../components/Gallery/gallerySection";
+import GallerySection from "../../components/Gallery/gallery";
 import TextContainer from "../../components/TextContainer/textContainer";
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'

@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar/navbar";
 import TextContainer from "../../components/TextContainer/textContainer";
-import GallerySection from "../../components/Gallery/gallerySection";
+import GallerySection from "../../components/Gallery/gallery";
 import Data from "../../data/devPageThumbnails.json";
 import PreviewSection from "../../sections/PageCardSection/pageCardSection";
 import "./artPage.css";

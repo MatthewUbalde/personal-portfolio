@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar/navbar";
-import SpotlightSection from "../../components/SpotlightContainer/spotlightContainer";
-import GallerySection from "../../components/Gallery/gallerySection";
+import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
+import GallerySection from "../../components/Gallery/gallery";
 import TextContainer from "../../components/TextContainer/textContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 
@@ -24,7 +24,7 @@ function SoftwarePage() {
     <div id="web-page" className="page">
       <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Others"]} />
 
-      <SpotlightSection
+      <SpotlightContainer
         id="intro"
         backgroundImgPath={PortraitImg}
         backgroundImgAlt="Picture of Matthew Ubalde"
@@ -34,7 +34,7 @@ function SoftwarePage() {
           I have used and created applications in <b>C++</b> and <b>Java</b> throughout my time in Fanshawe's Computer Programming and Analysis program.
         </p>
         <p><b>Currently looking for an intership!</b></p>
-      </SpotlightSection>
+      </SpotlightContainer>
 
       <section id="socials">
         <h2>My Soical Accounts</h2>
