@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Thumbnail from "./Thumbnail/thumbnail";
-import "./gallerySection.css";
+import "./gallery.css";
 
 interface Props {
   id?: string;
