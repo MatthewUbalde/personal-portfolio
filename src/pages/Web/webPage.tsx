@@ -3,7 +3,7 @@ import Gallery from "../../components/Gallery/gallery";
 import TextContainer from "../../components/TextContainer/textContainer";
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
-import ContactForm from "../../components/ContactForm/contactForm";
+// import ContactForm from "../../components/ContactForm/contactForm";
 
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
 import SocialThumbnails from "../../data/thumbnails/devSocials.json";
@@ -77,10 +77,10 @@ function WebPage() {
         </div>
       </Gallery> */}
 
-      <section id="contacts">
+      {/* <section id="contacts">
         <h2>Contact Me</h2>
         <ContactForm/>
-      </section>
+      </section> */}
 
       <PageCardSection id='others'/>
     </div>
