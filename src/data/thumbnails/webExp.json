@@ -1,5 +1,5 @@
 {
-  "frontendThumbnails": [
+  "frontendData": [
     {
       "title": "React - Beginner",
       "imgPath": "./assets/react.svg",
@@ -21,7 +21,7 @@
       "altImg": "Bootstrap logo"
     }
   ],
-  "backendThumbnails": [
+  "backendData": [
     {
       "title": "ASP.NET C# - Beginner",
       "imgPath": "./assets/aspnet.svg",

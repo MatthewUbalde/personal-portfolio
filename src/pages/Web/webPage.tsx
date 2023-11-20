@@ -1,13 +1,13 @@
 import Navbar from "../../components/Navbar/navbar";
-import GallerySection from "../../components/Gallery/gallery";
+import Gallery from "../../components/Gallery/gallery";
 import TextContainer from "../../components/TextContainer/textContainer";
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 // import ContactForm from "../../components/ContactForm/contactForm";
 
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";
-import SocialThumbnails from "../../data/thumbnails/socials.json";
-import WebThumbnails from "../../data/thumbnails/webDevExperiences.json";
+import SocialThumbnails from "../../data/thumbnails/devSocials.json";
+import WebThumbnails from "../../data/thumbnails/webExp.json";
 import PortraitImg from '/assets/portfolio-portrait.webp';
 import "./webPage.css";
 import "../page.css";
@@ -15,10 +15,10 @@ import { useEffect } from "react";
 
 function WebPage() {
   const frontendThumbnails: Array<ThumbnailData> =
-    WebThumbnails.frontendThumbnails;
+    WebThumbnails.frontendData;
   const backendThumbnails: Array<ThumbnailData> =
-    WebThumbnails.backendThumbnails;
-  const socialThumbnails: Array<ThumbnailData> = SocialThumbnails.thumbnails;
+    WebThumbnails.backendData;
+  const socialThumbnails: Array<ThumbnailData> = SocialThumbnails.data;
 
   // Set scroll to the very top!
   useEffect(() => {
@@ -48,14 +48,14 @@ function WebPage() {
 
       <section id="socials">
         <h2>My Soical Accounts</h2>
-        <GallerySection src={socialThumbnails} type="logo" />
+        <Gallery src={socialThumbnails} type="logo" />
       </section>
 
       <section id="experiences">
         <h2>Frontend</h2>
-        <GallerySection src={frontendThumbnails} type="logo" />
+        <Gallery src={frontendThumbnails} type="logo" />
         <h2>Backend</h2>
-        <GallerySection src={backendThumbnails} type="logo" />
+        <Gallery src={backendThumbnails} type="logo" />
       </section>
 
       <TextContainer position="middle" align="center">
@@ -71,11 +71,11 @@ function WebPage() {
         <p>No worthy projects to be shown just yet!</p>
       </TextContainer>
 
-      {/* <GallerySection id="examples" thumbnails={websiteData}>
+      {/* <Gallery id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">
           <h2>Here are applications (or websites) I have created so far in React</h2>
         </div>
-      </GallerySection> */}
+      </Gallery> */}
 
       {/* <section id="contacts">
         <h2>Contact Me</h2>
