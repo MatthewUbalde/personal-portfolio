@@ -1,8 +1,14 @@
+// import { useState } from "react";
 import EmailJS from "@emailjs/browser";
-import { emailjsKey, serviceId, receiveTemplateId } from "../../secret/secret";
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import { useForm } from "../../hooks/useForm/useForm";
 import "./contactForm.css";
+
+const emailjsServiceID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const emailjsTemplateID: string = import.meta.env.VITE_EMAILJS_RECEIVE_TEMPLATE_ID;
+const emailjsKey: string = import.meta.env.VITE_EMAILJS_KEY;
+const recaptchaKey: string = import.meta.env.VITE_RECAPTHA_KEY;
 
 function ContactForm() {
   const initialState = {
@@ -20,8 +26,8 @@ function ContactForm() {
     console.log(values);
 
     EmailJS.send(
-      serviceId,
-      receiveTemplateId,
+      emailjsServiceID,
+      emailjsTemplateID,
       values,
       emailjsKey
     ).then(
@@ -61,6 +67,9 @@ function ContactForm() {
           required
         />
       </div>
+      <ReCAPTCHA
+        sitekey={recaptchaKey}
+      />
       <button type="submit">Send</button>
     </form>
   );
