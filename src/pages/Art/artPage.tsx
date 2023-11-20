@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar/navbar";
 import TextContainer from "../../components/TextContainer/textContainer";
-import GallerySection from "../../components/Gallery/gallery";
-import Data from "../../data/devPageThumbnails.json";
+// import Gallery from "../../components/Gallery/gallery";
+// import Data from "../../data/devPageThumbnails.json";
 import PreviewSection from "../../sections/PageCardSection/pageCardSection";
 import "./artPage.css";
 import "../page.css";
@@ -25,7 +25,7 @@ function ArtPage() {
         </p>
         <p>This place is currently in working progress!</p>
       </TextContainer>
-      <GallerySection id="examples" src={data} />
+      {/* <Gallery id="examples" src={data} /> */}
       <PreviewSection id='others'/>
     </div>
   );
