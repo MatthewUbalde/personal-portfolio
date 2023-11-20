@@ -9,18 +9,8 @@ interface Props {
   type?: 'auto' | 'display' | 'logo';
 }
 
-function GallerySection({id, children, src, type}: Props) {
-
-  if (!src)
-  {
-    return (
-      <div id={id} className="gallery">
-        {children}
-      </div>
-    )
-  }
-
-  return (
+function Gallery({id, children, src, type}: Props) {
+  return src && (
     <div id={id} className={"gallery gallery-" + type}>
       {children}
       {src.map((items, index) => (
@@ -36,4 +26,4 @@ function GallerySection({id, children, src, type}: Props) {
   );
 }
 
-export default GallerySection;
+export default Gallery;
