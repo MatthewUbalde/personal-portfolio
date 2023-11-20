@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar/navbar";
-import TextSection from "../../components/TextContainer/textContainer";
+import TextContainer from "../../components/TextContainer/textContainer";
 import GallerySection from "../../components/Gallery/gallerySection";
 import Data from "../../data/devPageThumbnails.json";
 import PreviewSection from "../../sections/PageCardSection/pageCardSection";
@@ -12,7 +12,7 @@ function ArtPage() {
   return (
     <div id="art-page" className="page">
       <Navbar sections={["Intro", "Examples", "Other", "Others"]} />
-      <TextSection id="intro" align="center">
+      <TextContainer id="intro" align="center">
         <p>
           Hello everyone! My art portfolio can also be found through{" "}
           <a
@@ -24,7 +24,7 @@ function ArtPage() {
           </a>
         </p>
         <p>This place is currently in working progress!</p>
-      </TextSection>
+      </TextContainer>
       <GallerySection id="examples" src={data} />
       <PreviewSection id='others'/>
     </div>

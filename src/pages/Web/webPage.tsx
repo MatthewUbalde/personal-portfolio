@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar/navbar";
 import GallerySection from "../../components/Gallery/gallerySection";
-import TextSection from "../../components/TextContainer/textContainer";
-import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
+import TextContainer from "../../components/TextContainer/textContainer";
+import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 // import ContactForm from "../../components/ContactForm/contactForm";
 
@@ -29,7 +29,7 @@ function WebPage() {
     <div id="web-page" className="page">
       <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Others"]} />
 
-      <SpotlightSection
+      <SpotlightContainer
         id="intro"
         backgroundImgPath={PortraitImg}
         backgroundImgAlt="Picture of Matthew Ubalde"
@@ -44,7 +44,7 @@ function WebPage() {
           program.
         </p>
         <p><b>Currently looking for an intership!</b></p>
-      </SpotlightSection>
+      </SpotlightContainer>
 
       <section id="socials">
         <h2>My Soical Accounts</h2>
@@ -58,18 +58,18 @@ function WebPage() {
         <GallerySection src={backendThumbnails} type="logo" />
       </section>
 
-      <TextSection position="middle" align="center">
+      <TextContainer position="middle" align="center">
         <h1>This website is created in React</h1>
         <p>
           And I'll always learn and strive for perfection as I grow deeper as a
           web developer.
         </p>
-      </TextSection>
+      </TextContainer>
 
-      <TextSection id='projects' position='middle' align='center'>
+      <TextContainer id='projects' position='middle' align='center'>
         <h1>Projects</h1>
         <p>No worthy projects to be shown just yet!</p>
-      </TextSection>
+      </TextContainer>
 
       {/* <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">

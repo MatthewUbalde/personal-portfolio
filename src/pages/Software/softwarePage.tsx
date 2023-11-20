@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar/navbar";
-import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
+import SpotlightSection from "../../components/SpotlightContainer/spotlightContainer";
 import GallerySection from "../../components/Gallery/gallerySection";
-import TextSection from "../../components/TextContainer/textContainer";
+import TextContainer from "../../components/TextContainer/textContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 
 import SoftwareExpThumbnails from '../../data/thumbnails/softwareExp.json'
@@ -46,10 +46,10 @@ function SoftwarePage() {
         <GallerySection src={softwareExpThumbnails} type="logo" />
       </section>
 
-      <TextSection id='projects' position='middle' align='center'>
+      <TextContainer id='projects' position='middle' align='center'>
         <h1>Projects</h1>
         <p>No worthy projects to be shown just yet!</p>
-      </TextSection>
+      </TextContainer>
 
       {/* <GallerySection id="examples" thumbnails={websiteData}>
         <div className="gallery-text-container">

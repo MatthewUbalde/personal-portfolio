@@ -1,4 +1,4 @@
-import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
+import SpotlightSection from "../../components/SpotlightContainer/spotlightContainer";
 import PageCardSection from "../../sections/PageCardSection/pageCardSection";
 import PotraitImg from '/assets/portfolio-portrait.webp'
 import "./landingPage.css";
