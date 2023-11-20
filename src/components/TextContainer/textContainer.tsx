@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import './textSection.css'
+import './textContainer.css'
 
 interface Props {
     children: ReactNode;

@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar/navbar";
 import SpotlightSection from "../../components/SpotlightSection/spotlightSection";
 import GallerySection from "../../components/Gallery/gallerySection";
-import TextSection from "../../components/TextSection/textSection";
+import TextSection from "../../components/TextContainer/textContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 
 import SoftwareExpThumbnails from '../../data/thumbnails/softwareExp.json'

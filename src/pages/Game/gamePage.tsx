@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner/banner";
 import Navbar from "../../components/Navbar/navbar";
-import TextSection from "../../components/TextSection/textSection";
+import TextSection from "../../components/TextContainer/textContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 
 import "../page.css";
