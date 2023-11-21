@@ -2,7 +2,8 @@ import Navbar from "../../components/Navbar/navbar";
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import Gallery from "../../components/Gallery/gallery";
 import TextContainer from "../../components/TextContainer/textContainer";
-import PageCardSection from '../../sections/PageCardSection/pageCardSection'
+import PageCardSection from '../../sections/PageCardSection/pageCardSection';
+import ContactForm from "../../components/ContactForm/contactForm";
 
 import SoftwareExpThumbnails from '../../data/thumbnails/softwareExp.json'
 import SocialThumbnails from "../../data/thumbnails/devSocials.json";
@@ -57,10 +58,10 @@ function SoftwarePage() {
         </div>
       </Gallery> */}
 
-      {/* <section id="contacts">
+      <section id="contacts">
         <h2>Contact Me</h2>
         <ContactForm/>
-      </section> */}
+      </section>
 
       <PageCardSection id='others'/>
       <Banner status="warning" />

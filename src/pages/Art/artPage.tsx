@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar/navbar";
 import TextContainer from "../../components/TextContainer/textContainer";
 // import Gallery from "../../components/Gallery/gallery";
 // import Data from "../../data/devPageThumbnails.json";
+import ContactForm from "../../components/ContactForm/contactForm";
 import PreviewSection from "../../sections/PageCardSection/pageCardSection";
 import "./artPage.css";
 import "../page.css";
@@ -26,6 +27,12 @@ function ArtPage() {
         <p>This place is currently in working progress!</p>
       </TextContainer>
       {/* <Gallery id="examples" src={data} /> */}
+
+      <section id="contacts">
+        <h2>Contact Me</h2>
+        <ContactForm/>
+      </section>
+
       <PreviewSection id='others'/>
     </div>
   );
