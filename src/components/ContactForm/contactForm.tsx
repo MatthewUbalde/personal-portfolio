@@ -2,10 +2,9 @@
 import EmailJS, { EmailJSResponseStatus } from "@emailjs/browser";
 import ReCAPTCHA from 'react-google-recaptcha'
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { useForm } from "../../hooks/useForm/useContactForm";
 import "./contactForm.css";
-import React from "react";
 
 const emailjsServiceID: string = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const emailjsTemplateID: string = import.meta.env.VITE_EMAILJS_RECEIVE_TEMPLATE_ID;
@@ -13,7 +12,7 @@ const emailjsKey: string = import.meta.env.VITE_EMAILJS_KEY;
 const recaptchaKey: string = import.meta.env.VITE_RECAPTHA_KEY;
 
 
-function ContactFormStatus(state: FormState) {
+function ContactFormStatus(state: FormState): ReactNode {
   let msg: string = '';
 
   switch (state) {
@@ -27,7 +26,7 @@ function ContactFormStatus(state: FormState) {
       msg = "Please be sure to complete the Recaptcha first!";
       break;
     default:
-      return React.Fragment;
+      return <></>;
       break;
   }
 
