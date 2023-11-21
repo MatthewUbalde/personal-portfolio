@@ -1,8 +1,7 @@
 import {useState} from 'react'
-
 import React from 'react'
 
-export const useForm = (callback: any, recaptchaResponse: any, initialState = {}) => {
+export const useForm = (callback: CallableFunction, recaptchaResponse: string, initialState: ContactFormData) => {
   const [values, setValues] = useState(initialState);
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,10 +19,20 @@ export const useForm = (callback: any, recaptchaResponse: any, initialState = {}
     await callback(); // trigger the callback
   }
 
+  const clearValues = () => {
+    setValues({
+      'from-name': "",
+      'email': "",
+      'message': "",
+      'g-recaptcha-response': ""
+    });
+  }
+
   return {
     onInputChange,
     onTextareaChange,
     onSubmit,
+    clearValues,
     values,
   };
 }
