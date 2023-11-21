@@ -13,7 +13,7 @@ const emailjsKey: string = import.meta.env.VITE_EMAILJS_KEY;
 const recaptchaKey: string = import.meta.env.VITE_RECAPTHA_KEY;
 
 
-function contactFormStatus(state: FormState) {
+function ContactFormStatus(state: FormState) {
   let msg: string = '';
 
   switch (state) {
@@ -21,17 +21,17 @@ function contactFormStatus(state: FormState) {
       msg = "Email sent! I'll get back to you within 3 days. Have a great day!";
       break;
     case 'error' :
-      msg = "Error. Unable to send email. My apologies"
+      msg = "Error. Unable to send email. My apologies";
       break;
     case 'no-recaptcha': 
-      msg = "Please be sure to complete the Recaptcha first!"
+      msg = "Please be sure to complete the Recaptcha first!";
       break;
     default:
-      return React.Fragment
+      return React.Fragment;
       break;
   }
 
-  return <p className='status'>{msg}</p>
+  return <p className='status'>{msg}</p>;
 }
 
 function ContactForm() {
@@ -78,7 +78,7 @@ function ContactForm() {
 
   return (
     <form id="contact" className='contact-form' onSubmit={onSubmit}>
-      {contactFormStatus(formState)}
+      {ContactFormStatus(formState)}
       <div className="field-container">
         <input
           name="from-name"
