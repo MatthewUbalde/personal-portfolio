@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import Navbar from "../../components/Navbar/navbar";
-import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
+import Banner from "../../components/Banner/banner";
 import Gallery from "../../components/Gallery/gallery";
+import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import TextContainer from "../../components/TextContainer/textContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection';
 import ContactForm from "../../components/ContactForm/contactForm";
@@ -8,9 +10,7 @@ import ContactForm from "../../components/ContactForm/contactForm";
 import SoftwareExpThumbnails from '../../data/thumbnails/softwareExp.json'
 import SocialThumbnails from "../../data/thumbnails/devSocials.json";
 import PortraitImg from '/assets/portfolio-portrait.webp'
-import "../page.css";
-import { useEffect } from "react";
-import Banner from "../../components/Banner/banner";
+import "./softwarePage.css";
 
 function SoftwarePage() {
   const softwareExpThumbnails: Array<ThumbnailData> = SoftwareExpThumbnails.data
@@ -23,7 +23,7 @@ function SoftwarePage() {
 
   return (
     <div id="web-page" className="page">
-      <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Others"]} />
+      <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Contacts", "Others"]} />
 
       <SpotlightContainer
         id="intro"
@@ -58,11 +58,7 @@ function SoftwarePage() {
         </div>
       </Gallery> */}
 
-      <section id="contacts">
-        <h2>Contact Me</h2>
-        <ContactForm/>
-      </section>
-
+      <ContactForm/>
       <PageCardSection id='others'/>
       <Banner status="warning" />
     </div>

@@ -10,7 +10,6 @@ import SocialThumbnails from "../../data/thumbnails/devSocials.json";
 import WebThumbnails from "../../data/thumbnails/webExp.json";
 import PortraitImg from '/assets/portfolio-portrait.webp';
 import "./webPage.css";
-import "../page.css";
 import { useEffect } from "react";
 
 function WebPage() {
@@ -27,7 +26,7 @@ function WebPage() {
 
   return (
     <div id="web-page" className="page">
-      <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Others"]} />
+      <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Contacts", "Others"]} />
 
       <SpotlightContainer
         id="intro"
@@ -77,11 +76,7 @@ function WebPage() {
         </div>
       </Gallery> */}
 
-      <section id="contacts">
-        <h2>Contact Me</h2>
-        <ContactForm/>
-      </section>
-
+      <ContactForm/>
       <PageCardSection id='others'/>
     </div>
   );

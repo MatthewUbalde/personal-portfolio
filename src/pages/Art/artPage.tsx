@@ -5,7 +5,6 @@ import TextContainer from "../../components/TextContainer/textContainer";
 import ContactForm from "../../components/ContactForm/contactForm";
 import PreviewSection from "../../sections/PageCardSection/pageCardSection";
 import "./artPage.css";
-import "../page.css";
 
 function ArtPage() {
   // const data: Array<ThumbnailData> = Data.thumbnails;
@@ -26,13 +25,7 @@ function ArtPage() {
         </p>
         <p>This place is currently in working progress!</p>
       </TextContainer>
-      {/* <Gallery id="examples" src={data} /> */}
-
-      <section id="contacts">
-        <h2>Contact Me</h2>
-        <ContactForm/>
-      </section>
-
+      <ContactForm/>
       <PreviewSection id='others'/>
     </div>
   );

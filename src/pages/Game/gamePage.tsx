@@ -1,11 +1,12 @@
+import { useEffect } from "react";
+
 import Banner from "../../components/Banner/banner";
 import Navbar from "../../components/Navbar/navbar";
 import TextContainer from "../../components/TextContainer/textContainer";
 import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 import ContactForm from "../../components/ContactForm/contactForm";
 
-import "../page.css";
-import { useEffect } from "react";
+import "./gamePage.css";
 
 function GamePage() {
   // Set scroll to the very top!
@@ -21,11 +22,7 @@ function GamePage() {
         <h1>This section will showcase some of my game development skills!</h1>
       </TextContainer>
 
-      <section id="contacts">
-        <h2>Contact Me</h2>
-        <ContactForm/>
-      </section>
-      
+      <ContactForm/>
       <PageCardSection id='others'/>
       <Banner status="warning" />
     </div>
