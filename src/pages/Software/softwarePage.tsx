@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Navbar from "../../components/Navbar/navbar";
-import Banner from "../../components/Banner/banner";
 import Gallery from "../../components/Gallery/gallery";
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import TextContainer from "../../components/TextContainer/textContainer";
