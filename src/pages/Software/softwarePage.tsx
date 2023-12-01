@@ -60,7 +60,6 @@ function SoftwarePage() {
 
       <ContactForm/>
       <PageCardSection id='others'/>
-      <Banner status="warning" />
     </div>
   );
 }

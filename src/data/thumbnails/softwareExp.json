@@ -2,18 +2,18 @@
   "data": [
     {
       "title": "C++ - Intermediate",
-      "imgPath": "",
-      "altImg": ""
+      "imgPath": "./assets/c++.svg",
+      "altImg": "C++"
     },
     {
       "title": "Java - Intermediate",
-      "imgPath": "",
-      "altImg": ""
+      "imgPath": "./assets/java.svg",
+      "altImg": "Java Logo"
     },
     {
       "title": "C# - Intermediate",
-      "imgPath": "",
-      "altImg": ""
+      "imgPath": "./assets/c-sharp.svg",
+      "altImg": "C# Logo"
     },
     {
       "title": "MySQL - Beginner",
@@ -22,13 +22,13 @@
     },
     {
       "title": "OpenGL - Beginner",
-      "imgPath": "",
-      "altImg": ""
+      "imgPath": "./assets/Opengl-logo.svg",
+      "altImg": "OpenGL Logo"
     },
     {
       "title": "Android Studio - Beginner",
-      "imgPath": "",
-      "altImg": ""
+      "imgPath": "./assets/android-studio-stable.svg",
+      "altImg": "Android Studio Logo"
     }
   ]
 }
