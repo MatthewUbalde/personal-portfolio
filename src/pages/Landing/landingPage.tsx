@@ -1,6 +1,4 @@
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
-import PageCardSection from "../../sections/PageCardSection/pageCardSection";
-
 import PotraitImg from '/assets/portfolio-portrait.webp'
 import "./landingPage.css";
 
@@ -12,7 +10,6 @@ function LandingPage() {
         <p>I'm in <b>Fanshawe's Computer Programming and Analysis program</b> with some experience in Web, Software, and Game Development.</p>
         <p>Highly recommend to check out my expereinces in <b>Web Development</b> first!</p>
       </SpotlightContainer>
-      <PageCardSection/>
     </div>
   );
 }

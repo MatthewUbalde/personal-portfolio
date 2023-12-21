@@ -19,7 +19,7 @@ function SoftwarePage() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
+  
   return (
     <div id="web-page" className="page">
       <Navbar sections={["Intro", "Socials", "Experiences", "Projects", "Contacts", "Others"]} />
@@ -58,7 +58,6 @@ function SoftwarePage() {
       </Gallery> */}
 
       <ContactForm/>
-      <PageCardSection id='others'/>
     </div>
   );
 }

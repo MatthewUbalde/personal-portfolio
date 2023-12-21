@@ -77,7 +77,6 @@ function WebPage() {
       </Gallery> */}
 
       <ContactForm/>
-      <PageCardSection id='others'/>
     </div>
   );
 }

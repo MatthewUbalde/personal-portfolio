@@ -11,6 +11,7 @@ function ArtPage() {
 
   return (
     <div id="art-page" className="page">
+        <PreviewSection id='others'/>
       <Navbar sections={["Intro", "Examples", "Other", "Others"]} />
       <TextContainer id="intro" align="center">
         <p>
@@ -26,7 +27,6 @@ function ArtPage() {
         <p>This place is currently in working progress!</p>
       </TextContainer>
       <ContactForm/>
-      <PreviewSection id='others'/>
     </div>
   );
 }
