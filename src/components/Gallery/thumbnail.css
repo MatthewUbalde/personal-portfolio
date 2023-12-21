@@ -3,13 +3,12 @@
   
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   
   border-radius: 4px;
   padding: 1rem;
   
-  align-items: center;
-  justify-content: center;
-
   transform: scale(1);
   transition: transform 0.5s;
 }
@@ -24,19 +23,9 @@
   transition: transform 0.1s;
 }
 
-
 .thumbnail-container h3 {
   margin: 0;
   color: white;
-}
-
-.thumbnail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  min-height: 15rem;
-  min-width: 15rem;
 }
 
 .thumbnail img {

@@ -1,5 +1,3 @@
-import "./thumbnail.css";
-
 function Thumbnail({ title, imgPath, altImg, link }: ThumbnailData) {
   return (
     <div className="thumbnail-container">

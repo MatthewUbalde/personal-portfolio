@@ -26,7 +26,8 @@
 .gallery-logo .thumbnail-container,
 .gallery-text-container {
     width: calc(25% - 2rem);
-    max-width: 20rem;
+    min-width: 10rem;
+    min-height: 20rem;
 }
 
 .gallery-display .thumbnail-container,
