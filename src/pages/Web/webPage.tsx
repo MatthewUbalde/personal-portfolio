@@ -2,7 +2,6 @@ import Navbar from "../../components/Navbar/navbar";
 import Gallery from "../../components/Gallery/gallery";
 import TextContainer from "../../components/TextContainer/textContainer";
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
-import PageCardSection from '../../sections/PageCardSection/pageCardSection'
 import ContactForm from "../../components/ContactForm/contactForm";
 
 // import WebsiteThumbnails from "../../data/thumbnails/reactApplications.json";

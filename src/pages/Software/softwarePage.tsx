@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar/navbar";
 import Gallery from "../../components/Gallery/gallery";
 import SpotlightContainer from "../../components/SpotlightContainer/spotlightContainer";
 import TextContainer from "../../components/TextContainer/textContainer";
-import PageCardSection from '../../sections/PageCardSection/pageCardSection';
 import ContactForm from "../../components/ContactForm/contactForm";
 
 import SoftwareExpThumbnails from '../../data/thumbnails/softwareExp.json'
