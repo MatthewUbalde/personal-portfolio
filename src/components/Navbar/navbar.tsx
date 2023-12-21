@@ -15,7 +15,7 @@ function Navbar({sections }: Props) {
             className="link"
             activeClass="link-active"
             smooth
-            offset={-100}
+            offset={-225}
             spy={true}
             to={value.toLowerCase()}
           >
