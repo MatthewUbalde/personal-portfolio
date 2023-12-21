@@ -11,7 +11,7 @@ body {
     color: white;
 }
 
-nav, div {
+section, nav, div {
     box-sizing: border-box;
 }
 
