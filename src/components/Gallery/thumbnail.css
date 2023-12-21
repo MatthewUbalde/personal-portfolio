@@ -24,14 +24,25 @@
   transition: transform 0.1s;
 }
 
-.thumbnail-container img {
-  width: 100%;
-  overflow: visible;
-}
 
 .thumbnail-container h3 {
   margin: 0;
   color: white;
+}
+
+.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  min-height: 15rem;
+  min-width: 15rem;
+}
+
+.thumbnail img {
+  width: 100%;
+  overflow: visible;
+  object-fit: cover;
 }
 
 .gallery-logo .thumbnail {
