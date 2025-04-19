@@ -7,10 +7,10 @@
 
 import { getCollection } from "astro:content";
 
-import Layout from "../../../layouts/BaseLayout.astro";
-import Section from "../../../components/Section.astro";
-import BadgeDisplay from "../../../components/BadgeDisplay.astro";
-import LayoutSection from "../../../components/LayoutSection.astro";
+import Layout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import BadgeDisplay from "../../components/BadgeDisplay.astro";
+import LayoutSection from "../../components/LayoutSection.astro";
 
 const experiences = await getCollection("experiences");
 const mobileExp = experiences.find((e) => e.id === "mobile")?.data;

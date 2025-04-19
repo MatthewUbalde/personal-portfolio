@@ -26,36 +26,13 @@ const gameProject = projects.sort(
   title="Game"
   description="Have experience in Godot and Unity to create well designed games"
 >
-  <LayoutSection row class="items-center">
-    <Section noMargin textContent class="md:w-3/4">
-      <h1>Experience Summary</h1>
-      <p>
-        Was taught on how to use the Unity Engine, but developed games as a
-        side-hobby with Godot. This is purely as an interest, but willing to try
-        to break into this industry when given the opportunity.
-      </p>
-    </Section>
-    {
-      gameExp && (
-        <BadgeDisplay noMargin title="Game Experiences" src={gameExp} />
-      )
-    }
-  </LayoutSection>
-  <Section textContent class="sm:w-1/2 sm:mx-auto">
-    <h1>Games for Fun</h1>
-    <p>
-      These are purely made out of fun as I found the game development
-      interesting since I was really young. I like making games that are simple,
-      but tried to make it deep and rewarding at the same time.
-    </p>
-  </Section>
   <ContainerProject>
     {
       gameProject &&
         gameProject.map((p) => (
           <ProjectShowcase
             {...p.data}
-            href={`/personal-portfolio-astro/comp-experience/game/${p.id}`}
+            href={`/personal-portfolio-astro/projects/game/${p.id}`}
           />
         ))
     }
