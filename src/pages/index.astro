@@ -53,7 +53,12 @@ articles.sort(
     <ContainerProject>
       {
         articles &&
-          articles.map((p) => <ProjectShowcase href={p.id} {...p.data} />)
+          articles.map((p) => (
+            <ProjectShowcase
+              href={`./personal-portfolio-astro/${p.id}`}
+              {...p.data}
+            />
+          ))
       }
     </ContainerProject>
   </Section>

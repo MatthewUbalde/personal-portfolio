@@ -28,11 +28,11 @@ const articles = defineCollection({
 const computerExperienceLoader = (root) =>
   glob({
     pattern: "*.{md,mdx}",
-    base: `./src/content/comp-experience/${root}`,
+    base: `./src/content/projects/${root}`,
   });
 
 const gameArticles = defineCollection({
-  loader: computerExperienceLoader("game"),
+  loader: computerExperienceLoader("games"),
   schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
 });
 
