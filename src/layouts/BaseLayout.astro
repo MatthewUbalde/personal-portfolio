@@ -27,21 +27,30 @@ const { title, description, prevNav } = Astro.props;
     <BaseHead title={"Matthew Ubalde | " + title} description={description} />
   </head>
   <body
-    class="h-fit overflow-x-hidden bg-indigo-500 bg-gradient-to-b from-indigo-500 via-purple-400 to-indigo-500 text-cyan-50"
+    class="h-fit min-h-screen overflow-x-hidden bg-slate-800 bg-gradient-to-b from-slate-800 to-slate-950 text-cyan-50"
   >
-    <NavbarMobile prev={prevNav} current={currentPath} class="md:hidden" />
-    <div class="flex flex-row md:m-0">
-      <NavbarDesktop
-        prev={prevNav}
-        current={currentPath}
-        class="hidden md:block flex-shrink-0"
-      />
-      <div class="flex flex-col justify-between">
-        <main>
-          <slot />
-        </main>
-        <Footer />
+    <header class="fixed inset-0 pointer-events-none">
+      <!-- Bar background -->
+      <div class="h-full w-4 bg-slate-600"></div>
+      <div
+        class="absolute top-2 left-2 right-2 flex flex-row gap-2 h-fit pointer-events-auto"
+      >
+        <!-- Put the image here -->
+        <a href="/"><div class="bg-red-100 w-24 h-24"></div></a>
+        <div class="flex flex-col w-fit">
+          <h1><a href="/">Matthew Ubalde</a></h1>
+          <div>Web and Game Developer</div>
+          <div class="text-xl">
+            <a href="/projects">Projects</a> | <a href="/blogs">Blogs</a>
+          </div>
+        </div>
       </div>
+    </header>
+    <div class="min-h-screen ml-4 flex flex-col justify-between">
+      <main>
+        <slot />
+      </main>
+      <Footer />
     </div>
   </body>
 </html>
