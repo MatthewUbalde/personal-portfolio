@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.3",
-    "@astrojs/tailwind": "^5.1.4",
-    "@astrojs/vue": "^5.0.3",
+    "@astrojs/mdx": "^4.2.4",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vue": "^5.0.10",
     "@playform/compress": "^0.1.6",
-    "astro": "^5.1.1",
+    "astro": "^5.7.4",
     "astro-embed": "^0.9.0",
     "astro-icon": "^1.1.5",
     "tailwind-merge": "^2.2.1",
