@@ -1,0 +1,47 @@
+---
+/**
+ * Putting the different variety of fields in different pages
+ *
+ * Prior version-4.0, there were separated fields for different careers.
+ * But I decided to make the landing page more specialized for web and game
+ * development, and have this to showcase my other skills as well such as in
+ * Mobile and Software Development, and Arts.
+ */
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+
+const articles = await getCollection("articles", (a) => a.data.featured);
+
+articles.sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+);
+---
+
+<Layout
+  title="Articles"
+  description="Articles such as experiences in events with other developers or artists."
+>
+  <Section>
+    <h2>Career</h2>
+    <p>
+      As of now, I'm currently seeking a career within the field of game or web
+      development. However, in my time in Fanshawe, I've learned variety of
+      skills from different department in software development such as mobile
+      development, and general software development.
+    </p>
+    <p>This also includes my art skills as well.</p>
+    <h3>Computer Related-fields</h3>
+    <ul>
+      <li><a href="career/software">General Software</a></li>
+      <li><a href="career/mobile">Mobile Development</a></li>
+      <li><a href="career/web">Web Development</a></li>
+      <li><a href="career/game">Game Development</a></li>
+    </ul>
+    <h3>Art Related-fields</h3>
+    <ul>
+      <li><a href="career/art">Art Hobbyist</a></li>
+    </ul>
+  </Section>
+</Layout>

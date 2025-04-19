@@ -1,0 +1,33 @@
+---
+/**
+ * Showcasing the projects made
+ */
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+
+import ContainerProject from "../../components/ContainerProject.astro";
+import ProjectShowcase from "../../components/ProjectShowcase.astro";
+
+const articles = await getCollection("articles", (a) => a.data.featured);
+
+articles.sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+);
+---
+
+<Layout
+  title="Home"
+  description="Ranging from Web and Game Development, and Creative Arts!"
+>
+  <Section>
+    <h2>Projects</h2>
+    <ContainerProject>
+      {
+        articles &&
+          articles.map((p) => <ProjectShowcase href={p.id} {...p.data} />)
+      }
+    </ContainerProject>
+  </Section>
+</Layout>
