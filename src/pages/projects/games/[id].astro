@@ -7,7 +7,7 @@ import { getCollection, render } from "astro:content";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
-  const articles = await getCollection("gameArticles");
+  const articles = await getCollection("gamesArticles");
   return articles.map((article) => ({
     params: { id: article.id },
     props: { article },

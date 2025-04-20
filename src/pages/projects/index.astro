@@ -9,25 +9,42 @@ import Section from "../../components/Section.astro";
 
 import ContainerProject from "../../components/ContainerProject.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
+import LayoutSection from "../../components/LayoutSection.astro";
 
-const articles = await getCollection("articles", (a) => a.data.featured);
-
-articles.sort(
-  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
-);
+const articles = (
+  await getCollection("articles", (a) => a.data.featured)
+).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 ---
 
 <Layout
   title="Projects"
   description="Ranging from Web and Game Development, and Creative Arts!"
 >
-  <Section>
-    <h2 class="text-center">Games</h2>
-    <ContainerProject>
-      {
-        articles &&
-          articles.map((p) => <ProjectShowcase href={p.id} {...p.data} />)
-      }
-    </ContainerProject>
-  </Section>
+  <LayoutSection row>
+    <a href="./projects/games">
+      <Section noMargin>
+        <h2 class="text-center">Games</h2>
+      </Section>
+    </a>
+    <a href="./projects/apps">
+      <Section noMargin>
+        <h2 class="text-center">Apps</h2>
+      </Section>
+    </a>
+    <a href="./projects/websites">
+      <Section noMargin>
+        <h2 class="text-center">Websites</h2>
+      </Section>
+    </a>
+  </LayoutSection>
+  {
+    articles.length !== 0 && (
+        <h2 class="text-center">Featured Projects</h2>
+        <ContainerProject>
+          {articles.map((p) => (
+            <ProjectShowcase href={`./projects/${p.id}`} {...p.data} />
+          ))}
+        </ContainerProject>
+    )
+  }
 </Layout>

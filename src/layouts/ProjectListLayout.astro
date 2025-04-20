@@ -1,0 +1,48 @@
+---
+/**
+ * ProjectListLayout
+ *
+ * A template for the projects pages
+ */
+import { getCollection } from "astro:content";
+import type { CollectionKey } from "astro:content";
+
+import Layout from "./BaseLayout.astro";
+
+import ContainerProject from "../components/ContainerProject.astro";
+import ProjectShowcase from "../components/ProjectShowcase.astro";
+
+interface Props {
+  title: string;
+  collectionName: CollectionKey;
+  root: string;
+}
+
+const { title, collectionName, root } = Astro.props;
+
+const projects = (await getCollection(collectionName)).sort(
+  (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf()
+);
+---
+
+<Layout
+  title="Game"
+  description="Have experience in Godot and Unity to create well designed games"
+>
+  <h2 class="text-center">{title}</h2>
+  {
+    projects.length !== 0 ? (
+      <div class="text-center text-sm">Ranging from Latest to Oldest</div>
+      <ContainerProject>
+        {projects.map((p) => (
+          <ProjectShowcase
+            {...p.data}
+            href={`/personal-portfolio-astro/projects/${root}/${p.id}`}
+          />
+        ))}
+      </ContainerProject>
+    ) : (
+      <div class="text-center">No projects at the moment!</div>
+    )
+  }
+</Layout>

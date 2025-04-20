@@ -17,7 +17,7 @@ const experiences = defineCollection({
 const articles = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
-    base: `./src/content/`,
+    base: `./src/content/projects`,
   }),
   schema: ({ image }) => projectArticleSchema({ image }),
 });
@@ -31,31 +31,25 @@ const computerExperienceLoader = (root) =>
     base: `./src/content/projects/${root}`,
   });
 
-const gameArticles = defineCollection({
+const gamesArticles = defineCollection({
   loader: computerExperienceLoader("games"),
   schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
 });
 
-const mobileArticles = defineCollection({
-  loader: computerExperienceLoader("mobile"),
+const appsArticles = defineCollection({
+  loader: computerExperienceLoader("apps"),
   schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
 });
 
-const webArticles = defineCollection({
+const websitesArticles = defineCollection({
   loader: computerExperienceLoader("web"),
   schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
 });
 
-const softwarebArticles = defineCollection({
-  loader: computerExperienceLoader("software"),
-  schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
-});
-
 export const collections = {
-  articles,
   experiences,
-  gameArticles,
-  mobileArticles,
-  webArticles,
-  softwarebArticles,
+  articles,
+  gamesArticles,
+  appsArticles,
+  websitesArticles,
 };
