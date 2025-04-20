@@ -3,8 +3,12 @@
  * The base of the entire website.
  * It holds the metadata in the head, Navbars, and holds the main content.
  */
+import { Image } from "astro:assets";
+
 import Footer from "../components/Footer.astro";
 import BaseHead from "../components/BaseHead.astro";
+
+import portraitImg from "../assets/portfolio-portrait.png";
 
 import NavbarDesktop from "../components/Navbar/NavbarDesktop.astro";
 import NavbarMobile from "../components/Navbar/NavbarMobile.astro";
@@ -33,12 +37,14 @@ const { title, description, prevNav } = Astro.props;
       <!-- Bar background -->
       <div class="h-full w-4 bg-slate-600"></div>
       <div
-        class="absolute top-2 left-2 right-0 flex flex-row gap-2 h-fit pointer-events-auto bg-slate-700 bg-opacity-50"
+        class="absolute top-2 left-2 right-0 flex flex-row gap-2 h-fit pointer-events-auto bg-slate-800 bg-opacity-50"
       >
-        <!-- Put the image here -->
-        <a href="/personal-portfolio-astro"
-          ><div class="bg-red-100 w-24 h-24"></div></a
+        <a
+          class="bg-slate-800 w-28 h-28 overflow-hidden rounded-sm"
+          href="/personal-portfolio-astro"
         >
+          <Image src={portraitImg} alt="" />
+        </a>
         <div class="flex flex-col w-fit">
           <h1><a href="/personal-portfolio-astro">Matthew Ubalde</a></h1>
           <div>Web and Game Developer</div>
