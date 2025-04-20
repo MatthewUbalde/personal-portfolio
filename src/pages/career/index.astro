@@ -11,6 +11,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/BaseLayout.astro";
 import Section from "../../components/Section.astro";
+import LayoutSection from "../../components/LayoutSection.astro";
 
 const articles = await getCollection("articles", (a) => a.data.featured);
 
@@ -20,28 +21,43 @@ articles.sort(
 ---
 
 <Layout
-  title="Articles"
-  description="Articles such as experiences in events with other developers or artists."
+  title="Career"
+  description="My career in computer sciences and my hobby as an artist."
 >
-  <Section>
-    <h2>Career</h2>
+  <Section articleContent>
+    <h2 class="text-center">Career</h2>
     <p>
       As of now, I'm currently seeking a career within the field of game or web
       development. However, in my time in Fanshawe, I've learned variety of
       skills from different department in software development such as mobile
       development, and general software development.
     </p>
-    <p>This also includes my art skills as well.</p>
-    <h3>Computer Related-fields</h3>
-    <ul>
-      <li><a href="./career/software">General Software</a></li>
-      <li><a href="./career/mobile">Mobile Development</a></li>
-      <li><a href="./career/web">Web Development</a></li>
-      <li><a href="./career/game">Game Development</a></li>
-    </ul>
-    <h3>Art Related-fields</h3>
-    <ul>
-      <li><a href="./career/art">Art Hobbyist</a></li>
-    </ul>
+    <p>This also includes my art skills as well as a hobbyist.</p>
   </Section>
+  <div>
+    <h3 class="text-center">Computer Related-fields</h3>
+    <LayoutSection row class="justify-center items-stretch">
+      <a href="./career/software">
+        <Section noMargin> General Software </Section>
+      </a>
+      <a href="./career/mobile">
+        <Section noMargin> Mobile Development </Section>
+      </a>
+      <a href="./career/web">
+        <Section noMargin> Web Development </Section>
+      </a>
+      <a href="./career/game">
+        <Section noMargin> Game Development </Section>
+      </a>
+    </LayoutSection>
+  </div>
+
+  <div>
+    <h3 class="text-center">Art Related-fields</h3>
+    <LayoutSection row class="justify-center items-stretch">
+      <a href="./career/art">
+        <Section noMargin> Art Hobbyist </Section>
+      </a>
+    </LayoutSection>
+  </div>
 </Layout>
