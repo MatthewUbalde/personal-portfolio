@@ -9,7 +9,7 @@ const { title, src, experience, ...props } = Astro.props;
 ---
 
 <div
-  class="group relative flex flex-col gap-1 justify-around items-center size-28 md:size-32 bg-sky-950 p-4 rounded-md
+  class="group relative flex flex-col gap-1 justify-around items-center size-26 md:size-32 bg-slate-700 p-4 rounded-md
           hover:scale-110 transition-transform"
   {...props}
 >
@@ -19,7 +19,7 @@ const { title, src, experience, ...props } = Astro.props;
     {title}
   </div>
   <Icon name={src} class="flex-grow size-14 sm:size-18 md:size-20" size={80} />
-  <div class="w-fit mx-auto p-1 text-center text-sm bg-sky-800 rounded-md">
+  <div class="w-fit mx-auto p-1 text-center text-sm bg-slate-800 rounded-md">
     {experience}
   </div>
 </div>
