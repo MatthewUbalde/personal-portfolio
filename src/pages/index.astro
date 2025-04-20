@@ -28,28 +28,43 @@ articles.sort(
   <Section>
     <h2>Summary</h2>
     <p>
-      A Fanshawe College student studying in Computer Programming and Analysis
+      A Fanshawe College student in the <b>Computer Programming and Analysis</b
+      >, and later in <b>Game Development - Advanced Programming</b>, seeking to
+      go deeper within the <b>web</b> or <b>game development</b> industry.
     </p>
   </Section>
   <Section>
     <h2>Key Skills</h2>
     <ul class="flex flex-row flex-wrap">
-      <li>Intelligence</li>
-      <li>Intelligence</li>
-      <li>Intelligence</li>
-      <li>Intelligence</li>
-      <li>Intelligence</li>
-      <li>Intelligence</li>
-      <li>Intelligence</li>
-      <li>Intelligence</li>
-      <li>Intelligence</li>
+      <li>Quick-learner</li>
+      <li>Critical Thinker</li>
+      <li>Attention to Detail</li>
+      <li>Curious</li>
+      <li>Creative</li>
+      <li>Time Responsible</li>
+      <li>Adaptability</li>
+      <li>Team-player</li>
     </ul>
   </Section>
-  <Section>
-    <h2>Education</h2>
-  </Section>
-  <Section>
-    <h2>Projects</h2>
+  <LayoutSection col noMedia>
+    <h2 class="text-center">Education</h2>
+    <Section class="flex flex-col" noMargin>
+      <h3>Computer Programming and Analysis</h3>
+      <div class="flex flex-row justify-between">
+        <div><b>Fanshawe College</b> - Advanced Diploma</div>
+        <div>Jan 2022 - April 2026</div>
+      </div>
+    </Section>
+    <Section class="flex flex-col" noMargin>
+      <h3>Game Development - Advanced Programming</h3>
+      <div class="flex flex-row justify-between">
+        <div><b>Fanshawe College</b> - Advanced Diploma</div>
+        <div>Sept 2025 - April 2026</div>
+      </div>
+    </Section>
+  </LayoutSection>
+  <div>
+    <h2 class="text-center">Projects</h2>
     <ContainerProject>
       {
         articles &&
@@ -61,8 +76,5 @@ articles.sort(
           ))
       }
     </ContainerProject>
-  </Section>
-  <Section>
-    <h2>Experience</h2>
-  </Section>
+  </div>
 </Layout>
