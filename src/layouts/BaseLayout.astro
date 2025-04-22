@@ -48,13 +48,13 @@ const { title, description, prevNav } = Astro.props;
         class="absolute top-2 left-2 right-0 flex flex-row h-fit pointer-events-auto"
       >
         <a
-          class="bg-slate-800 w-28 h-28 overflow-hidden rounded-sm"
+          class="bg-slate-800 w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 overflow-hidden rounded-sm"
           href="/personal-portfolio-astro"
         >
           <Image src={portraitImg} alt="" />
         </a>
         <div
-          class="flex flex-col w-fit p-2 bg-gradient-to-r from-slate-900 via-slate-800 to-transparent"
+          class="flex flex-col justify-center w-fit p-2 bg-gradient-to-r from-slate-900 via-slate-800 to-transparent"
         >
           <h1><a href="/personal-portfolio-astro">Matthew Ubalde</a></h1>
           <div>Web and Game Developer</div>
