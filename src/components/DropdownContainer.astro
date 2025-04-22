@@ -1,0 +1,37 @@
+---
+import Section from "./Section.astro";
+---
+
+<hide-container>
+  <Section>
+    <div class="flex flex-row">
+      <div class="flex-grow flex-shrink-0">
+        <slot name="header" />
+      </div>
+      <button id="hide-button" class="flex-shrink">Show</button>
+    </div>
+    <div id="container" class="hidden">
+      <slot />
+    </div>
+  </Section>
+</hide-container>
+
+<script>
+  class HideContainer extends HTMLElement {
+    connectedCallback() {
+      let toggle = false;
+
+      const button = this.querySelector("#hide-button");
+      const container = this.querySelector("#container");
+
+      button?.addEventListener("click", () => {
+        container?.classList.toggle("hidden");
+        toggle = container?.classList.contains("hidden") ?? false;
+
+        button.textContent = toggle ? "Show" : "Hide";
+      });
+    }
+  }
+
+  customElements.define("hide-container", HideContainer);
+</script>
