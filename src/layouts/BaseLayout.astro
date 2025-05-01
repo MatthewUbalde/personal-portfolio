@@ -42,8 +42,8 @@ const { title, description, prevNav, hideNavPortrait } = Astro.props;
       class="fixed -left-1 -top-8 w-[200%] opacity-10 rotate-2 pointer-events-none"
     />
     <!-- HEADER / NAV SECTION -->
-    <header class="sticky xl:fixed left-0 top-0 pointer-events-none z-50">
-      <div class="flex flex-row h-28 md:h-32 lg:h-36 pointer-events-auto">
+    <header class="group sticky xl:fixed left-0 top-0 z-50 pointer-events-auto">
+      <div class="flex flex-row h-28 md:h-32 lg:h-36">
         {
           !hideNavPortrait && (
             <a
@@ -55,7 +55,7 @@ const { title, description, prevNav, hideNavPortrait } = Astro.props;
           )
         }
         <div
-          class="flex flex-col justify-center w-fit h-full px-4 py-2 bg-gradient-to-r from-slate-900 via-slate-800 to-transparent"
+          class="flex flex-col justify-center w-fit h-full px-4 py-2 bg-gradient-to-r from-slate-900 to-transparent to-25% group-hover:to-90% opacity-75 group-hover:opacity-100 transition-all"
         >
           <h1><a href="/personal-portfolio-astro">Matthew Ubalde</a></h1>
           <div>Web and Game Developer</div>
