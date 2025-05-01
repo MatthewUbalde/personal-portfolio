@@ -1,8 +1,14 @@
 ---
+import type { HTMLAttributes } from "astro/types";
+
 import Section from "./Section.astro";
+
+type Props = HTMLAttributes<"div">;
+
+const props = Astro.props;
 ---
 
-<hide-container>
+<hide-container {...props}>
   <Section>
     <div class="flex flex-row">
       <div class="flex-grow flex-shrink-0">
