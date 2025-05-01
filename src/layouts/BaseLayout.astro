@@ -22,9 +22,10 @@ interface Props {
   prevNav?: string;
   title: string;
   description: string;
+  hideNavPortrait?: boolean;
 }
 
-const { title, description, prevNav } = Astro.props;
+const { title, description, prevNav, hideNavPortrait } = Astro.props;
 ---
 
 <!doctype html>
@@ -43,18 +44,22 @@ const { title, description, prevNav } = Astro.props;
     <!-- HEADER / NAV SECTION -->
     <header class="sticky md:fixed left-0 top-0 pointer-events-none z-50">
       <div class="flex flex-row h-fit pointer-events-auto">
-        <a
-          class="bg-slate-800 w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 overflow-hidden rounded-sm"
-          href="/personal-portfolio-astro"
-        >
-          <Image src={portraitImg} alt="" />
-        </a>
+        {
+          !hideNavPortrait && (
+            <a
+              class="bg-slate-800 w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 overflow-hidden rounded-sm"
+              href="/personal-portfolio-astro"
+            >
+              <Image src={portraitImg} alt="" />
+            </a>
+          )
+        }
         <div
-          class="flex flex-col justify-center w-fit p-2 bg-gradient-to-r from-slate-900 via-slate-800 to-transparent"
+          class="flex flex-col justify-center w-fit px-4 py-2 bg-gradient-to-r from-slate-900 via-slate-800 to-transparent"
         >
           <h1><a href="/personal-portfolio-astro">Matthew Ubalde</a></h1>
           <div>Web and Game Developer</div>
-          <nav class="text-xl">
+          <nav class="text-xl my-1">
             <a href="/personal-portfolio-astro/projects">Projects</a> | <a
               href="/personal-portfolio-astro/articles">Articles</a
             > |
