@@ -43,11 +43,11 @@ const { title, description, prevNav, hideNavPortrait } = Astro.props;
     />
     <!-- HEADER / NAV SECTION -->
     <header class="sticky md:fixed left-0 top-0 pointer-events-none z-50">
-      <div class="flex flex-row h-fit pointer-events-auto">
+      <div class="flex flex-row h-28 md:h-32 lg:h-36 pointer-events-auto">
         {
           !hideNavPortrait && (
             <a
-              class="bg-slate-800 w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 overflow-hidden rounded-sm"
+              class="bg-slate-800 h-full w-28 md:w-32 lg:w-36 overflow-hidden rounded-sm"
               href="/personal-portfolio-astro"
             >
               <Image src={portraitImg} alt="" />
@@ -55,7 +55,7 @@ const { title, description, prevNav, hideNavPortrait } = Astro.props;
           )
         }
         <div
-          class="flex flex-col justify-center w-fit px-4 py-2 bg-gradient-to-r from-slate-900 via-slate-800 to-transparent"
+          class="flex flex-col justify-center w-fit h-full px-4 py-2 bg-gradient-to-r from-slate-900 via-slate-800 to-transparent"
         >
           <h1><a href="/personal-portfolio-astro">Matthew Ubalde</a></h1>
           <div>Web and Game Developer</div>
