@@ -47,17 +47,17 @@ const {
 
 <BaseLayout prevNav={prevNav} title={title} description={description}>
   <!-- Title Section -->
-  <Section noPadding class="relative group overflow-hidden">
-      <div class="-z-10 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden">
+  <Section noPadding class="group relative group overflow-hidden">
+      <div class="-z-10 group-hover:-translate-y-0 group-hover:translate-x-32 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden opacity-100 transition-all">
         <Image
-          class="object-cover h-full"
+          class="object-cover h-full opacity-45 group-hover:opacity-80 shadow-slate-950 shadow-lg transition-all"
           src={coverImage}
           alt={coverImageAlt}
           width="1280"
           height="720"
         />
       </div>
-      <div class="p-4 flex flex-row">
+      <div class="z-50 p-4 flex flex-row ">
         <div class="flex-grow">
           <h1>{title}</h1>
           <div class="text-sm">
@@ -72,7 +72,7 @@ const {
               )
             }
           </div>
-          <p>{description}</p>
+          <p class="w-96">{description}</p>
           <div class="mt-2">
           {
             summaryPoints && (
