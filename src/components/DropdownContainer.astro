@@ -8,20 +8,24 @@ type Props = HTMLAttributes<"div">;
 const props = Astro.props;
 ---
 
-<hide-container {...props}>
-  <Section>
-    <div class="flex flex-row">
-      <div class="flex-grow flex-shrink-0">
-        <slot name="header" />
-      </div>
-      <button id="hide-button" class="flex-shrink pointer-events-auto"
-        >Show</button
-      >
+<hide-container
+  {...props}
+  class:list={[
+    props.class,
+    "bg-slate-700 bg-opacity-50 p-2 sm:px-4 py-4 rounded-sm",
+  ]}
+>
+  <div class="flex flex-row">
+    <div class="flex-grow flex-shrink-0">
+      <slot name="header" />
     </div>
-    <div id="container" class="hidden">
-      <slot />
-    </div>
-  </Section>
+    <button id="hide-button" class="flex-shrink pointer-events-auto"
+      >Show</button
+    >
+  </div>
+  <div id="container" class="hidden">
+    <slot />
+  </div>
 </hide-container>
 
 <script>
