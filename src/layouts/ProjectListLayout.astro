@@ -11,14 +11,16 @@ import Layout from "./BaseLayout.astro";
 
 import ContainerProject from "../components/ContainerProject.astro";
 import ProjectShowcase from "../components/ProjectShowcase.astro";
+import LayoutSection from "../components/LayoutSection.astro";
 
 interface Props {
   title: string;
+  description?: string;
   collectionName: CollectionKey;
   root: string;
 }
 
-const { title, collectionName, root } = Astro.props;
+const { title, description, collectionName, root } = Astro.props;
 
 const projects = (await getCollection(collectionName)).sort(
   (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf()
@@ -26,13 +28,14 @@ const projects = (await getCollection(collectionName)).sort(
 ---
 
 <Layout
-  title="Game"
-  description="Have experience in Godot and Unity to create well designed games"
+  title={title}
+  description={description ?? ""}
 >
-  <h2 class="text-center">{title}</h2>
+<LayoutSection col>
+  <h1 class="text-center">{title}</h1>
   {
     projects.length !== 0 ? (
-      <div class="text-center text-sm">Ranging from Latest to Oldest</div>
+      <div class="text-center text-xl">Ranging from Latest to Oldest</div>
       <ContainerProject>
         {projects.map((p) => (
           <ProjectShowcase
@@ -42,7 +45,8 @@ const projects = (await getCollection(collectionName)).sort(
         ))}
       </ContainerProject>
     ) : (
-      <div class="text-center">No projects at the moment!</div>
+      <div class="text-center text-xl">No projects at the moment!</div>
     )
   }
+</LayoutSection>
 </Layout>
