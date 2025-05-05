@@ -10,6 +10,7 @@ import Layout from "../../layouts/BaseLayout.astro";
 import Section from "../../components/Section.astro";
 import BadgeDisplay from "../../components/BadgeDisplay.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
+import DropdownContainer from "../../components/DropdownContainer.astro";
 
 const experiences = await getCollection("experiences");
 const softwareExp = experiences.find((e) => e.id === "software")?.data;
@@ -37,10 +38,11 @@ const softwareExp = experiences.find((e) => e.id === "software")?.data;
         particle system.
       </p>
     </Section>
-    {
-      softwareExp && (
-        <BadgeDisplay noMargin title="Software Experiences" src={softwareExp} />
-      )
-    }
+    <DropdownContainer class="w-full h-fit">
+      <Fragment slot="header">
+        <h1>Software Experiences</h1>
+      </Fragment>
+      {softwareExp && <BadgeDisplay src={softwareExp} />}
+    </DropdownContainer>
   </LayoutSection>
 </Layout>

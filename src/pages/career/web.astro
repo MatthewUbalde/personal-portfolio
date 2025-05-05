@@ -11,6 +11,7 @@ import Layout from "../../layouts/BaseLayout.astro";
 import Section from "../../components/Section.astro";
 import BadgeDisplay from "../../components/BadgeDisplay.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
+import DropdownContainer from "../../components/DropdownContainer.astro";
 
 const experiences = await getCollection("experiences");
 const experiencesFrontend = experiences.find(
@@ -37,18 +38,31 @@ const experiencesBackend = experiences.find(
       learned so far for other passion projects.
     </p>
   </Section>
-  <LayoutSection row class="justify-between">
-    {
-      experiencesFrontend && (
-        <BadgeDisplay noMargin title="Front-end" src={experiencesFrontend} />
-      )
-    }
-    {
-      experiencesBackend && (
-        <BadgeDisplay noMargin title="Back-end" src={experiencesBackend} />
-      )
-    }
-  </LayoutSection>
+  <div>
+    <h1 class="text-center">Web Development Experiences</h1>
+    <LayoutSection row class="justify-between">
+      {
+        experiencesFrontend && (
+          <DropdownContainer class="w-full h-fit">
+            <Fragment slot="header">
+              <h2>Front-end</h2>
+            </Fragment>
+            <BadgeDisplay src={experiencesFrontend} />
+          </DropdownContainer>
+        )
+      }
+      {
+        experiencesBackend && (
+          <DropdownContainer class="w-full h-fit">
+            <Fragment slot="header">
+              <h2>Back-end</h2>
+            </Fragment>
+            <BadgeDisplay src={experiencesBackend} />
+          </DropdownContainer>
+        )
+      }
+    </LayoutSection>
+  </div>
   <Section textContent class="sm:mx-auto sm:w-2/3">
     <h1>Experiences in Fanshawe</h1>
     <p>

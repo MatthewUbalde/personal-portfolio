@@ -12,6 +12,7 @@ import BadgeDisplay from "../../components/BadgeDisplay.astro";
 import ContainerProject from "../../components/ContainerProject.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
+import DropdownContainer from "../../components/DropdownContainer.astro";
 
 const experiences = await getCollection("experiences");
 const projects = (await getCollection("gamesArticles")).sort(
@@ -25,7 +26,7 @@ const gameExp = experiences.find((e) => e.id === "game")?.data;
   title="Game"
   description="Have experience in Godot and Unity to create well designed games"
 >
-  <LayoutSection row class="items-center">
+  <LayoutSection col class="items-center">
     <Section noMargin textContent class="md:w-3/4">
       <h1>Experience Summary</h1>
       <p>
@@ -34,9 +35,15 @@ const gameExp = experiences.find((e) => e.id === "game")?.data;
         to break into this industry when given the opportunity.
       </p>
     </Section>
+
     {
       gameExp && (
-        <BadgeDisplay noMargin title="Game Experiences" src={gameExp} />
+        <DropdownContainer class="w-full h-fit">
+          <Fragment slot="header">
+            <h1>Game Experience</h1>
+          </Fragment>
+          <BadgeDisplay src={gameExp} title="Game Engines" />
+        </DropdownContainer>
       )
     }
   </LayoutSection>
