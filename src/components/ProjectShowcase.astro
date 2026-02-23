@@ -7,7 +7,7 @@ import FormattedDate from "./FormattedDate.astro";
 import GithubLink from "./Icons/GithubLink.astro";
 import SteamLink from "./Icons/SteamLink.astro";
 import ItchioLink from "./Icons/ItchioLink.astro";
-import Section from "./Section.astro";
+import Container from "./Container.astro";
 
 type Props = ProjectShowcaseType;
 
@@ -26,7 +26,7 @@ const {
 ---
 
 <a href={href} class="group w-full sm:w-2/3 md:w-3/4">
-  <Section
+  <Container
     noMargin
     noPadding
     tabindex={0}
@@ -62,5 +62,5 @@ const {
         )
       }
     </div>
-  </Section>
+  </Container>
 </a>

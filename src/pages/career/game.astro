@@ -6,7 +6,7 @@
 import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/BaseLayout.astro";
-import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
 import BadgeDisplay from "../../components/BadgeDisplay.astro";
 
 import ContainerProject from "../../components/ContainerProject.astro";
@@ -27,14 +27,14 @@ const gameExp = experiences.find((e) => e.id === "game")?.data;
   description="Have experience in Godot and Unity to create well designed games"
 >
   <LayoutSection col class="items-center">
-    <Section noMargin textContent class="md:w-3/4">
+    <Container noMargin textContent class="md:w-3/4">
       <h1>Experience Summary</h1>
       <p>
         Was taught on how to use the Unity Engine, but developed games as a
         side-hobby with Godot. This is purely as an interest, but willing to try
         to break into this industry when given the opportunity.
       </p>
-    </Section>
+    </Container>
 
     {
       gameExp && (
@@ -48,14 +48,14 @@ const gameExp = experiences.find((e) => e.id === "game")?.data;
     }
   </LayoutSection>
   <div>
-    <Section textContent class="sm:w-1/2 sm:mx-auto">
+    <Container textContent class="sm:w-1/2 sm:mx-auto">
       <h1>Games for Fun</h1>
       <p>
         These are purely made out of fun as I found the game development
         interesting since I was really young. I like making games that are
         simple, but tried to make it deep and rewarding at the same time.
       </p>
-    </Section>
+    </Container>
     {
       projects && (
         <ContainerProject>

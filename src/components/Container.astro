@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<section
+<div
   class:list={[
     "bg-slate-700 bg-opacity-50 from-slate-800 to-transparent bg-linear-to-b shadow-2xl",
     !noPadding && "p-2 sm:px-4 py-4",
@@ -33,4 +33,4 @@ const {
   {...props}
 >
   <slot />
-</section>
+</div>

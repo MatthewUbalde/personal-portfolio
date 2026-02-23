@@ -6,7 +6,7 @@
 import { SITE_NAVIGATION } from "../../const";
 
 import Layout from "../../layouts/BaseLayout.astro";
-import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
 
 const currentNav = SITE_NAVIGATION.find((nav) =>
@@ -16,7 +16,7 @@ const currentNav = SITE_NAVIGATION.find((nav) =>
 
 <Layout title="Home" description="Ranging from Web and Game Development.">
   <LayoutSection>
-    <Section noMargin textContent class="flex-grow">
+    <Container noMargin textContent class="flex-grow">
       <h1>Experience Summary</h1>
       <p>
         I'm a college student at Fanshawe College with a solid understanding of
@@ -30,7 +30,7 @@ const currentNav = SITE_NAVIGATION.find((nav) =>
       <p>
         I'm currently trying to specialize int <b>Web and Game Development</b>
       </p>
-    </Section>
+    </Container>
     <div class="flex flex-col justify-center items-center gap-2">
       <h2 class="text-center leading-tight">Career Fields</h2>
       {
@@ -46,7 +46,7 @@ const currentNav = SITE_NAVIGATION.find((nav) =>
       }
     </div>
   </LayoutSection>
-  <Section textContent class="sm:w-3/4 sm:mx-auto">
+  <Container textContent class="sm:w-3/4 sm:mx-auto">
     <h1>Fanshawe College 2019-2024</h1>
     <p>
       I was new to programming, but I had incredibly fun at my programming
@@ -60,5 +60,5 @@ const currentNav = SITE_NAVIGATION.find((nav) =>
       interesting, and I would love to get into the tech industry to improve my
       skills and help to create applications in need.
     </p>
-  </Section>
+  </Container>
 </Layout>

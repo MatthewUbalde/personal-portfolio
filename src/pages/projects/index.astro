@@ -5,7 +5,7 @@
 import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/BaseLayout.astro";
-import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
 
 import ContainerProject from "../../components/ContainerProject.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
@@ -23,19 +23,19 @@ const articles = (
   <h1 class="text-center">Projects</h1>
   <LayoutSection row class="justify-center items-stretch">
     <a href="./projects/games">
-      <Section noMargin>
+      <Container noMargin>
         <h2 class="text-center">Games</h2>
-      </Section>
+      </Container>
     </a>
     <a href="./projects/apps">
-      <Section noMargin>
+      <Container noMargin>
         <h2 class="text-center">Apps</h2>
-      </Section>
+      </Container>
     </a>
     <a href="./projects/websites">
-      <Section noMargin>
+      <Container noMargin>
         <h2 class="text-center">Websites</h2>
-      </Section>
+      </Container>
     </a>
   </LayoutSection>
   {

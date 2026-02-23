@@ -10,7 +10,7 @@ import { Image } from "astro:assets";
 
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
 
 import ItchioLink from "../components/Icons/ItchioLink.astro";
 import SteamLink from "../components/Icons/SteamLink.astro";
@@ -46,8 +46,8 @@ const {
 ---
 
 <BaseLayout prevNav={prevNav} title={title} description={description}>
-  <!-- Title Section -->
-  <Section noPadding class="group relative group overflow-hidden">
+  <!-- Title Container -->
+  <Container noPadding class="group relative group overflow-hidden">
       <div class="-z-10 group-hover:-translate-y-0 group-hover:translate-x-32 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden opacity-100 transition-all">
         <Image
           class="object-cover h-full opacity-45 group-hover:opacity-80 shadow-slate-950 shadow-lg transition-all"
@@ -113,9 +113,9 @@ const {
           }
         </div>
       </div>
-  </Section>
+  </Container>
   <!-- Article Content -->
-  <Section noMargin articleContent class="md:w-3/4 m-4 md:mx-auto">
+  <Container noMargin articleContent class="md:w-3/4 m-4 md:mx-auto">
     <slot />
-  </Section>
+  </Container>
 </BaseLayout>

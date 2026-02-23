@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 import { SITE_NAVIGATION } from "../const";
-import Section from "./Section.astro";
+import Container from "./Container.astro";
 
 type Props = HTMLAttributes<"footer">;
 
@@ -16,7 +16,7 @@ const { class: className, ...props } = Astro.props;
   <div class="flex flex-row justify-start items-stretch gap-2 flex-wrap">
     {
       SITE_NAVIGATION.map((nav) => (
-        <Section
+        <Container
           noMargin
           noPadding
           class="flex flex-col justify-center items-start flex-wrap p-2"
@@ -33,7 +33,7 @@ const { class: className, ...props } = Astro.props;
               ))}
             </div>
           )}
-        </Section>
+        </Container>
       ))
     }
   </div>

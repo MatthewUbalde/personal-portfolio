@@ -8,7 +8,7 @@
 import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/BaseLayout.astro";
-import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
 import BadgeDisplay from "../../components/BadgeDisplay.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
 import DropdownContainer from "../../components/DropdownContainer.astro";
@@ -26,7 +26,7 @@ const experiencesBackend = experiences.find(
   title="Web"
   description="Have experience in React, Vue, Angular, Gatsby, and now Astro, to develop websites."
 >
-  <Section textContent class="md:mx-auto md:w-2/3">
+  <Container textContent class="md:mx-auto md:w-2/3">
     <h1>Experience Summary</h1>
     <p>
       Was taught how to do front-end and back-end in the CPA3 program at
@@ -37,7 +37,7 @@ const experiencesBackend = experiences.find(
       Personally self-taught on other frameworks and using the skills I've
       learned so far for other passion projects.
     </p>
-  </Section>
+  </Container>
   <div>
     <h1 class="text-center">Web Development Experiences</h1>
     <LayoutSection row class="justify-between">
@@ -63,7 +63,7 @@ const experiencesBackend = experiences.find(
       }
     </LayoutSection>
   </div>
-  <Section textContent class="sm:mx-auto sm:w-2/3">
+  <Container textContent class="sm:mx-auto sm:w-2/3">
     <h1>Experiences in Fanshawe</h1>
     <p>
       Was taught on the front-end with <b>Vue.js</b>, <b>React</b>, and <b
@@ -76,8 +76,8 @@ const experiencesBackend = experiences.find(
       I was able to create a full-stack application and was able to host it on
       <b>AWS</b> with their <b>EC2</b> service.
     </p>
-  </Section>
-  <Section textContent>
+  </Container>
+  <Container textContent>
     <h1 class="text-center">What's this Website's Framework?</h1>
     <p>
       This website made with <b>Astro</b>, <b>Vue.js</b>, and <b>Tailwind</b>.
@@ -93,5 +93,5 @@ const experiencesBackend = experiences.find(
       I've tried with Gatsby with React for content collections, but found a
       simplier and better approach with Astro.
     </p>
-  </Section>
+  </Container>
 </Layout>

@@ -10,7 +10,7 @@
 import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/BaseLayout.astro";
-import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
 
 const articles = await getCollection("articles", (a) => a.data.featured);
@@ -24,7 +24,7 @@ articles.sort(
   title="Career"
   description="My career in computer sciences and my hobby as an artist."
 >
-  <Section articleContent>
+  <Container articleContent>
     <h2 class="text-center">Career</h2>
     <p>
       As of now, I'm currently seeking a career within the field of game or web
@@ -33,21 +33,21 @@ articles.sort(
       development, and general software development.
     </p>
     <p>This also includes my art skills as well as a hobbyist.</p>
-  </Section>
+  </Container>
   <div>
     <h3 class="text-center">Computer Related-fields</h3>
     <LayoutSection col class="justify-center items-stretch text-center">
       <a href="./career/software">
-        <Section noMargin> <h4>General Software</h4> </Section>
+        <Container noMargin> <h4>General Software</h4> </Container>
       </a>
       <a href="./career/mobile">
-        <Section noMargin> <h4>Mobile Development</h4> </Section>
+        <Container noMargin> <h4>Mobile Development</h4> </Container>
       </a>
       <a href="./career/web">
-        <Section noMargin> <h4>Web Development</h4> </Section>
+        <Container noMargin> <h4>Web Development</h4> </Container>
       </a>
       <a href="./career/game">
-        <Section noMargin> <h4>Game Development</h4> </Section>
+        <Container noMargin> <h4>Game Development</h4> </Container>
       </a>
     </LayoutSection>
   </div>
@@ -56,7 +56,7 @@ articles.sort(
     <h3 class="text-center">Art Related-fields</h3>
     <LayoutSection col class="justify-center items-stretch text-center">
       <a href="./career/art">
-        <Section noMargin> <h4>Art Hobbyist</h4> </Section>
+        <Container noMargin> <h4>Art Hobbyist</h4> </Container>
       </a>
     </LayoutSection>
   </div>

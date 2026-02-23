@@ -5,7 +5,7 @@
 import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/BaseLayout.astro";
-import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
 
 const articles = await getCollection("articles", (a) => a.data.featured);
 
@@ -18,8 +18,8 @@ articles.sort(
   title="Articles"
   description="Articles such as experiences in events with other developers or artists."
 >
-  <Section>
+  <Container>
     <h2>Articles</h2>
     <p>As of now, there is no articles at the moment.</p>
-  </Section>
+  </Container>
 </Layout>
