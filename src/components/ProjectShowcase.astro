@@ -1,0 +1,66 @@
+---
+import type { ProjectShowcaseType } from "../types";
+
+import { Image } from "astro:assets";
+
+import FormattedDate from "./FormattedDate.astro";
+import GithubLink from "./Icons/GithubLink.astro";
+import SteamLink from "./Icons/SteamLink.astro";
+import ItchioLink from "./Icons/ItchioLink.astro";
+import Section from "./Section.astro";
+
+type Props = ProjectShowcaseType;
+
+const {
+  title,
+  description,
+  coverImage,
+  coverImageAlt,
+  href,
+  published,
+  itchioLink,
+  steamLink,
+  githubLink,
+  ...props
+} = Astro.props;
+---
+
+<a href={href} class="group w-full sm:w-2/3 md:w-3/4">
+  <Section
+    noMargin
+    noPadding
+    tabindex={0}
+    {...props}
+    class="relative overflow-hidden"
+  >
+    <Image
+      class="opacity-45 group-hover:opacity-75 group-hover:-translate-y-4 mb-4 ml-12 rounded-bl-full object-contain shadow-slate-950 shadow-lg transition-all"
+      src={coverImage}
+      alt={coverImageAlt}
+      width={1280}
+      height={720}
+    />
+    <div class="absolute bottom-0 flex p-4">
+      <div class="flex-grow">
+        <h1>{title}</h1>
+        {
+          published && (
+            <div class="text-sm">
+              <FormattedDate date={published} />
+            </div>
+          )
+        }
+        <p>{description}</p>
+      </div>
+      {
+        (itchioLink || steamLink || githubLink) && (
+          <div class="flex flex-col gap-2 justify-end items-end w-24 p-1">
+            {itchioLink && <ItchioLink href={itchioLink} size={32} />}
+            {steamLink && <SteamLink href={steamLink} size={32} />}
+            {githubLink && <GithubLink href={githubLink} size={32} />}
+          </div>
+        )
+      }
+    </div>
+  </Section>
+</a>

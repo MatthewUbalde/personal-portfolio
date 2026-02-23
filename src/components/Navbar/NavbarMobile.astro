@@ -1,0 +1,64 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
+
+import { SITE_NAVIGATION } from "../../const";
+
+import NavLink from "./NavLink.astro";
+import SocialLink from "../Icons/SocialLink.astro";
+
+interface Props extends HTMLAttributes<"nav"> {
+  prev?: string;
+  current: string;
+}
+
+const props = Astro.props;
+---
+
+<nav-bar class:list={[props.class]} {...props}>
+  <button
+    class="sticky top-0 w-full z-50 p-4 text-4xl text-left bg-gradient-to-b from-sky-800 to-transparent"
+    ><Icon name="list" /></button
+  >
+  <nav
+    class:list={[
+      "z-50 fixed inset-0 hidden flex flex-col justify-between p-4 bg-gradient-to-b from-sky-800 to-transparent",
+      props.class,
+    ]}
+    {...props}
+  >
+    <div class="flex">
+      <div class="flex-grow">
+        <span class="text-xl opacity-50">Navigation</span>
+        {SITE_NAVIGATION.map((link) => <NavLink {...link} />)}
+      </div>
+      <button id="mobile-nav-go-back-btn" class="self-start text-4xl"
+        ><Icon name="close-btn" /></button
+      >
+    </div>
+    <div class="flex gap-4 my-1">
+      <SocialLink name="linkedin" size={48} />
+      <SocialLink name="github" size={48} />
+    </div>
+  </nav>
+</nav-bar>
+
+<script>
+  class Navbar extends HTMLElement {
+    connectedCallback() {
+      const dropdownButton = this.querySelector("button");
+      const navigation = this.querySelector("nav");
+      const navBackButton = this.querySelector("#mobile-nav-go-back-btn");
+
+      function dropdown() {
+        navigation?.classList.toggle("hidden");
+        dropdownButton?.classList.toggle("hidden");
+      }
+
+      dropdownButton?.addEventListener("click", dropdown);
+      navBackButton?.addEventListener("click", dropdown);
+    }
+  }
+
+  customElements.define("nav-bar", Navbar);
+</script>

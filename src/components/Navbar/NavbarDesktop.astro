@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { SITE_NAVIGATION } from "../../const";
+
+import NavLink from "./NavLink.astro";
+import SocialLink from "../Icons/SocialLink.astro";
+
+interface Props extends HTMLAttributes<"nav"> {
+  prev?: string;
+  current: string;
+}
+
+const props = Astro.props;
+---
+
+<div
+  class:list={["bg-gradient-to-r from-sky-800 to-transparent", props.class]}
+  {...props}
+>
+  <div class="sticky top-0 flex flex-col px-4 py-8 justify-between h-screen">
+    <nav>
+      <span class="opacity-50">Navigation</span>
+      {SITE_NAVIGATION.map((link) => <NavLink {...link} />)}
+    </nav>
+    <div class="flex gap-2">
+      <SocialLink name="linkedin" size={32} />
+      <SocialLink name="github" size={32} />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import LinkIcon from "./LinkIcon.astro";
+
+interface Props extends HTMLAttributes<"a"> {
+  size?: number;
+}
+
+const { href, class: className, size: sizeAttr } = Astro.props;
+---
+
+<LinkIcon name="steam" href={href} class={className} size={sizeAttr} />

@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { ExperienceBadgeType, MalleableComponentType } from "../types";
+
+import ExperienceBadge from "./ExperienceBadge.astro";
+import Section from "./Section.astro";
+
+interface Props extends HTMLAttributes<"div">, MalleableComponentType {
+  title?: string;
+  src: Array<ExperienceBadgeType>;
+}
+
+const {
+  class: className,
+  title,
+  src,
+  noPadding,
+  noMargin,
+  noRounded,
+} = Astro.props;
+---
+
+<Section
+  noPadding={noPadding}
+  noMargin={noMargin}
+  noRounded={noRounded}
+  class:list={[className]}
+>
+  <h1 class="text-center mb-2">{title}</h1>
+  <div class="flex flex-row flex-wrap justify-center items-center gap-4">
+    {src.map((badge) => <ExperienceBadge {...badge} />)}
+  </div>
+</Section>

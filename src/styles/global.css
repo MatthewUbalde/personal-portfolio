@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+    @apply text-sky-100;
+}
+
+h1, #h1 {
+    @apply text-4xl;
+}

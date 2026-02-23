@@ -1,0 +1,36 @@
+---
+/**
+ * Custom Section element that holds the default styling for majority of the site.
+ */
+import type { HTMLAttributes } from "astro/types";
+import type { MalleableComponentType, ContentComponentType } from "../types";
+
+type Props = HTMLAttributes<"section"> &
+  MalleableComponentType &
+  ContentComponentType;
+
+const {
+  class: className,
+  noPadding,
+  noMargin,
+  noRounded,
+  textContent,
+  articleContent,
+  ...props
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    "bg-slate-700 bg-opacity-50 from-slate-800 to-transparent bg-linear-to-b shadow-2xl",
+    !noPadding && "p-2 sm:px-4 py-4",
+    !noMargin && "m-2 sm:m-4",
+    !noRounded && "rounded-sm",
+    textContent && " space-y-2 text-center content-center",
+    articleContent && "space-y-2 text-start content-center",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</section>

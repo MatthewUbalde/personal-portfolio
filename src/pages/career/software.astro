@@ -1,0 +1,48 @@
+---
+/**
+ * Explores my experience in the general software development.
+ * Highlighting my potential strength and intrigue in low-level computers.
+ */
+
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import BadgeDisplay from "../../components/BadgeDisplay.astro";
+import LayoutSection from "../../components/LayoutSection.astro";
+import DropdownContainer from "../../components/DropdownContainer.astro";
+
+const experiences = await getCollection("experiences");
+const softwareExp = experiences.find((e) => e.id === "software")?.data;
+---
+
+<Layout
+  title="Software"
+  description="Have experience in C/C++, C#, and Java to create computer software"
+>
+  <LayoutSection col noMedia class="items-center">
+    <Section noMargin textContent class="md:w-2/3">
+      <h1>Experience Summary</h1>
+      <p>
+        Was taught in various languages and frameworks. Have solid foundations
+        on relatively low-level langauages on C/C++. Able to make desktop and
+        mobile applications with React Native.
+      </p>
+      <p>
+        Worked with MySQL and able to help design and maintain well-design
+        databases to suit the company's requirements.
+      </p>
+      <p>
+        Have used OpenGL to create and render 3d models using shaders, and
+        helped develop tools for manipulating the environment and created a
+        particle system.
+      </p>
+    </Section>
+    <DropdownContainer class="w-full h-fit">
+      <Fragment slot="header">
+        <h1>Software Experiences</h1>
+      </Fragment>
+      {softwareExp && <BadgeDisplay src={softwareExp} />}
+    </DropdownContainer>
+  </LayoutSection>
+</Layout>

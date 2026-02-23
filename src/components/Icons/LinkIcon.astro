@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
+
+interface Props extends HTMLAttributes<"a"> {
+  name: string;
+  size?: number | string;
+}
+
+const { name, href, size, class: className } = Astro.props;
+---
+
+<a class={className} href={href} target="_blank">
+  <Icon name={name} size={size} />
+</a>

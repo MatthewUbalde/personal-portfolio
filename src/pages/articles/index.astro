@@ -1,0 +1,25 @@
+---
+/**
+ * Articles such as experiences in events with other developers or artists.
+ */
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+
+const articles = await getCollection("articles", (a) => a.data.featured);
+
+articles.sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+);
+---
+
+<Layout
+  title="Articles"
+  description="Articles such as experiences in events with other developers or artists."
+>
+  <Section>
+    <h2>Articles</h2>
+    <p>As of now, there is no articles at the moment.</p>
+  </Section>
+</Layout>

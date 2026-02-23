@@ -1,0 +1,38 @@
+---
+/**
+ * Explores my experience in mobile development.
+ * Highlighting a project I made in Fanshawe of a to-do
+ * application with decent UI that's quick and simple.
+ */
+
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import BadgeDisplay from "../../components/BadgeDisplay.astro";
+import LayoutSection from "../../components/LayoutSection.astro";
+
+const experiences = await getCollection("experiences");
+const mobileExp = experiences.find((e) => e.id === "mobile")?.data;
+---
+
+<Layout
+  title="Mobile"
+  description="Have experience in Android Studio and React Native to create Android apps"
+>
+  <LayoutSection col noMedia class="items-center">
+    <Section noMargin textContent>
+      <h1>Experience Summary</h1>
+      <p>
+        Was taught how to use both Android Studio and React Native to develop
+        mobile applications. Due to my experience as a web developer, my skills
+        were transferable in React Native.
+      </p>
+    </Section>
+    {
+      mobileExp && (
+        <BadgeDisplay noMargin title="Mobile Experiences" src={mobileExp} />
+      )
+    }
+  </LayoutSection>
+</Layout>

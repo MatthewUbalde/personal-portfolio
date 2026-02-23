@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "personal-portfolio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "4.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,6 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/vue": "^5.1.4",
+    "@tailwindcss/vite": "^4.2.0",
+    "astro": "^5.17.1",
+    "tailwindcss": "^4.2.0",
+    "vue": "^3.5.28"
   }
 }

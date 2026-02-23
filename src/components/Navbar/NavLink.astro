@@ -1,0 +1,24 @@
+---
+/**
+ * Represent a link in the navigation bar on the side carries the link and its children.
+ */
+
+import type { NavLinkType } from "../../types";
+
+type Props = NavLinkType;
+
+const { href, label, children } = Astro.props;
+---
+
+<div class="block">
+  <a href={href} class="text-2xl md:text-xl">{label}</a>
+  {
+    children && (
+      <div class="flex flex-col px-4 text-2xl md:text-lg border-y-2 border-white">
+        {children?.map((link) => (
+          <a href={`${href}${link.href}`}>{link.label}</a>
+        ))}
+      </div>
+    )
+  }
+</div>

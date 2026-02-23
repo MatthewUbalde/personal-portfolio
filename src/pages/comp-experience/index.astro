@@ -1,0 +1,64 @@
+---
+/**
+ * Explores my career in computer science. So far, my experience has been fairly limited.
+ */
+
+import { SITE_NAVIGATION } from "../../const";
+
+import Layout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import LayoutSection from "../../components/LayoutSection.astro";
+
+const currentNav = SITE_NAVIGATION.find((nav) =>
+  nav.href.includes("comp-experience")
+);
+---
+
+<Layout title="Home" description="Ranging from Web and Game Development.">
+  <LayoutSection>
+    <Section noMargin textContent class="flex-grow">
+      <h1>Experience Summary</h1>
+      <p>
+        I'm a college student at Fanshawe College with a solid understanding of
+        programming and computers. Have experience in creating web, mobile, and
+        desktop applications in various frameworks.
+      </p>
+      <p>
+        On the right, you can check the different skills I've learned so far
+        throughout my career.
+      </p>
+      <p>
+        I'm currently trying to specialize int <b>Web and Game Development</b>
+      </p>
+    </Section>
+    <div class="flex flex-col justify-center items-center gap-2">
+      <h2 class="text-center leading-tight">Career Fields</h2>
+      {
+        currentNav?.children &&
+          currentNav?.children.map((nav) => (
+            <a
+              href={`${currentNav.href}${nav.href}`}
+              class=" px-2 py-1 text-lg text-center content-center bg-sky-900 bg-opacity-50 rounded-md"
+            >
+              {nav.label}
+            </a>
+          ))
+      }
+    </div>
+  </LayoutSection>
+  <Section textContent class="sm:w-3/4 sm:mx-auto">
+    <h1>Fanshawe College 2019-2024</h1>
+    <p>
+      I was new to programming, but I had incredibly fun at my programming
+      course back in high-school. Throughout my experience in Fanshawe, I've
+      learned a lot and created a solid and firm understanding of computers and
+      programming. I'm able to learn other programming languages fairly quickly,
+      and able to create applications in web, mobile, and desktop.
+    </p>
+    <p>
+      I'm not an expert, but learning these technologies are fun and
+      interesting, and I would love to get into the tech industry to improve my
+      skills and help to create applications in need.
+    </p>
+  </Section>
+</Layout>

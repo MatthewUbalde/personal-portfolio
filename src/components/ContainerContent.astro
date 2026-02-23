@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"div">;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<div
+  class:list={[
+    className,
+    "rounded-md overflow-hidden border-4 border-sky-950 bg-sky-900 bg-opacity-75",
+  ]}
+  {...props}
+>
+  <div class="bg-sky-950 p-1 break-words">
+    <slot name="header" />
+  </div>
+  <slot />
+</div>

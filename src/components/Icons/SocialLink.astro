@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import LinkIcon from "./LinkIcon.astro";
+import { SOCIAL_MEDIA_LINKS } from "../../const";
+
+interface Props extends HTMLAttributes<"span"> {
+  name: "github" | "linkedin";
+  size?: number;
+}
+
+const { name, class: className, size: sizeAttr } = Astro.props;
+---
+
+<LinkIcon
+  name={name}
+  href={SOCIAL_MEDIA_LINKS[name]}
+  class={className}
+  size={sizeAttr}
+/>
