@@ -1,7 +1,7 @@
 ---
 import type { ExperienceBadgeType } from "../types";
 
-import { Icon } from "astro-icon/components";
+// import { Icon } from "astro-icon/components";
 
 type Props = ExperienceBadgeType;
 
@@ -18,7 +18,7 @@ const { title, src, experience, ...props } = Astro.props;
   >
     {title}
   </div>
-  <Icon name={src} class="flex-grow size-14 sm:size-18 md:size-20" size={80} />
+  <!-- <Icon name={src} class="flex-grow size-14 sm:size-18 md:size-20" size={80} /> -->
   <div class="w-fit mx-auto p-1 text-center text-sm bg-slate-800 rounded-md">
     {experience}
   </div>
