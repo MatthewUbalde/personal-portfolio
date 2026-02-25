@@ -9,17 +9,17 @@ const { name, svg, experience, ...props } = Astro.props;
 ---
 
 <div
-  class="group relative flex flex-col gap-1 justify-around items-center size-26 md:size-32 bg-slate-700 p-4 rounded-md
+  class="group relative flex flex-col justify-center items-center size-26 md:size-32 bg-slate-900 p-1 rounded-md shadow-md
           hover:scale-110 transition-transform"
   {...props}
 >
   <div
     class="absolute left-0.5 top-2 opacity-50 leading-tight [writing-mode:vertical-lr]"
   >
-    {name}
-  </div>
-  <Icon name={svg} class="grow size-14 sm:size-18 md:size-20" size={80} />
-  <div class="w-fit mx-auto p-1 text-center text-sm bg-slate-800 rounded-md">
     {experience}
   </div>
+  <div class="w-fit mx-auto p-1 text-center text-sm font-bold">
+    {name}
+  </div>
+  <Icon name={svg} class="grow size-12 sm:size-18 md:size-20" size={80} />
 </div>
