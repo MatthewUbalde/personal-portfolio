@@ -13,7 +13,7 @@ import LayoutSection from "../../components/LayoutSection.astro";
 import DropdownContainer from "../../components/DropdownContainer.astro";
 
 const experiences = await getCollection("experiences");
-const softwareExp = experiences.find((e) => e.id === "software")?.data;
+const expSoftware = experiences[0].filter((e) => e.type.includes("software"));
 ---
 
 <Layout
@@ -42,7 +42,7 @@ const softwareExp = experiences.find((e) => e.id === "software")?.data;
       <Fragment slot="header">
         <h1>Software Experiences</h1>
       </Fragment>
-      {softwareExp && <BadgeDisplay src={softwareExp} />}
+      {expSoftware && <BadgeDisplay src={expSoftware.data} />}
     </DropdownContainer>
   </LayoutSection>
 </Layout>

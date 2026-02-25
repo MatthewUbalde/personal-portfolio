@@ -14,6 +14,10 @@ import ContainerProject from "../components/ContainerProject.astro";
 import ProjectShowcase from "../components/ProjectShowcase.astro";
 import LayoutSection from "../components/LayoutSection.astro";
 import DropdownContainer from "../components/DropdownContainer.astro";
+import Section from "../components/Section.astro";
+import GithubLink from "../components/Icons/GithubLink.astro";
+import ItchioLink from "../components/Icons/ItchioLink.astro";
+import LinkedInLink from "../components/Icons/LinkedInLink.astro";
 
 // const articles = await getCollection("articles", (a) => a.data.featured);
 
@@ -27,95 +31,130 @@ import DropdownContainer from "../components/DropdownContainer.astro";
   description="Ranging from Web and Game Development, and Creative Arts!"
   hideNavPortrait
 >
-  <Container>
-    <h1>Matthew Ubalde</h1>
-    <span>Striving to make beautiful and meaningful websites, functional software, and fun games</span>
-  </Container>
-
-  <Container>
-
-  </Container>
-
-  <!-- <Fragment slot="top">
-    <div
-      class="relative h-screen flex flex-row px-64 bg-gradient-to-t from-slate-950 to-transparent"
-    >
-      <div class="h-full flex flex-col justify-center items-left w-full">
-        <LayoutSection col noMedia class="w-96 justify-end">
-          <h2 class="text-6xl">Matthew Ubalde</h2>
-          <div class="text-4xl">Web and Software Developer</div>
-          <p class="text-3xl">
-            Striving to make beautiful websites, and meaningful and fun games.
-          </p>
-        </LayoutSection>
-        <DropdownContainer class="z-40 w-full h-fit max-h-96 overflow-y-scroll">
-          <Fragment slot="header">
-            <h2>Resume</h2>
-          </Fragment>
-          <Container>
-            <h2>Summary</h2>
-            <p>
-              A Fanshawe College student in the <b
-                >Computer Programming and Analysis</b
-              >, and later in <b>Game Development - Advanced Programming</b>,
-              seeking to go deeper within the <b>web</b> or <b
-                >game development</b
-              > industry.
-            </p>
-          </Container>
-          <Container>
-            <h2>Key Skills</h2>
-            <ul class="flex flex-row flex-wrap">
-              <li>Quick-learner</li>
-              <li>Critical Thinker</li>
-              <li>Attention to Detail</li>
-              <li>Curious</li>
-              <li>Creative</li>
-              <li>Time Responsible</li>
-              <li>Adaptability</li>
-              <li>Team-player</li>
-            </ul>
-          </Container>
-          <LayoutSection col noMedia>
-            <h2 class="text-center">Education</h2>
-            <Container class="flex flex-col" noMargin>
-              <h3>Computer Programming and Analysis</h3>
-              <div class="flex flex-row justify-between">
-                <div>
-                  <b>Fanshawe College</b> - Ontario College Advanced Diploma
-                </div>
-                <div>Jan 2022 - April 2026</div>
-              </div>
-            </Container>
-            <Container class="flex flex-col" noMargin>
-              <h3>Game Development - Advanced Programming</h3>
-              <div class="flex flex-row justify-between">
-                <div>
-                  <b>Fanshawe College</b> - Ontario College Graduate Certificate
-                </div>
-                <div>Sept 2025 - April 2026</div>
-              </div>
-            </Container>
-          </LayoutSection>
-          <div>
-            <h2 class="text-center">Projects</h2>
-            <ContainerProject>
-              {
-                articles &&
-                  articles.map((p) => (
-                    <ProjectShowcase
-                      href={`./personal-portfolio-astro/projects/${p.id}`}
-                      {...p.data}
-                    />
-                  ))
-              }
-            </ContainerProject>
-          </div>
-        </DropdownContainer>
-      </div>
-      <div class="self-end">
-        <Image src={portraitImage} alt="" class="w-[48rem]" />
-      </div>
+  <section class="h-dvh">
+    <Container class="w-3/4">
+      <h1>Matthew Ubalde</h1>
+      <span
+        >Striving to make beautiful and meaningful websites, functional
+        software, and fun games</span
+      >
+    </Container>
+    <div class="flex flex-row gap-2 m-2">
+      <GithubLink size={32} />
+      <ItchioLink size={32} />
+      <LinkedInLink size={32} />
     </div>
-  </Fragment> -->
+    <Image
+      src={portraitImage}
+      alt="Portrait image of Matthew Ubalde"
+      class="absolute right-0 bottom-0 w-full min-w-2xs max-w-lg"
+    />
+  </section>
+
+  <!-- SUMMARY -->
+  <Section header="SUMMARY">
+    <Container>
+      <p>
+        A Fanshawe College student in the <b
+          >Computer Programming and Analysis</b
+        >, and later in <b>Game Development - Advanced Programming</b>, seeking
+        to go deeper within the <b>web</b> or <b>game development</b> industry.
+      </p>
+    </Container>
+    <Container>
+      <h2>Key Skills</h2>
+      <ul class="columns-2">
+        <li>Quick-learner</li>
+        <li>Critical Thinker</li>
+        <li>Attention to Detail</li>
+        <li>Creative</li>
+        <li>Team-player</li>
+      </ul>
+    </Container>
+  </Section>
+
+  <!-- QUALIFICATIONS -->
+  <Section header="QUALIFICATIONS" class="flex flex-col">
+    <Container>
+      <h2>Computer Programming and Analysis</h2>
+      <div>Ontario College Advanced Diploma</div>
+      <div class="flex flex-row justify-between">
+        <div class="flex-2">
+          <b>Fanshawe College</b> - London, ON
+        </div>
+        <div class="flex-1 text-right">December 2025</div>
+      </div>
+    </Container>
+    <Container>
+      <h2>CompTIA A+</h2>
+      <div>Online Certification</div>
+      <div class="flex flex-row justify-between">
+        <div class="flex-2">
+          <b>CompTIA</b>
+        </div>
+        <div class="flex-1 text-right">Expected: March 2026</div>
+      </div>
+      <ul>
+        <li>
+          Studying to have a deeper understanding of computers and laptops,
+          Windows OS, and to further validate my skills as a technician as a
+          volunteer
+        </li>
+        <li>Worked with children ages from 5-14 years old.</li>
+        <li>Worked with children ages from 5-14 years old.</li>
+      </ul>
+    </Container>
+  </Section>
+  <!-- QUALIFICATIONS -->
+
+  <!-- PROJECTS -->
+  <Section header="PROJECTS" class="flex flex-col">
+    <!-- TODO: Fill in projects -->
+  </Section>
+  <!-- PROJECTS -->
+
+  <!-- EXPERIENCE -->
+  <Section header="EXPERIENCES" class="flex flex-col">
+    <Container>
+      <h2>Code Instructor/Sensei</h2>
+      <div class="flex flex-row justify-between">
+        <div class="flex-2">
+          <b>Code Ninjas</b> - London, ON
+        </div>
+        <div class="flex-1 text-right">Aug. 2025 - Present</div>
+      </div>
+      <ul>
+        <li>Worked with children ages from 5-14 years old.</li>
+        <li>Worked with children ages from 5-14 years old.</li>
+        <li>Worked with children ages from 5-14 years old.</li>
+      </ul>
+    </Container>
+    <Container>
+      <h2>Volunteer Technician Supervisor</h2>
+      <div class="flex flex-row justify-between">
+        <div class="flex-2">
+          <b>Jesus is Lord Church</b> - London, ON
+        </div>
+        <div class="flex-1 text-right">Aug. 2025 - Present</div>
+      </div>
+      <ul>
+        <li>Worked with children ages from 5-14 years old.</li>
+        <li>Worked with children ages from 5-14 years old.</li>
+        <li>Worked with children ages from 5-14 years old.</li>
+      </ul>
+    </Container>
+  </Section>
+  <!-- EXPERIENCE -->
+
+  <!-- CONTACT ME -->
+  <Section header="CONTACT ME">
+    <!-- TODO: CREATE A CONTACT ME FORM -->
+    <Container class="flex flex-col gap-2">
+      <input class="w-full min-h-12 p-1 bg-slate-900 rounded-md" />
+      <textarea class="w-full min-h-52 p-1 bg-slate-900 rounded-md"></textarea>
+      <button class="bg-slate-900 rounded-md p-2">Send!</button>
+    </Container>
+  </Section>
 </Layout>
+
+<!-- CONTACT ME -->

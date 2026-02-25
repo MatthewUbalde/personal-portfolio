@@ -14,12 +14,13 @@ import LayoutSection from "../../components/LayoutSection.astro";
 import DropdownContainer from "../../components/DropdownContainer.astro";
 
 const experiences = await getCollection("experiences");
-const experiencesFrontend = experiences.find(
-  (e) => e.id === "web-frontend"
-)?.data;
-const experiencesBackend = experiences.find(
-  (e) => e.id === "web-backend"
-)?.data;
+
+const expFrontend = experiences[0].data.filter((e) =>
+  e.type.includes("frontend"),
+);
+const expBackend = experiences[0].data.filter((e) =>
+  e.type.includes("backend"),
+);
 ---
 
 <Layout
@@ -42,22 +43,22 @@ const experiencesBackend = experiences.find(
     <h1 class="text-center">Web Development Experiences</h1>
     <LayoutSection row class="justify-between">
       {
-        experiencesFrontend && (
+        expFrontend && (
           <DropdownContainer class="w-full h-fit">
             <Fragment slot="header">
               <h2>Front-end</h2>
             </Fragment>
-            <BadgeDisplay src={experiencesFrontend} />
+            <BadgeDisplay src={expFrontend} />
           </DropdownContainer>
         )
       }
       {
-        experiencesBackend && (
+        expBackend && (
           <DropdownContainer class="w-full h-fit">
             <Fragment slot="header">
               <h2>Back-end</h2>
             </Fragment>
-            <BadgeDisplay src={experiencesBackend} />
+            <BadgeDisplay src={expBackend} />
           </DropdownContainer>
         )
       }

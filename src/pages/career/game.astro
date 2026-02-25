@@ -14,12 +14,12 @@ import ProjectShowcase from "../../components/ProjectShowcase.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
 import DropdownContainer from "../../components/DropdownContainer.astro";
 
-const experiences = await getCollection("experiences");
 const projects = (await getCollection("gamesArticles")).sort(
-  (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf()
+  (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf(),
 );
 
-const gameExp = experiences.find((e) => e.id === "game")?.data;
+const experiences = await getCollection("experiences");
+const expGame = experiences[0].filters((e) => e.type.includes("game"));
 ---
 
 <Layout
@@ -37,12 +37,12 @@ const gameExp = experiences.find((e) => e.id === "game")?.data;
     </Container>
 
     {
-      gameExp && (
+      expGame && (
         <DropdownContainer class="w-full h-fit">
           <Fragment slot="header">
             <h1>Game Experience</h1>
           </Fragment>
-          <BadgeDisplay src={gameExp} title="Game Engines" />
+          <BadgeDisplay src={expGame.data} title="Game Engines" />
         </DropdownContainer>
       )
     }

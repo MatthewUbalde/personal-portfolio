@@ -1,0 +1,112 @@
+experiences:
+  # Game Development
+  - name: Godot
+    svg: godot
+    experience: Beginner
+    types:
+      - game
+  - name: Unity
+    svg: unity
+    experience: Intermediate
+    types:
+      - game
+  - name: OpenGL
+    svg: opengl
+    experience: Beginner
+    types:
+      - game
+      - software
+  - name: Blender
+    svg: blender
+    experience: Learning
+    types:
+      - game
+      - art
+  # Frontend Development
+  - name: React
+    svg: react
+    experience: Intermediate
+    types:
+      - frontend
+      - mobile
+  - name: Vue
+    svg: vue
+    experience: Beginner
+    types:
+      - frontend
+  - name: Angular
+    svg: angular
+    experience: Beginner
+    types:
+      - frontend
+  - name: Astro.js
+    svg: astro
+    experience: Intermediate
+    types:
+      - frontend
+  - name: Tailwind
+    svg: tailwind
+    experience: Intermediate
+    types:
+      - frontend
+  # Backend Development
+  - name: ASP.NET C#
+    svg: aspnet
+    experience: Beginner
+    types:
+      - backend
+  - name: MySQL
+    svg: mysql
+    experience: Beginner
+    types:
+      - backend
+      - software
+  - name: Firebase
+    svg: firebase
+    experience: Beginner
+    types:
+      - backend
+      - software
+  - name: Java Spring Bean
+    svg: springio
+    experience: Beginner
+    types:
+      - backend
+      - software
+  - name: MongoDB
+    svg: mongodb
+    experience: Beginner
+    types:
+      - backend
+      - software
+  # SOFTWARE DEVELOPMENT
+  - name: C++
+    svg: c++
+    experience: Intermediate
+    types:
+      - software
+  - name: Java
+    svg: java
+    experience: Intermediate
+    types:
+      - backend
+      - software
+  - name: C#
+    svg: c-sharp
+    experience: Intermediate
+    types:
+      - backend
+      - software
+  - name: Android Studio
+    svg: android-studio
+    experience: Beginner
+    types:
+      - mobile
+      - software
+  - name: React Native
+    svg: react
+    experience: Beginner
+    types:
+      - frontend
+      - software
+      - mobile
