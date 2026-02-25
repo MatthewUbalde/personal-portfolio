@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 body {
+  font-family: "Nunito Variable", sans-serif;
   @apply text-sky-100;
 }
 
