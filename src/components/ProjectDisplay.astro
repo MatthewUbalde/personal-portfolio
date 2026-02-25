@@ -27,10 +27,17 @@ const projects = (
 
 <FlexContainer col noMedia class:list={["items-center", className]}>
   {
-    projects.map((p) => (
+    projects.map(({ data, id }) => (
       <ProjectShowcase
-        {...p.data}
-        href={`${rootHref ?? "/projects"}/${p.id}`}
+        title={data.title}
+        description={data.description}
+        coverImage={data.coverImage}
+        coverImageAlt={data.coverImageAlt}
+        published={data.published}
+        itchioLink={data.itchio}
+        steamLink={data.steam}
+        githubLink={data.github}
+        href={`${rootHref ?? "/projects"}/${id}`}
       />
     ))
   }
