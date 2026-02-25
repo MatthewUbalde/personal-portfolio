@@ -21,3 +21,13 @@ ul {
 li {
   @apply ml-4;
 }
+
+/* This is used in the ArticleLayout */
+p img,
+lite-youtube {
+  @apply rounded-md w-full sm:w-2/3 sm:max-h-96 sm:mx-auto object-contain;
+}
+
+.astro-code {
+  @apply p-2 rounded-md w-full sm:mx-auto;
+}
