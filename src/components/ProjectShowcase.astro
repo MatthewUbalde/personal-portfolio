@@ -26,13 +26,13 @@ const {
 } = Astro.props;
 ---
 
-<a href={href} class="group w-full sm:w-2/3 md:w-3/4">
+<a href={href}>
   <Container
     noMargin
     noPadding
     tabindex={0}
     {...props}
-    class="relative overflow-hidden"
+    class="group relative overflow-hidden sm:w-2/3 md:w-3/4"
   >
     <Image
       class="opacity-25 group-hover:opacity-40 group-hover:-translate-y-12 group-hover:translate-x-8 mb-4 ml-4 rounded-bl-full object-contain shadow-slate-950 shadow-lg transition-all"
@@ -41,7 +41,12 @@ const {
       width={1280}
       height={720}
     />
-    <FlexContainer row noMedia class="absolute bottom-0 justify-between p-2">
+    <FlexContainer
+      row
+      noMedia
+      noMargin
+      class="absolute bottom-0 justify-between items-end p-4"
+    >
       <div class="grow">
         <h2 class="text-4xl! font-bold tracking-tight">{title}</h2>
         {
@@ -55,7 +60,7 @@ const {
       </div>
       {
         (itchioLink || steamLink || githubLink) && (
-          <FlexContainer row class="gap-2 justify-end items-end w-fit p-1">
+          <FlexContainer row class="gap-2 justify-end items-end w-fit">
             {itchioLink && <ItchioLink href={itchioLink} size={32} />}
             {steamLink && <SteamLink href={steamLink} size={32} />}
             {githubLink && <GithubLink href={githubLink} size={32} />}
