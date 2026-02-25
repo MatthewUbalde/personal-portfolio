@@ -11,6 +11,7 @@ import Section from "../../components/Section.astro";
 import ContainerProject from "../../components/ContainerProject.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
 import BadgeDisplay from "../../components/BadgeDisplay.astro";
+import ProjectDisplay from "../../components/ProjectDisplay.astro";
 
 const projects = (await getCollection("gameProjects")).sort(
   (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf(),
@@ -46,14 +47,7 @@ const expGame = experiences[0].data.filter((e) => e.types.includes("game"));
             simple, but tried to make it deep and rewarding at the same time.
           </p>
         </Container>
-        <ContainerProject>
-          {projects.map((p) => (
-            <ProjectShowcase
-              {...p.data}
-              href={`/personal-portfolio-astro/projects/games/${p.id}`}
-            />
-          ))}
-        </ContainerProject>
+        <ProjectDisplay collection="gameProjects" />
       </Section>
     )
   }

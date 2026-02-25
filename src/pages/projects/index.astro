@@ -7,9 +7,8 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/BaseLayout.astro";
 import Container from "../../components/Container.astro";
 
-import ContainerProject from "../../components/ContainerProject.astro";
-import ProjectShowcase from "../../components/ProjectShowcase.astro";
 import Section from "../../components/Section.astro";
+import ProjectDisplay from "../../components/ProjectDisplay.astro";
 
 const gameProjects = (await getCollection("gameProjects")).sort(
   (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
@@ -34,22 +33,14 @@ const webProjects = (await getCollection("webProjects")).sort(
   {
     gameProjects.length !== 0 && (
       <Section header="GAMES">
-        <ContainerProject>
-          {gameProjects.map((p) => (
-            <ProjectShowcase href={`./projects/${p.id}`} {...p.data} />
-          ))}
-        </ContainerProject>
+        <ProjectDisplay collection="gameProjects" />
       </Section>
     )
   }
   {
     webProjects.length !== 0 && (
       <Section header="WEBSITES">
-        <ContainerProject>
-          {webProjects.map((p) => (
-            <ProjectShowcase href={`./projects/${p.id}`} {...p.data} />
-          ))}
-        </ContainerProject>
+        <ProjectDisplay collection="webProjects" />
       </Section>
     )
   }

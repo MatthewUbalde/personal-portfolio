@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { getCollection } from "astro:content";
+
+import ProjectShowcase from "./ProjectShowcase.astro";
+import FlexContainer from "./FlexContainer.astro";
+
+interface Props extends HTMLAttributes<"div"> {
+  collection: string;
+  rootHref?: string;
+}
+
+const { class: className, collection, rootHref } = Astro.props;
+
+const projects = (await getCollection("gameProjects")).sort(
+  (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf(),
+);
+---
+
+<FlexContainer col noMedia class:list={["items-center", className]}>
+  {
+    projects.map((p) => (
+      <ProjectShowcase {...p.data} href={`${rootHref}${p.id}`} />
+    ))
+  }
+</FlexContainer>

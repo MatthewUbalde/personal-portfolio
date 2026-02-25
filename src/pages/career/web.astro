@@ -10,13 +10,9 @@ import { getCollection } from "astro:content";
 import IndexLayout from "./index.astro";
 import Section from "../../components/Section.astro";
 import Container from "../../components/Container.astro";
-import ContainerProject from "../../components/ContainerProject.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
 import BadgeDisplay from "../../components/BadgeDisplay.astro";
-
-const projects = (await getCollection("webProjects")).sort(
-  (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf(),
-);
+import ProjectDisplay from "../../components/ProjectDisplay.astro";
 
 const experiences = await getCollection("experiences");
 const expFrontend = experiences[0].data.filter((e) =>
@@ -76,14 +72,7 @@ const expBackend = experiences[0].data.filter((e) =>
   {
     projects.length !== 0 && (
       <Section header="WEBSITES">
-        <ContainerProject>
-          {projects.map((p) => (
-            <ProjectShowcase
-              {...p.data}
-              href={`/personal-portfolio-astro/projects/games/${p.id}`}
-            />
-          ))}
-        </ContainerProject>
+        <ProjectDisplay collection="webPages" />
       </Section>
     )
   }
