@@ -5,28 +5,20 @@
  */
 import { Image } from "astro:assets";
 
-import Footer from "../components/Footer.astro";
-import BaseHead from "../components/BaseHead.astro";
-
-import portraitImg from "../assets/portfolio-portrait.png";
-
-import NavbarDesktop from "../components/Navbar/NavbarDesktop.astro";
-import NavbarMobile from "../components/Navbar/NavbarMobile.astro";
 import Navbar from "../components/Navbar.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
 
 import gridBg from "../assets/grid-bg.svg";
 
 const pathname = Astro.url.pathname;
-const currentPath = pathname;
 
 interface Props {
-  prevNav?: string;
   title: string;
   description: string;
-  hideNavPortrait?: boolean;
 }
 
-const { title, description, prevNav, hideNavPortrait } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -42,17 +34,13 @@ const { title, description, prevNav, hideNavPortrait } = Astro.props;
       alt=""
       class="fixed -left-1 -top-1 w-[200%] opacity-10 rotate-1 pointer-events-none"
     />
-    
+
     <!-- HEADER / NAV SECTION -->
     <Navbar />
     <!-- HEADER / NAV SECTION -->
 
     <!-- LANDING SECTION -->
-    {
-      Astro.slots.has("top") && (
-          <slot name="top" />
-      )
-    }
+    {Astro.slots.has("top") && <slot name="top" />}
     <!-- LANDING SECTION -->
 
     <!-- MAIN SECTION -->
