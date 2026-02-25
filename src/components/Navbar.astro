@@ -16,18 +16,13 @@ const asPath = Astro.url.pathname;
   />
   <nav class="flex flex-col justify-center w-full h-full">
     <h1><a href="/">Matthew Ubalde</a></h1>
-    <div class="flex flex-row items-center text-xl text-sky-300">
+    <div class="flex flex-row items-start gap-1 text-xl text-sky-300">
       <a href="/projects">Projects</a>
-      <div class="relative group/inner flex flex-row gap-2 items-center p-2">
+      <div class="group/inner flex flex-row gap-1">
+        <a href="/career">Career</a>
         <div
-          class="absolute w-full h-full bg-slate-900 shadow-md rounded-md opacity-0 group-hover/inner:opacity-100 pointer-events-none -z-10"
+          class="flex flex-row flex-wrap items-start gap-x-2 p-1 bg-slate-900 shadow-md rounded-md opacity-0 group-hover/inner:opacity-100 transition-opacity *:font-bold"
         >
-        </div>
-        <a href="/career" class="ml-2">Career</a>
-        <div
-          class="flex flex-row gap-2 opacity-0 group-hover/inner:opacity-100 transition-opacity"
-        >
-          {">"}
           <a
             href="/career/software"
             class:list={[asPath.includes("software") && "opacity-50"]}
