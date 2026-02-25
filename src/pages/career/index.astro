@@ -41,6 +41,12 @@ const asPath = Astro.url.pathname;
             class="justify-center items-stretch text-center *:bg-slate-900 *:text-2xl *:rounded-md *:p-4 *:shadow-md"
           >
             <a
+              href="/career/web"
+              class:list={[
+                asPath.includes("web") && " text-sky-300 opacity-50",
+              ]}>Web</a
+            >
+            <a
               href="/career/software"
               class:list={[
                 asPath.includes("software") && " text-sky-300 opacity-50",
@@ -52,12 +58,7 @@ const asPath = Astro.url.pathname;
                 asPath.includes("mobile") && " text-sky-300 opacity-50",
               ]}>Mobile</a
             >
-            <a
-              href="/career/web"
-              class:list={[
-                asPath.includes("web") && " text-sky-300 opacity-50",
-              ]}>Web</a
-            >
+
             <a
               href="/career/game"
               class:list={[

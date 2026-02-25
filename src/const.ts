@@ -38,20 +38,6 @@ export const SITE_NAVIGATION: Array<NavLinkType> = [
   {
     href: `${SITE_ROOT}/projects`,
     label: "Projects",
-    children: [
-      {
-        href: "/apps",
-        label: "Applications",
-      },
-      {
-        href: "/games",
-        label: "Games",
-      },
-      {
-        href: "/websites",
-        label: "Websites",
-      },
-    ],
   },
 ];
 
