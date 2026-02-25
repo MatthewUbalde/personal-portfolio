@@ -6,23 +6,25 @@
 
 import { getCollection } from "astro:content";
 
-import Layout from "../../layouts/BaseLayout.astro";
+import IndexLayout from "./index.astro";
 import Container from "../../components/Container.astro";
 import BadgeDisplay from "../../components/BadgeDisplay.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
 import DropdownContainer from "../../components/DropdownContainer.astro";
+import Section from "../../components/Section.astro";
 
 const experiences = await getCollection("experiences");
-const expSoftware = experiences[0].filter((e) => e.type.includes("software"));
+const expSoftware = experiences[0].data.filter((e) =>
+  e.types.includes("software"),
+);
 ---
 
-<Layout
+<IndexLayout
   title="Software"
   description="Have experience in C/C++, C#, and Java to create computer software"
 >
-  <LayoutSection col noMedia class="items-center">
-    <Container noMargin textContent class="md:w-2/3">
-      <h1>Experience Summary</h1>
+  <Section header="SUMMARY">
+    <Container textContent class="md:mx-auto md:w-2/3">
       <p>
         Was taught in various languages and frameworks. Have solid foundations
         on relatively low-level langauages on C/C++. Able to make desktop and
@@ -38,11 +40,9 @@ const expSoftware = experiences[0].filter((e) => e.type.includes("software"));
         particle system.
       </p>
     </Container>
-    <DropdownContainer class="w-full h-fit">
-      <Fragment slot="header">
-        <h1>Software Experiences</h1>
-      </Fragment>
-      {expSoftware && <BadgeDisplay src={expSoftware} />}
-    </DropdownContainer>
-  </LayoutSection>
-</Layout>
+  </Section>
+
+  <Section header="SKILLS">
+    <BadgeDisplay src={expSoftware} />
+  </Section>
+</IndexLayout>

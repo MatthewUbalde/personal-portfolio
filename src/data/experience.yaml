@@ -1,5 +1,4 @@
 experiences:
-  # Game Development
   - name: Godot
     svg: godot
     experience: Beginner
@@ -22,7 +21,12 @@ experiences:
     types:
       - game
       - art
-  # Frontend Development
+  - name: Krita
+    svg: krita
+    experience: Intermediate
+    types:
+      - game
+      - art
   - name: React
     svg: react
     experience: Intermediate
@@ -49,7 +53,6 @@ experiences:
     experience: Intermediate
     types:
       - frontend
-  # Backend Development
   - name: ASP.NET C#
     svg: aspnet
     experience: Beginner
@@ -79,7 +82,6 @@ experiences:
     types:
       - backend
       - software
-  # SOFTWARE DEVELOPMENT
   - name: C++
     svg: c++
     experience: Intermediate

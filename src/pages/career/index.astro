@@ -2,62 +2,45 @@
 /**
  * Putting the different variety of fields in different pages
  *
- * Prior version-4.0, there were separated fields for different careers.
- * But I decided to make the landing page more specialized for web and game
- * development, and have this to showcase my other skills as well such as in
- * Mobile and Software Development, and Arts.
+ * Prior version-5.0, there were separated fields for different careers.
+ * By utilizing page-transitions from astro, we're able to create a
+ * seemless experience while having the ability to send unique links for
+ * each sector of my career.
+ *
+ * This also acts a Layout for each of the pages to keep it consistent
  */
-import { getCollection } from "astro:content";
-
 import Layout from "../../layouts/BaseLayout.astro";
 import Container from "../../components/Container.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
-
-const articles = await getCollection("articles", (a) => a.data.featured);
-
-articles.sort(
-  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
-);
+import Section from "../../components/Section.astro";
 ---
 
 <Layout
   title="Career"
   description="My career in computer sciences and my hobby as an artist."
 >
-  <Container articleContent>
-    <h2 class="text-center">Career</h2>
-    <p>
-      As of now, I'm currently seeking a career within the field of game or web
-      development. However, in my time in Fanshawe, I've learned variety of
-      skills from different department in software development such as mobile
-      development, and general software development.
-    </p>
-    <p>This also includes my art skills as well as a hobbyist.</p>
-  </Container>
-  <div>
-    <h3 class="text-center">Computer Related-fields</h3>
-    <LayoutSection col class="justify-center items-stretch text-center">
-      <a href="./career/software">
-        <Container noMargin> <h4>General Software</h4> </Container>
-      </a>
-      <a href="./career/mobile">
-        <Container noMargin> <h4>Mobile Development</h4> </Container>
-      </a>
-      <a href="./career/web">
-        <Container noMargin> <h4>Web Development</h4> </Container>
-      </a>
-      <a href="./career/game">
-        <Container noMargin> <h4>Game Development</h4> </Container>
-      </a>
-    </LayoutSection>
-  </div>
-
-  <div>
-    <h3 class="text-center">Art Related-fields</h3>
-    <LayoutSection col class="justify-center items-stretch text-center">
-      <a href="./career/art">
-        <Container noMargin> <h4>Art Hobbyist</h4> </Container>
-      </a>
-    </LayoutSection>
-  </div>
+  <Section header="Career">
+    <Container textContent>
+      <p>
+        As of now, I'm currently seeking a career within the field of game or
+        web development. However, in my time in Fanshawe, I've learned variety
+        of skills from different department in software development such as
+        mobile development, and general software development.
+      </p>
+      <p>This also includes my art skills as well as a hobbyist.</p>
+      <LayoutSection
+        col
+        noMedia
+        class="justify-center items-stretch text-center *:bg-slate-900 *:text-2xl *:rounded-md *:p-4 *:shadow-md"
+      >
+        <a href="/career/software">Software</a>
+        <a href="/career/mobile">Mobile</a>
+        <a href="/career/web">Web</a>
+        <a href="/career/game">Game</a>
+        <a href="/career/art">Art</a>
+      </LayoutSection>
+    </Container>
+  </Section>
+  <!-- This slot is for other pages -->
+  <slot />
 </Layout>
