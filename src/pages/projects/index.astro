@@ -10,42 +10,48 @@ import Container from "../../components/Container.astro";
 import ContainerProject from "../../components/ContainerProject.astro";
 import ProjectShowcase from "../../components/ProjectShowcase.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
+import Section from "../../components/Section.astro";
 
-const articles = (
-  await getCollection("articles", (a) => a.data.featured)
-).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+const gameProjects = (await getCollection("gameProjects")).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
+const webProjects = (await getCollection("webProjects")).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
 ---
 
 <Layout
   title="Projects"
   description="Ranging from Web and Game Development, and Creative Arts!"
 >
-  <h1 class="text-center">Projects</h1>
-  <LayoutSection row class="justify-center items-stretch">
-    <a href="./projects/games">
-      <Container noMargin>
-        <h2 class="text-center">Games</h2>
-      </Container>
-    </a>
-    <a href="./projects/apps">
-      <Container noMargin>
-        <h2 class="text-center">Apps</h2>
-      </Container>
-    </a>
-    <a href="./projects/web">
-      <Container noMargin>
-        <h2 class="text-center">Websites</h2>
-      </Container>
-    </a>
-  </LayoutSection>
+  <Section header="PROJECTS">
+    <Container textContent>
+      <p>
+        Contains all of the projects that includes applications, websites, and
+        games.
+      </p>
+    </Container>
+  </Section>
   {
-    articles.length !== 0 && (
-        <h2 class="text-center">Featured Projects</h2>
+    gameProjects.length !== 0 && (
+      <Section header="GAMES">
         <ContainerProject>
-          {articles.map((p) => (
+          {gameProjects.map((p) => (
             <ProjectShowcase href={`./projects/${p.id}`} {...p.data} />
           ))}
         </ContainerProject>
+      </Section>
+    )
+  }
+  {
+    webProjects.length !== 0 && (
+      <Section header="WEBSITES">
+        <ContainerProject>
+          {webProjects.map((p) => (
+            <ProjectShowcase href={`./projects/${p.id}`} {...p.data} />
+          ))}
+        </ContainerProject>
+      </Section>
     )
   }
 </Layout>

@@ -9,12 +9,18 @@ const experiences = defineCollection({
   schema: z.array(experienceBadgeSchema),
 });
 
-const articles = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content" }),
+const webProjects = defineCollection({
+  loader: glob({ pattern: "*.{md,mdx}", base: "./src/content/webProjects" }),
+  schema: ({ image }) => projectArticleSchema({ image }),
+});
+
+const gameProjects = defineCollection({
+  loader: glob({ pattern: "*.{md,mdx}", base: "./src/content/gameProjects" }),
   schema: ({ image }) => projectArticleSchema({ image }),
 });
 
 export const collections = {
   experiences,
-  articles,
+  webProjects,
+  gameProjects,
 };

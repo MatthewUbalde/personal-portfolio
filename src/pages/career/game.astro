@@ -15,7 +15,7 @@ import LayoutSection from "../../components/LayoutSection.astro";
 import DropdownContainer from "../../components/DropdownContainer.astro";
 import Section from "../../components/Section.astro";
 
-const projects = (await getCollection("gamesArticles")).sort(
+const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf(),
 );
 

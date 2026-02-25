@@ -1,0 +1,29 @@
+---
+/**
+ * Blog like articles of game projects.
+ */
+import { getCollection, render } from "astro:content";
+
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+export async function getStaticPaths() {
+  const webProjects = await getCollection("webProjects");
+  const gameProjects = await getCollection("gameProjects");
+
+  const allProjects = [...webProjects, ...gameProjects];
+
+  const articles = allProjects.map((article) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+
+  return articles;
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<ArticleLayout prevNav="/projects" {...article.data}>
+  <Content />
+</ArticleLayout>
