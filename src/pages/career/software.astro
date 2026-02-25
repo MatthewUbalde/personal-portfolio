@@ -42,7 +42,7 @@ const expSoftware = experiences[0].filter((e) => e.type.includes("software"));
       <Fragment slot="header">
         <h1>Software Experiences</h1>
       </Fragment>
-      {expSoftware && <BadgeDisplay src={expSoftware.data} />}
+      {expSoftware && <BadgeDisplay src={expSoftware} />}
     </DropdownContainer>
   </LayoutSection>
 </Layout>

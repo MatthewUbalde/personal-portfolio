@@ -16,10 +16,10 @@ import DropdownContainer from "../../components/DropdownContainer.astro";
 const experiences = await getCollection("experiences");
 
 const expFrontend = experiences[0].data.filter((e) =>
-  e.type.includes("frontend"),
+  e.types.includes("frontend"),
 );
 const expBackend = experiences[0].data.filter((e) =>
-  e.type.includes("backend"),
+  e.types.includes("backend"),
 );
 ---
 

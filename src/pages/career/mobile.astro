@@ -13,7 +13,7 @@ import BadgeDisplay from "../../components/BadgeDisplay.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
 
 const experiences = await getCollection("experiences");
-const expMobile = experiences[0].filter((e) => e.type.includes("mobile"))?.data;
+const expMobile = experiences[0].data.filter((e) => e.types.includes("mobile"));
 ---
 
 <Layout
