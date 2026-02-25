@@ -20,26 +20,33 @@ import Section from "../../components/Section.astro";
   description="My career in computer sciences and my hobby as an artist."
 >
   <Section header="Career">
-    <Container textContent>
-      <p>
-        As of now, I'm currently seeking a career within the field of game or
-        web development. However, in my time in Fanshawe, I've learned variety
-        of skills from different department in software development such as
-        mobile development, and general software development.
-      </p>
-      <p>This also includes my art skills as well as a hobbyist.</p>
-      <LayoutSection
-        col
-        noMedia
-        class="justify-center items-stretch text-center *:bg-slate-900 *:text-2xl *:rounded-md *:p-4 *:shadow-md"
-      >
-        <a href="/career/software">Software</a>
-        <a href="/career/mobile">Mobile</a>
-        <a href="/career/web">Web</a>
-        <a href="/career/game">Game</a>
-        <a href="/career/art">Art</a>
-      </LayoutSection>
-    </Container>
+    <LayoutSection col class="">
+      <Container textContent noMargin class="flex-2/3">
+        <p>
+          As of now, I'm currently seeking a career within the field of game or
+          web development. However, in my time in Fanshawe, I've learned variety
+          of skills from different department in software development such as
+          mobile development, and general software development.
+        </p>
+        <p>This also includes my art skills as well as a hobbyist.</p>
+      </Container>
+      <Container noMargin class="flex-1/3">
+        <h2 class="text-center">Navigation</h2>
+        <nav>
+          <LayoutSection
+            col
+            noMedia
+            class="justify-center items-stretch text-center *:bg-slate-900 *:text-2xl *:rounded-md *:p-4 *:shadow-md"
+          >
+            <a href="/career/software">Software</a>
+            <a href="/career/mobile">Mobile</a>
+            <a href="/career/web">Web</a>
+            <a href="/career/game">Game</a>
+            <a href="/career/art">Art</a>
+          </LayoutSection>
+        </nav>
+      </Container>
+    </LayoutSection>
   </Section>
   <!-- This slot is for other pages -->
   <slot />
