@@ -21,7 +21,7 @@ const { class: className, noMedia, col, row, noMargin, ...props } = Astro.props;
 
 <div
   class:list={[
-    "flex gap-2 sm:gap-4 flex-wrap",
+    "flex gap-2 sm:gap-4",
     noMedia ? row && "flex-row" : row && "flex-col md:flex-row",
     noMedia ? col && "flex-col" : col && "flex-row md:flex-col",
     !noMargin && "m-2 sm:m-4",
