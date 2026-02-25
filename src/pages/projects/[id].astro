@@ -24,6 +24,6 @@ const { article } = Astro.props;
 const { Content } = await render(article);
 ---
 
-<ArticleLayout prevNav="/projects" {...article.data}>
+<ArticleLayout {...article.data}>
   <Content />
 </ArticleLayout>

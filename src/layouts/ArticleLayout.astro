@@ -31,7 +31,6 @@ interface Props {
 }
 
 const {
-  prevNav,
   title,
   description,
   coverImage,
@@ -45,7 +44,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout prevNav={prevNav} title={title} description={description}>
+<BaseLayout title={title} description={description}>
   <!-- Title Container -->
   <Container noPadding class="group relative group overflow-hidden">
       <div class="-z-10 group-hover:-translate-y-0 group-hover:translate-x-32 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden opacity-100 transition-all">
