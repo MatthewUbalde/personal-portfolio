@@ -69,11 +69,7 @@ const expBackend = experiences[0].data.filter((e) =>
       </p>
     </Container>
   </Section>
-  {
-    projects.length !== 0 && (
-      <Section header="WEBSITES">
-        <ProjectDisplay collection="webPages" />
-      </Section>
-    )
-  }
+  <Section header="WEBSITES">
+    <ProjectDisplay collection="webProjects" />
+  </Section>
 </IndexLayout>
