@@ -15,7 +15,7 @@ import LayoutSection from "../../components/LayoutSection.astro";
 import DropdownContainer from "../../components/DropdownContainer.astro";
 import Section from "../../components/Section.astro";
 
-const projects = (await getCollection("projects")).sort(
+const projects = (await getCollection("gameProjects")).sort(
   (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf(),
 );
 
@@ -39,16 +39,16 @@ const expGame = experiences[0].data.filter((e) => e.types.includes("game"));
   <Section header="SKILLS">
     <BadgeDisplay src={expGame} title="Game Engines" />
   </Section>
-  <Section header="SIDE-PROJECTS">
-    <Container textContent class="sm:w-1/2 sm:mx-auto">
-      <p>
-        These are purely made out of fun as I found the game development
-        interesting since I was really young. I like making games that are
-        simple, but tried to make it deep and rewarding at the same time.
-      </p>
-    </Container>
-    {
-      projects && (
+  {
+    projects.length !== 0 && (
+      <Section header="SIDE-PROJECTS">
+        <Container textContent class="sm:w-2/3 sm:mx-auto">
+          <p>
+            These are purely made out of fun as I found the game development
+            interesting since I was really young. I like making games that are
+            simple, but tried to make it deep and rewarding at the same time.
+          </p>
+        </Container>
         <ContainerProject>
           {projects.map((p) => (
             <ProjectShowcase
@@ -57,7 +57,7 @@ const expGame = experiences[0].data.filter((e) => e.types.includes("game"));
             />
           ))}
         </ContainerProject>
-      )
-    }
-  </Section>
+      </Section>
+    )
+  }
 </IndexLayout>
