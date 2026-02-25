@@ -1,9 +1,23 @@
 @import "tailwindcss";
 
 body {
-    @apply text-sky-100;
+  @apply text-sky-100;
 }
 
-h1, #h1 {
-    @apply text-4xl;
+h1,
+#h1 {
+  @apply text-4xl;
+}
+
+h2,
+#h2 {
+  @apply text-2xl;
+}
+
+ul {
+  @apply list-disc;
+}
+
+li {
+  @apply ml-4;
 }
