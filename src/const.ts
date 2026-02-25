@@ -3,7 +3,7 @@ import type { NavLinkType } from "./types";
 /**
  * Holds the Navigation tree that the user can follow
  */
-const SITE_ROOT: string = "/personal-portfolio-astro";
+const SITE_ROOT: string = "/";
 export const SITE_NAVIGATION: Array<NavLinkType> = [
   {
     href: `${SITE_ROOT}/`,
