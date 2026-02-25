@@ -17,7 +17,6 @@ import SteamLink from "../components/Icons/SteamLink.astro";
 import GithubLink from "../components/Icons/GithubLink.astro";
 
 interface Props {
-  prevNav: string;
   title: string;
   description: string;
   coverImage: ImageMetadata;
@@ -47,7 +46,7 @@ const {
 <BaseLayout title={title} description={description}>
   <!-- Title Container -->
   <Container noPadding class="group relative group overflow-hidden">
-      <div class="-z-10 group-hover:-translate-y-0 group-hover:translate-x-32 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden opacity-100 transition-all">
+      <div class="-z-10 group-hover:translate-y-0 group-hover:translate-x-32 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden opacity-100 transition-all">
         <Image
           class="object-cover h-full opacity-45 group-hover:opacity-80 shadow-slate-950 shadow-lg transition-all"
           src={coverImage}
@@ -57,7 +56,7 @@ const {
         />
       </div>
       <div class="z-50 p-4 flex flex-row ">
-        <div class="flex-grow">
+        <div class="grow">
           <h1>{title}</h1>
           <div class="text-sm">
             <span>
@@ -85,7 +84,7 @@ const {
           }
           </div>
         </div>
-        <div class="flex-shrink flex flex-col justify-end items-end gap-2">
+        <div class="shrink flex flex-col justify-end items-end gap-2">
           {
             itchio && (
               <ItchioLink

@@ -17,18 +17,18 @@ const props = Astro.props;
 
 <nav-bar class:list={[props.class]} {...props}>
   <button
-    class="sticky top-0 w-full z-50 p-4 text-4xl text-left bg-gradient-to-b from-sky-800 to-transparent"
+    class="sticky top-0 w-full z-50 p-4 text-4xl text-left bg-linear-to-b from-sky-800 to-transparent"
     ><Icon name="list" /></button
   >
   <nav
     class:list={[
-      "z-50 fixed inset-0 hidden flex flex-col justify-between p-4 bg-gradient-to-b from-sky-800 to-transparent",
+      "z-50 fixed inset-0 flex flex-col justify-between p-4 bg-linear-to-b from-sky-800 to-transparent",
       props.class,
     ]}
     {...props}
   >
     <div class="flex">
-      <div class="flex-grow">
+      <div class="grow">
         <span class="text-xl opacity-50">Navigation</span>
         {SITE_NAVIGATION.map((link) => <NavLink {...link} />)}
       </div>

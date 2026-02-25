@@ -12,7 +12,7 @@ const { header, class: className, outerClass } = Astro.props;
 <section class:list={["group/outer relative", outerClass]}>
   {
     header && (
-      <h1 class="absolute top-0 left-0 opacity-85 group-hover/outer:opacity-25 !text-5xl font-bold tracking-tighter text-wrap transition-opacity">
+      <h1 class="absolute top-0 left-0 opacity-85 group-hover/outer:opacity-25 text-5xl! font-bold tracking-tighter text-wrap transition-opacity">
         {header}
       </h1>
     )

@@ -16,12 +16,10 @@ const props = Astro.props;
   ]}
 >
   <div class="flex flex-row">
-    <div class="flex-grow flex-shrink-0">
+    <div class="grow shrink-0">
       <slot name="header" />
     </div>
-    <button id="hide-button" class="flex-shrink pointer-events-auto"
-      >Show</button
-    >
+    <button id="hide-button" class="shrink pointer-events-auto">Show</button>
   </div>
   <div id="container" class="hidden">
     <slot />
