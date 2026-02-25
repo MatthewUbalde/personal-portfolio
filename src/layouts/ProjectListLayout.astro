@@ -11,7 +11,7 @@ import Layout from "./BaseLayout.astro";
 
 import ContainerProject from "../components/ContainerProject.astro";
 import ProjectShowcase from "../components/ProjectShowcase.astro";
-import LayoutSection from "../components/LayoutSection.astro";
+import FlexContainer from "../components/FlexContainer.astro";
 
 interface Props {
   title: string;
@@ -31,22 +31,22 @@ const projects = (await getCollection(collectionName)).sort(
   title={title}
   description={description ?? ""}
 >
-<LayoutSection col>
-  <h1 class="text-center">{title}</h1>
-  {
-    projects.length !== 0 ? (
-      <div class="text-center text-xl">Ranging from Latest to Oldest</div>
-      <ContainerProject>
-        {projects.map((p) => (
-          <ProjectShowcase
-            {...p.data}
-            href={`/personal-portfolio-astro/projects/${root}/${p.id}`}
-          />
-        ))}
-      </ContainerProject>
-    ) : (
-      <div class="text-center text-xl">No projects at the moment!</div>
-    )
-  }
-</LayoutSection>
+  <FlexContainer col>
+    <h1 class="text-center">{title}</h1>
+    {
+      projects.length !== 0 ? (
+        <div class="text-center text-xl">Ranging from Latest to Oldest</div>
+        <ContainerProject>
+          {projects.map((p) => (
+            <ProjectShowcase
+              {...p.data}
+              href={`/personal-portfolio-astro/projects/${root}/${p.id}`}
+            />
+          ))}
+        </ContainerProject>
+      ) : (
+        <div class="text-center text-xl">No projects at the moment!</div>
+      )
+    }
+  </FlexContainer>
 </Layout>
