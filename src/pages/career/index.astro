@@ -13,6 +13,8 @@ import Layout from "../../layouts/BaseLayout.astro";
 import Container from "../../components/Container.astro";
 import LayoutSection from "../../components/LayoutSection.astro";
 import Section from "../../components/Section.astro";
+
+const asPath = Astro.url.pathname;
 ---
 
 <Layout
@@ -38,11 +40,36 @@ import Section from "../../components/Section.astro";
             noMedia
             class="justify-center items-stretch text-center *:bg-slate-900 *:text-2xl *:rounded-md *:p-4 *:shadow-md"
           >
-            <a href="/career/software">Software</a>
-            <a href="/career/mobile">Mobile</a>
-            <a href="/career/web">Web</a>
-            <a href="/career/game">Game</a>
-            <a href="/career/art">Art</a>
+            <a
+              href="/career/software"
+              class:list={[
+                asPath.includes("software") && " text-sky-300 opacity-50",
+              ]}>Software</a
+            >
+            <a
+              href="/career/mobile"
+              class:list={[
+                asPath.includes("mobile") && " text-sky-300 opacity-50",
+              ]}>Mobile</a
+            >
+            <a
+              href="/career/web"
+              class:list={[
+                asPath.includes("web") && " text-sky-300 opacity-50",
+              ]}>Web</a
+            >
+            <a
+              href="/career/game"
+              class:list={[
+                asPath.includes("game") && " text-sky-300 opacity-50",
+              ]}>Game</a
+            >
+            <a
+              href="/career/art"
+              class:list={[
+                asPath.includes("art") && " text-sky-300 opacity-50",
+              ]}>Art</a
+            >
           </LayoutSection>
         </nav>
       </Container>
