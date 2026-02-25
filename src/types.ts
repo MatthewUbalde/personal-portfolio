@@ -18,8 +18,8 @@ export type ProjectShowcaseType = {
 };
 
 export type ExperienceBadgeType = {
-  title: string;
-  src: string;
+  name: string;
+  svg: string;
   experience: "Learning" | "Beginner" | "Adequate" | "Intermediate" | "Expert";
 };
 
