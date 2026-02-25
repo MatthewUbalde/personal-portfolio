@@ -4,7 +4,6 @@
  * and current experience. (As of Jan 11, 2024, I have no work experience).
  */
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
 
 import Layout from "../layouts/BaseLayout.astro";
 import Container from "../components/Container.astro";
@@ -15,12 +14,7 @@ import portraitImage from "../assets/portfolio-portrait.png";
 import GithubLink from "../components/Icons/GithubLink.astro";
 import ItchioLink from "../components/Icons/ItchioLink.astro";
 import LinkedInLink from "../components/Icons/LinkedInLink.astro";
-
-// const articles = await getCollection("articles", (a) => a.data.featured);
-
-// articles.sort(
-//   (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
-// );
+import ProjectDisplay from "../components/ProjectDisplay.astro";
 ---
 
 <Layout
@@ -105,7 +99,8 @@ import LinkedInLink from "../components/Icons/LinkedInLink.astro";
 
   <!-- PROJECTS -->
   <Section header="PROJECTS" class="flex flex-col">
-    <!-- TODO: Fill in projects -->
+    <ProjectDisplay collection="webProjects" featured />
+    <ProjectDisplay collection="gameProjects" featured />
   </Section>
   <!-- PROJECTS -->
 
