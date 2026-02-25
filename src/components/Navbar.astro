@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 
 import portraitImg from "../assets/portfolio-portrait.png";
+
+const asPath = Astro.url.pathname;
 ---
 
 <header
@@ -14,9 +16,41 @@ import portraitImg from "../assets/portfolio-portrait.png";
   />
   <nav class="flex flex-col justify-center w-full h-full">
     <h1><a href="/">Matthew Ubalde</a></h1>
-    <div class="flex flex-row gap-2 text-xl text-sky-300">
+    <div class="flex flex-row items-center text-xl text-sky-300">
       <a href="/projects">Projects</a>
-      <a href="/career">Career</a>
+      <div class="relative group/inner flex flex-row gap-2 items-center p-2">
+        <div
+          class="absolute w-full h-full bg-slate-900 shadow-md rounded-md opacity-0 group-hover/inner:opacity-100 pointer-events-none -z-10"
+        >
+        </div>
+        <a href="/career" class="ml-2">Career</a>
+        <div
+          class="flex flex-row gap-2 opacity-0 group-hover/inner:opacity-100 transition-opacity"
+        >
+          {">"}
+          <a
+            href="/career/software"
+            class:list={[asPath.includes("software") && "opacity-50"]}
+            >Software</a
+          >
+          <a
+            href="/career/mobile"
+            class:list={[asPath.includes("mobile") && "opacity-50"]}>Mobile</a
+          >
+          <a
+            href="/career/web"
+            class:list={[asPath.includes("web") && "opacity-50"]}>Web</a
+          >
+          <a
+            href="/career/game"
+            class:list={[asPath.includes("game") && "opacity-50"]}>Game</a
+          >
+          <a
+            href="/career/art"
+            class:list={[asPath.includes("art") && "opacity-50"]}>Art</a
+          >
+        </div>
+      </div>
     </div>
   </nav>
 </header>
