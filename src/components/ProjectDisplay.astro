@@ -4,17 +4,25 @@ import { getCollection } from "astro:content";
 
 import ProjectShowcase from "./ProjectShowcase.astro";
 import FlexContainer from "./FlexContainer.astro";
+import type { DataCollectionKey } from "astro:content";
 
 interface Props extends HTMLAttributes<"div"> {
-  collection: string;
+  collection: DataCollectionKey;
   rootHref?: string;
+  featured?: boolean;
 }
 
-const { class: className, collection, rootHref } = Astro.props;
+const { class: className, collection, featured, rootHref } = Astro.props;
 
-const projects = (await getCollection("gameProjects")).sort(
-  (a, b) => b.data.published?.valueOf() - a.data.published?.valueOf(),
-);
+const projects = (
+  await getCollection(collection, (p) => {
+    if (featured) {
+      return p.data.featured;
+    } else {
+      return true;
+    }
+  })
+).sort((a, b) => b.data.published?.valueOf() - a.data.published?.valueOf());
 ---
 
 <FlexContainer col noMedia class:list={["items-center", className]}>
