@@ -1,0 +1,59 @@
+experience:
+  - name: Code Instructor
+    company: Code Ninjas
+    location: London, ON
+    dateStarted: August 1, 2025
+    dateEnded: ~
+    dateExpected: ~
+    link: ~
+    descriptions:
+      - Mentor a room of 10-20 children to teach JavaScript, Lua in Roblox, Unity, and other STEM skills.
+      - Provide clear explanations by breaking down complicated concepts and ideas ages of 5-14.
+      - Adapt to certain needs to specific users such as children and handle customer’s concerns.
+      - Performed a yearly maintenance for 24 laptops by updating old software, and clean-up to ensure that they’re running optimally.
+  - name: Volunteer Technician Supervisor
+    company: Jesus is Lord Church
+    location: London, ON
+    dateStarted: Novemeber 1, 2024
+    dateEnded: ~
+    dateExpected: ~
+    link: ~
+    descriptions:
+      - Supervised, develop, and mentored team of 9 volunteers to use various equipment and tech during events, and adapting to constantly changing requirements.
+      - Continuously researching and experimenting with new technologies to innovate work-flows and strategies.
+      - Provide clear explanations with non-technical users with critical communication and non-technical terminology.
+      - Maintaining a culture that encourages growth, cooperation, and understanding.
+      - Cooperating with teams and worked with higher-heads to work towards a bigger picture.
+  - name: Telephone Survey Interviewer
+    company: Logit Group
+    location: London, ON
+    dateStarted: January 1, 2024
+    dateEnded: September 1, 2024
+    dateExpected: ~
+    link: ~
+    descriptions:
+      - Provide customer service skills by expressing enthusiasm and responding to concerns to achieving a call quota of 8-12 from 150 calls per shift.
+      - Maintain a positive and friendly tone in long 8 hour shifts while attentively listen with great paraphrasing.
+qualifications:
+  - name: Computer Programming and Analysis - Ontario College Advanced Diploma
+    company: Fanshawe
+    location: London, ON
+    dateStarted: ~
+    dateEnded: December 1, 2025
+    dateExpected: ~
+    link: ~
+    descriptions:
+      - Utilize C/C++, C# and Java to create software applications.
+      - Established websites and mobile apps with React, Vue, Angular, and React Native with C# ASP.NET, SQLite, and MongoDB for back-end.
+      - Demonstrate great problem-solving skills with solid foundations of programming.
+      - Participated in Agile-based workflows to effectively develop applications quickly
+  - name: CompTIA A+
+    company: CompTIA+
+    location: Remote
+    dateStarted: ~
+    dateEnded: ~
+    dateExpected: March 10, 2025
+    link: ~
+    descriptions:
+      - Studying to have a deeper understanding of computers and laptops, Windows OS, and to further validate my skills as a technician as a volunteer.
+      - Planned to get CompTIA Networking+ and Security+ after this certification to gain a deeper understanding of networking and security.

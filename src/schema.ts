@@ -12,6 +12,17 @@ export const projectShowcaseSchema = z.object({
   }),
 });
 
+export const resumeItemSchema = z.object({
+  name: z.string(),
+  company: z.string(),
+  location: z.string(),
+  dateStarted: z.coerce.date().optional().nullable(),
+  dateEnded: z.coerce.date().optional().nullable(),
+  dateExpected: z.coerce.date().optional().nullable(),
+  link: z.string().optional().nullable(),
+  descriptions: z.array(z.string().max(160)).default([]),
+});
+
 export const experienceBadgeSchema = z.object({
   name: z.string(),
   svg: z.string(),

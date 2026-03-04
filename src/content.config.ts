@@ -2,7 +2,16 @@ import { defineCollection } from "astro:content";
 import { glob, file } from "astro/loaders";
 import { z } from "astro/zod";
 
-import { experienceBadgeSchema, projectArticleSchema } from "./schema";
+import {
+  experienceBadgeSchema,
+  projectArticleSchema,
+  resumeItemSchema,
+} from "./schema";
+
+const resume = defineCollection({
+  loader: file("./src/data/resume.yaml"),
+  schema: z.array(resumeItemSchema),
+});
 
 const experiences = defineCollection({
   loader: file("./src/data/experience.yaml"),
@@ -20,6 +29,7 @@ const gameProjects = defineCollection({
 });
 
 export const collections = {
+  resume,
   experiences,
   webProjects,
   gameProjects,
