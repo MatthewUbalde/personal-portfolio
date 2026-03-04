@@ -3,6 +3,8 @@
  * Landing introduction page. It's to give a good brief explaination of my skills
  * and current experience. (As of Jan 11, 2024, I have no work experience).
  */
+import { getCollection } from "astro:content";
+
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/BaseLayout.astro";
@@ -11,10 +13,17 @@ import Section from "../components/Section.astro";
 
 import portraitImage from "../assets/portfolio-portrait.png";
 
+import ContactForm from "../components/ContactForm";
+
 import GithubLink from "../components/Icons/GithubLink.astro";
 import ItchioLink from "../components/Icons/ItchioLink.astro";
 import LinkedInLink from "../components/Icons/LinkedInLink.astro";
 import ProjectDisplay from "../components/ProjectDisplay.astro";
+import ResumeItem from "../components/ResumeItem.astro";
+
+const resume = await getCollection("resume");
+const resumeExperience = resume[0].data;
+const resumeCertifications = resume[1].data;
 ---
 
 <Layout
@@ -22,7 +31,7 @@ import ProjectDisplay from "../components/ProjectDisplay.astro";
   description="Ranging from Web and Game Development, and Creative Arts!"
 >
   <section class="h-dvh">
-    <Container class="w-3/4">
+    <Container class="w-1/2">
       <h1>Matthew Ubalde</h1>
       <span
         >Striving to make beautiful and meaningful websites, functional
@@ -65,35 +74,7 @@ import ProjectDisplay from "../components/ProjectDisplay.astro";
 
   <!-- QUALIFICATIONS -->
   <Section header="QUALIFICATIONS" class="flex flex-col">
-    <Container>
-      <h2>Computer Programming and Analysis</h2>
-      <div>Ontario College Advanced Diploma</div>
-      <div class="flex flex-row justify-between">
-        <div class="flex-2">
-          <b>Fanshawe College</b> - London, ON
-        </div>
-        <div class="flex-1 text-right">December 2025</div>
-      </div>
-    </Container>
-    <Container>
-      <h2>CompTIA A+</h2>
-      <div>Online Certification</div>
-      <div class="flex flex-row justify-between">
-        <div class="flex-2">
-          <b>CompTIA</b>
-        </div>
-        <div class="flex-1 text-right">Expected: March 2026</div>
-      </div>
-      <ul>
-        <li>
-          Studying to have a deeper understanding of computers and laptops,
-          Windows OS, and to further validate my skills as a technician as a
-          volunteer
-        </li>
-        <li>Worked with children ages from 5-14 years old.</li>
-        <li>Worked with children ages from 5-14 years old.</li>
-      </ul>
-    </Container>
+    {resumeCertifications.map((r) => <ResumeItem src={r} />)}
   </Section>
   <!-- QUALIFICATIONS -->
 
@@ -106,44 +87,16 @@ import ProjectDisplay from "../components/ProjectDisplay.astro";
 
   <!-- EXPERIENCE -->
   <Section header="EXPERIENCES" class="flex flex-col">
-    <Container>
-      <h2>Code Instructor/Sensei</h2>
-      <div class="flex flex-row justify-between">
-        <div class="flex-2">
-          <b>Code Ninjas</b> - London, ON
-        </div>
-        <div class="flex-1 text-right">Aug. 2025 - Present</div>
-      </div>
-      <ul>
-        <li>Worked with children ages from 5-14 years old.</li>
-        <li>Worked with children ages from 5-14 years old.</li>
-        <li>Worked with children ages from 5-14 years old.</li>
-      </ul>
-    </Container>
-    <Container>
-      <h2>Volunteer Technician Supervisor</h2>
-      <div class="flex flex-row justify-between">
-        <div class="flex-2">
-          <b>Jesus is Lord Church</b> - London, ON
-        </div>
-        <div class="flex-1 text-right">Aug. 2025 - Present</div>
-      </div>
-      <ul>
-        <li>Worked with children ages from 5-14 years old.</li>
-        <li>Worked with children ages from 5-14 years old.</li>
-        <li>Worked with children ages from 5-14 years old.</li>
-      </ul>
-    </Container>
+    {resumeExperience.map((r) => <ResumeItem src={r} />)}
   </Section>
   <!-- EXPERIENCE -->
 
   <!-- CONTACT ME -->
   <Section header="CONTACT ME">
-    <!-- TODO: CREATE A CONTACT ME FORM -->
     <Container class="flex flex-col gap-2">
-      <input class="w-full min-h-12 p-1 bg-slate-900 rounded-md" />
-      <textarea class="w-full min-h-52 p-1 bg-slate-900 rounded-md"></textarea>
-      <button class="bg-slate-900 rounded-md p-2">Send!</button>
+      <ContactForm client:load>
+        <div slot="fallback">Loading...</div>
+      </ContactForm>
     </Container>
   </Section>
 </Layout>
