@@ -55,7 +55,7 @@ jobs:
             exit 1
           fi
       - name: Setup Bun
-        uses: oven0sh/setup-bun@v2
+        uses: oven-sh/setup-bun@v2
         with:
           version: "latest"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
