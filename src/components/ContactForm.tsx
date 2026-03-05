@@ -15,14 +15,11 @@ const dateTimeFormat = new Intl.DateTimeFormat("en-US", {
   second: "2-digit",
 });
 
-const serviceKey = import.meta.env.SERVICE_KEY;
-const templateKey = import.meta.env.TEMPLATE_KEY;
+const serviceKey = import.meta.env.PUBLIC_SERVICE_KEY;
+const templateKey = import.meta.env.PUBLIC_TEMPLATE_KEY;
 const publicKey = import.meta.env.PUBLIC_KEY;
 
-console.log(serviceKey, templateKey, publicKey);
-
 function ContactForm() {
-  const formRef = useRef();
   const submitBtnRef = useRef();
   const [formStatus, setFormStatus] = useState("");
 
@@ -109,38 +106,35 @@ function ContactForm() {
       formData.messageError !== null ||
       formData.messageError !== null
     ) {
-      setFormStatus("Please properly fill in the contact form.");
+      setFormStatus("Please fill the contact form properly.");
       return;
     }
 
     // Send
     emailjs
-      .send(
-        import.meta.env.SERVICE_KEY,
-        import.meta.env.TEMPLATE_KEY,
-        dataSend,
-        {
-          publicKey: import.meta.env.PUBLIC_KEY,
-        },
-      )
+      .send(serviceKey, templateKey, dataSend, {
+        publicKey: publicKey,
+      })
       .then(() => {
         formDataDispatch({ type: "reset" });
-        setFormStatus("It was a success! We'll catch up with you shortly!");
+        setFormStatus(
+          "Success! I'll get back to you within 2-3 business days!",
+        );
       })
       .catch((err) => {
         setFormStatus(
-          "Sorry for the inconvience, there was an error while sending the message. Please try again!",
+          "There's an error while sending the message. Please try again!",
         );
         console.log(err);
       });
   };
 
   return (
-    <form ref={formRef} className="flex flex-col gap-2">
+    <form className="flex flex-col gap-2">
       <label>
         Name{" "}
         {formData.nameError && (
-          <span className="text-amber-300 bg-slate-900 font-bold w-fit px-1 rounded-sm shadow-sm">
+          <span className="text-sky-300 bg-slate-900 font-bold w-fit px-1 rounded-sm shadow-sm">
             {formData.nameError}
           </span>
         )}
@@ -158,7 +152,7 @@ function ContactForm() {
       <label>
         Email{" "}
         {formData.emailError && (
-          <span className="text-amber-300 bg-slate-900 font-bold w-fit px-1 rounded-sm shadow-sm">
+          <span className="text-sky-300 bg-slate-900 font-bold w-fit px-1 rounded-sm shadow-sm">
             {formData.emailError}
           </span>
         )}
@@ -176,7 +170,7 @@ function ContactForm() {
       <label>
         Message{" "}
         {formData.messageError && (
-          <span className="text-amber-300 bg-slate-900 font-bold w-fit px-1 rounded-sm shadow-sm">
+          <span className="text-sky-300 bg-slate-900 font-bold w-fit px-1 rounded-sm shadow-sm">
             {formData.messageError}
           </span>
         )}
@@ -190,12 +184,12 @@ function ContactForm() {
         onChange={handleChangeMessageTextArea}
       ></textarea>
       {formStatus.length !== 0 && (
-        <span className="text-amber-300 bg-slate-900 font-bold w-fit px-1 rounded-sm shadow-sm">
+        <span className="bg-slate-900 font-bold w-fit px-1 mx-auto rounded-sm shadow-sm">
           {formStatus}
         </span>
       )}
       <button
-        className="bg-slate-900 rounded-md p-2 pointer-events-auto scale-100 hover:scale-101 active:scale-99 transition-[scale] disabled:opacity-50"
+        className="bg-slate-900 rounded-md p-2 scale-100 hover:scale-101 active:scale-99 transition-[scale] disabled:opacity-50"
         ref={submitBtnRef}
         onClick={handleSubmit}
       >
