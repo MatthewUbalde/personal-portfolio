@@ -1,9 +1,9 @@
 export const nameValidate = (val: string): string | undefined | null => {
   if (val.length === 0) {
-    return "Require message.";
+    return "Please write down your message.";
   } else {
     if (val.includes("@")) {
-      return "You can only place the email in the email field above for further discussions.";
+      return "Please place your email in the email field below for further discussions.";
     }
 
     if (val.length >= 600) {
@@ -15,8 +15,8 @@ export const nameValidate = (val: string): string | undefined | null => {
 };
 
 export const emailValidate = (val: string): string | undefined | null => {
-  if (val.length <= 3) {
-    return "Require email for further discussion if needed.";
+  if (val.length === 0) {
+    return "Please write down your email for further discussion if needed.";
   } else {
     if (
       val[0] === "." ||
@@ -36,10 +36,10 @@ export const emailValidate = (val: string): string | undefined | null => {
 
 export const messageValidate = (val: string): string | undefined | null => {
   if (val.length === 0) {
-    return "Require message.";
+    return "Please write down message.";
   } else {
     if (val.includes("@")) {
-      return "You can only place the email in the email field above for further discussions.";
+      return "Please place your email in the email field above for further discussions.";
     }
 
     if (val.length >= 600) {
