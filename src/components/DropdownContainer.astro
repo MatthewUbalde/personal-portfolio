@@ -1,0 +1,47 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Container from "./Container.astro";
+
+type Props = HTMLAttributes<"div">;
+
+const props = Astro.props;
+---
+
+<hide-container
+  {...props}
+  class:list={[
+    props.class,
+    "bg-slate-700 bg-opacity-50 p-2 sm:px-4 py-4 rounded-sm",
+  ]}
+>
+  <div class="flex flex-row">
+    <div class="grow shrink-0">
+      <slot name="header" />
+    </div>
+    <button id="hide-button" class="shrink pointer-events-auto">Show</button>
+  </div>
+  <div id="container" class="hidden">
+    <slot />
+  </div>
+</hide-container>
+
+<script>
+  class HideContainer extends HTMLElement {
+    connectedCallback() {
+      let toggle = false;
+
+      const button = this.querySelector("#hide-button");
+      const container = this.querySelector("#container");
+
+      button?.addEventListener("click", () => {
+        container?.classList.toggle("hidden");
+        toggle = container?.classList.contains("hidden") ?? false;
+
+        button.textContent = toggle ? "Show" : "Hide";
+      });
+    }
+  }
+
+  customElements.define("hide-container", HideContainer);
+</script>

@@ -1,21 +1,19 @@
+// @ts-check
 import { defineConfig } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
-import { twJoin, twMerge } from "tailwind-merge";
-
-import vue from "@astrojs/vue";
-
-import mdx from "@astrojs/mdx";
-
-import playformCompress from "@playform/compress";
+import tailwindcss from "@tailwindcss/vite";
 
 import icon from "astro-icon";
 
+import mdx from "@astrojs/mdx";
+
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://matthewubalde.github.io",
-  base: "personal-portfolio-astro",
-  integrations: [tailwind({
-    applyBaseStyles: true,
-  }), twJoin(), twMerge(), vue(), mdx(), playformCompress(), icon()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  integrations: [icon(), mdx(), react()],
 });

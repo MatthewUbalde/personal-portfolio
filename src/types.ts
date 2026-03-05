@@ -17,9 +17,26 @@ export type ProjectShowcaseType = {
   githubLink?: string;
 };
 
+<<<<<<< HEAD
 export type ExperienceBadgeType = {
   title: string;
   src: string;
+=======
+export type ResumeItemType = {
+  name: string;
+  company: string;
+  location: string;
+  dateStarted?: Date | null | undefined;
+  dateEnded?: Date | null | undefined;
+  dateExpected?: Date | null | undefined;
+  link?: string | null | undefined;
+  descriptions: string[];
+};
+
+export type ExperienceBadgeType = {
+  name: string;
+  svg: string;
+>>>>>>> personal-portfolio/master
   experience: "Learning" | "Beginner" | "Adequate" | "Intermediate" | "Expert";
 };
 

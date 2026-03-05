@@ -1,61 +1,36 @@
-import { defineCollection, z, type SchemaContext } from "astro:content";
-import { glob } from "astro/loaders";
+import { defineCollection } from "astro:content";
+import { glob, file } from "astro/loaders";
+import { z } from "astro/zod";
 
-import { experienceBadgeSchema, projectArticleSchema } from "./schemas";
+import {
+  experienceBadgeSchema,
+  projectArticleSchema,
+  resumeItemSchema,
+} from "./schema";
 
-/**
- * A collection of experiences of varying fields in computers or arts
- */
+const resume = defineCollection({
+  loader: file("./src/data/resume.yaml"),
+  schema: z.array(resumeItemSchema),
+});
+
 const experiences = defineCollection({
-  loader: glob({ pattern: "*.json", base: "./src/data/experience" }),
+  loader: file("./src/data/experience.yaml"),
   schema: z.array(experienceBadgeSchema),
 });
 
-/**
- * A general collection of ALL articles. This is often used as a highlight of others
- */
-const articles = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdx}",
-    base: `./src/content/`,
-  }),
+const webProjects = defineCollection({
+  loader: glob({ pattern: "*.{md,mdx}", base: "./src/content/webProjects" }),
   schema: ({ image }) => projectArticleSchema({ image }),
 });
 
-/**
- * Below are articles for each section in the comp-experience directory
- */
-const computerExperienceLoader = (root) =>
-  glob({
-    pattern: "*.{md,mdx}",
-    base: `./src/content/comp-experience/${root}`,
-  });
-
-const gameArticles = defineCollection({
-  loader: computerExperienceLoader("game"),
-  schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
-});
-
-const mobileArticles = defineCollection({
-  loader: computerExperienceLoader("mobile"),
-  schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
-});
-
-const webArticles = defineCollection({
-  loader: computerExperienceLoader("web"),
-  schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
-});
-
-const softwarebArticles = defineCollection({
-  loader: computerExperienceLoader("software"),
-  schema: ({ image }: SchemaContext) => projectArticleSchema({ image }),
+const gameProjects = defineCollection({
+  loader: glob({ pattern: "*.{md,mdx}", base: "./src/content/gameProjects" }),
+  schema: ({ image }) => projectArticleSchema({ image }),
 });
 
 export const collections = {
-  articles,
+  resume,
   experiences,
-  gameArticles,
-  mobileArticles,
-  webArticles,
-  softwarebArticles,
+  webProjects,
+  gameProjects,
 };

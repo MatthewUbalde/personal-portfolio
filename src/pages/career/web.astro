@@ -1,0 +1,75 @@
+---
+/**
+ * Explores my experience as a web developer.
+ * Highlight how I made this site by exploring other technologies and
+ * then settling on Astro.
+ */
+
+import { getCollection } from "astro:content";
+
+import IndexLayout from "./index.astro";
+import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
+import ProjectShowcase from "../../components/ProjectShowcase.astro";
+import BadgeDisplay from "../../components/BadgeDisplay.astro";
+import ProjectDisplay from "../../components/ProjectDisplay.astro";
+
+const experiences = await getCollection("experiences");
+const expFrontend = experiences[0].data.filter((e) =>
+  e.types.includes("frontend"),
+);
+const expBackend = experiences[0].data.filter((e) =>
+  e.types.includes("backend"),
+);
+---
+
+<IndexLayout
+  title="Web"
+  description="Have experience in React, Vue, Angular, Gatsby, and now Astro, to develop websites."
+>
+  <Section header="WEB DEVELOPMENT">
+    <Container textContent class="md:mx-auto md:w-2/3">
+      <p>
+        Was taught how to do front-end and back-end in the CPA3 program at
+        Fanshawe college. Able to use AWS with EC2 to host websites that
+        everyone can have access to publicly.
+      </p>
+      <p>
+        Personally self-taught on other frameworks and using the skills I've
+        learned so far for other passion projects.
+      </p>
+    </Container>
+  </Section>
+
+  <Section header="SKILLS">
+    <Container>
+      <h2>Front-end</h2>
+      <BadgeDisplay src={expFrontend} />
+    </Container>
+    <Container>
+      <h2>Back-end</h2>
+      <BadgeDisplay src={expBackend} />
+    </Container>
+  </Section>
+  <Section header="CREATION OF WEBSITE">
+    <Container textContent>
+      <p>
+        This website made with <b>Astro</b>, <b>Vue.js</b>, and <b>Tailwind</b>.
+        Currently hosted in <b>Github</b>.
+      </p>
+      <p>
+        Originally, my portfolio was purely made in <b>React</b> and <b
+          >Tailwind</b
+        >. However, I wanted to try another framework that I haven't tried yet
+        that might be better for my own use case.
+      </p>
+      <p>
+        I've tried with Gatsby with React for content collections, but found a
+        simplier and better approach with Astro.
+      </p>
+    </Container>
+  </Section>
+  <!-- <Section header="WEBSITES">
+    <ProjectDisplay collection="webProjects"/>
+  </Section> -->
+</IndexLayout>

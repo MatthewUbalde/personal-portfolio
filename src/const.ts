@@ -3,15 +3,15 @@ import type { NavLinkType } from "./types";
 /**
  * Holds the Navigation tree that the user can follow
  */
-const SITE_ROOT: string = "/personal-portfolio-astro";
+const SITE_ROOT: string = "/";
 export const SITE_NAVIGATION: Array<NavLinkType> = [
   {
     href: `${SITE_ROOT}/`,
     label: "Home",
   },
   {
-    href: `${SITE_ROOT}/comp-experience`,
-    label: "Computer Experience",
+    href: `${SITE_ROOT}/career`,
+    label: "Career",
     children: [
       {
         href: "/web",
@@ -29,11 +29,15 @@ export const SITE_NAVIGATION: Array<NavLinkType> = [
         href: "/game",
         label: "Game",
       },
+      {
+        href: "/art",
+        label: "Art",
+      },
     ],
   },
   {
-    href: `${SITE_ROOT}/art-experience`,
-    label: "Art Experience",
+    href: `${SITE_ROOT}/projects`,
+    label: "Projects",
   },
 ];
 

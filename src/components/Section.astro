@@ -1,36 +1,28 @@
 ---
-/**
- * Custom Section element that holds the default styling for majority of the site.
- */
 import type { HTMLAttributes } from "astro/types";
-import type { MalleableComponentType, ContentComponentType } from "../types";
 
-type Props = HTMLAttributes<"section"> &
-  MalleableComponentType &
-  ContentComponentType;
+interface Props extends HTMLAttributes<"section"> {
+  header?: string;
+  outerClass?: string;
+}
 
-const {
-  class: className,
-  noPadding,
-  noMargin,
-  noRounded,
-  textContent,
-  articleContent,
-  ...props
-} = Astro.props;
+const { header, class: className, outerClass } = Astro.props;
 ---
 
-<section
-  class:list={[
-    "bg-sky-800 bg-opacity-50",
-    !noPadding && "p-4 sm:px-8 py-4",
-    !noMargin && "m-4 sm:m-8",
-    !noRounded && "rounded-md",
-    textContent && " space-y-2 text-center content-center",
-    articleContent && "space-y-2 text-start content-center",
-    className,
-  ]}
-  {...props}
->
-  <slot />
+<section class:list={["group/outer relative overflow-hidden", outerClass]}>
+  {
+    header && (
+      <h1 class="sm:absolute sm:top-0 sm:left-0 opacity-100 sm:opacity-85 sm:group-hover/outer:opacity-25 text-5xl! font-bold tracking-tighter text-wrap transition-opacity -z-10">
+        {header}
+      </h1>
+    )
+  }
+  <div
+    class:list={[
+      "sm:pt-8 sm:group-hover/outer:pt-4 transition-[padding] ease-out",
+      className,
+    ]}
+  >
+    <slot />
+  </div>
 </section>

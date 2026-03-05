@@ -1,33 +1,39 @@
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
+@import "tailwindcss";
 
-.h1,
-h1 {
-  @apply text-3xl font-medium;
+html {
+  font-family: "Nunito Variable", sans-serif;
+  font-size: 18px;
 }
 
-.h2,
-h2 {
-  @apply text-2xl font-medium;
+body {
+  @apply overflow-x-hidden min-h-screen bg-slate-800
+    bg-linear-to-b from-slate-800 to-slate-950 text-sky-100;
 }
 
-.h3,
-h3 {
-  @apply text-2xl font-light;
+h1,
+#h1 {
+  @apply text-5xl sm:text-4xl;
 }
 
-.h4,
-h4 {
-  @apply text-xl font-light;
+h2,
+#h2 {
+  @apply text-3xl sm:text-2xl;
 }
 
-.p,
-p {
-  @apply text-base font-normal;
+ul {
+  @apply list-disc;
 }
 
-.li,
 li {
-  @apply list-disc ml-6;
+  @apply ml-4;
+}
+
+/* This is used in the ArticleLayout */
+p img,
+lite-youtube {
+  @apply rounded-md w-full sm:w-2/3 sm:max-h-96 sm:mx-auto object-contain;
+}
+
+.astro-code {
+  @apply p-2 rounded-md w-full sm:mx-auto;
 }

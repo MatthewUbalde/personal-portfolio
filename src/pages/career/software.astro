@@ -1,0 +1,46 @@
+---
+/**
+ * Explores my experience in the general software development.
+ * Highlighting my potential strength and intrigue in low-level computers.
+ */
+
+import { getCollection } from "astro:content";
+
+import IndexLayout from "./index.astro";
+import Container from "../../components/Container.astro";
+import Section from "../../components/Section.astro";
+import BadgeDisplay from "../../components/BadgeDisplay.astro";
+
+const experiences = await getCollection("experiences");
+const expSoftware = experiences[0].data.filter((e) =>
+  e.types.includes("software"),
+);
+---
+
+<IndexLayout
+  title="Software"
+  description="Have experience in C/C++, C#, and Java to create computer software"
+>
+  <Section header="SOFTWARE DEVELOPMENT">
+    <Container textContent class="md:mx-auto md:w-2/3">
+      <p>
+        Was taught in various languages and frameworks. Have solid foundations
+        on relatively low-level langauages on C/C++. Able to make desktop and
+        mobile applications with React Native.
+      </p>
+      <p>
+        Worked with MySQL and able to help design and maintain well-design
+        databases to suit the company's requirements.
+      </p>
+      <p>
+        Have used OpenGL to create and render 3d models using shaders, and
+        helped develop tools for manipulating the environment and created a
+        particle system.
+      </p>
+    </Container>
+  </Section>
+
+  <Section header="SKILLS">
+    <BadgeDisplay src={expSoftware} />
+  </Section>
+</IndexLayout>

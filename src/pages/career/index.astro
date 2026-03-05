@@ -1,0 +1,80 @@
+---
+/**
+ * Putting the different variety of fields in different pages
+ *
+ * Prior version-5.0, there were separated fields for different careers.
+ * By utilizing page-transitions from astro, we're able to create a
+ * seemless experience while having the ability to send unique links for
+ * each sector of my career.
+ *
+ * This also acts a Layout for each of the pages to keep it consistent
+ */
+import Layout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/Container.astro";
+import FlexContainer from "../../components/FlexContainer.astro";
+import Section from "../../components/Section.astro";
+
+const asPath = Astro.url.pathname;
+---
+
+<Layout
+  title="Career"
+  description="My career in computer sciences and my hobby as an artist."
+>
+  <Section header="CAREER">
+    <FlexContainer col class="">
+      <Container textContent noMargin class="flex-2/3">
+        <p>
+          As of now, I'm currently seeking a career within the field of game or
+          web development. However, in my time in Fanshawe, I've learned variety
+          of skills from different department in software development such as
+          mobile development, and general software development.
+        </p>
+        <p>This also includes my art skills as well as a hobbyist.</p>
+      </Container>
+      <Container noMargin class="flex-1/3">
+        <h2 class="text-center">Navigation</h2>
+        <nav>
+          <FlexContainer
+            row
+            class="flex-wrap justify-center items-stretch text-center *:bg-slate-900 *:text-2xl *:rounded-md *:p-4 *:shadow-md"
+          >
+            <a
+              href="/career/web"
+              class:list={[
+                asPath.includes("web") && " text-sky-300 opacity-50",
+              ]}>Web</a
+            >
+            <a
+              href="/career/software"
+              class:list={[
+                asPath.includes("software") && " text-sky-300 opacity-50",
+              ]}>Software</a
+            >
+            <a
+              href="/career/mobile"
+              class:list={[
+                asPath.includes("mobile") && " text-sky-300 opacity-50",
+              ]}>Mobile</a
+            >
+
+            <a
+              href="/career/game"
+              class:list={[
+                asPath.includes("game") && " text-sky-300 opacity-50",
+              ]}>Game</a
+            >
+            <a
+              href="/career/art"
+              class:list={[
+                asPath.includes("art") && " text-sky-300 opacity-50",
+              ]}>Art</a
+            >
+          </FlexContainer>
+        </nav>
+      </Container>
+    </FlexContainer>
+  </Section>
+  <!-- This slot is for other pages -->
+  <slot />
+</Layout>

@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+
+import Container from "../../components/Container.astro";
+import Section from "../../components/Section.astro";
+import IndexLayout from "./index.astro";
+import BadgeDisplay from "../../components/BadgeDisplay.astro";
+
+const experiences = await getCollection("experiences");
+const expArt = experiences[0].data.filter((e) => e.types.includes("art"));
+---
+
+<IndexLayout
+  title="Art"
+  description="Mattew Ubalde's art portfolio. Purely a hobby and for fun"
+>
+  <Section header="DIGITAL ART">
+    <Container textContent class="sm:w-3/4 sm:mx-auto">
+      <p>
+        I'm a self-taught digital artist drawing illustrations with a cartoon
+        design, but slowly improving on anatomy, perspective, and on
+        backgrounds. I've been interested in animation at a young age, but
+        drawing became an interest of me as I strive for improvement for fun.
+      </p>
+      <p>
+        I used Krita to do all of my digital drawings, and would post them
+        online for fun with a different online-handle. And sames goes for the
+        games I've made - the illustrations and the sprites are made by me.
+      </p>
+    </Container>
+  </Section>
+  <Section header="SKILLS">
+    <BadgeDisplay src={expArt} title="Art Programs" />
+  </Section>
+</IndexLayout>

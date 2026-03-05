@@ -3,68 +3,102 @@
  * Landing introduction page. It's to give a good brief explaination of my skills
  * and current experience. (As of Jan 11, 2024, I have no work experience).
  */
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/BaseLayout.astro";
+import Container from "../components/Container.astro";
 import Section from "../components/Section.astro";
 
 import portraitImage from "../assets/portfolio-portrait.png";
-import ContainerProject from "../components/ContainerProject.astro";
-import ProjectShowcase from "../components/ProjectShowcase.astro";
-import LayoutSection from "../components/LayoutSection.astro";
 
-const articles = await getCollection("articles", (a) => a.data.featured);
+import ContactForm from "../components/ContactForm";
 
-articles.sort(
-  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
-);
+import GithubLink from "../components/Icons/GithubLink.astro";
+import ItchioLink from "../components/Icons/ItchioLink.astro";
+import LinkedInLink from "../components/Icons/LinkedInLink.astro";
+import ProjectDisplay from "../components/ProjectDisplay.astro";
+import ResumeItem from "../components/ResumeItem.astro";
+
+const resume = await getCollection("resume");
+const resumeExperience = resume[0].data;
+const resumeCertifications = resume[1].data;
 ---
 
 <Layout
   title="Home"
   description="Ranging from Web and Game Development, and Creative Arts!"
 >
-  <!-- Introduction -->
-  <LayoutSection
-    noMedia
-    col
-    class="relative justify-start pb-48 overflow-hidden"
-  >
-    <Section noMargin class="h-fit sm:w-2/3">
-      <p class="text-sm">My name is...</p>
-      <h1 class="text-5xl mb-2">Matthew Ubalde</h1>
-      <p class="font-light">
-        A Fanshawe College student studying in Computer Programming and Analysis
-      </p>
-    </Section>
-    <Section noMargin class="w-1/2 text-lg">
-      Currently looking for an intern position in <b
-        ><a href="/comp-experience/software">Software</a></b
-      >, <b><a href="/comp-experience/web">Web</a></b>, or <b
-        ><a href="/comp-experience/game">Game</a></b
-      > Development.
-    </Section>
-    <Section noMargin textContent class="w-1/2">
-      <h1>Featured Projects</h1>
-      <p>
-        Down below are my personal projects that I've made and proud to
-        showcase!
-      </p>
-    </Section>
+  <section class="h-dvh relative">
+    <Container class="w-1/2">
+      <h1>Matthew Ubalde</h1>
+      <span
+        >Striving to make beautiful and meaningful websites, functional
+        software, and fun games</span
+      >
+    </Container>
+    <div class="flex flex-row gap-2 m-2">
+      <GithubLink size={32} />
+      <ItchioLink size={32} />
+      <LinkedInLink size={32} />
+    </div>
     <Image
-      class="absolute right-0 bottom-0 object-cover sm:w-2/3 md:w-fit -z-10"
       src={portraitImage}
-      width={400}
-      height={600}
-      loading="eager"
-      alt="Matthew wearing a blue, orange-stripped, t-shirt and glasses."
+      alt="Portrait image of Matthew Ubalde"
+      class="absolute right-0 bottom-0 w-full min-w-20 max-w-lg -z-10"
     />
-  </LayoutSection>
-  <ContainerProject>
-    {
-      articles &&
-        articles.map((p) => <ProjectShowcase href={p.id} {...p.data} />)
-    }
-  </ContainerProject>
+  </section>
+
+  <!-- SUMMARY -->
+  <Section header="SUMMARY">
+    <Container>
+      <p>
+        A Fanshawe College student in the <b
+          >Computer Programming and Analysis</b
+        >, and later in <b>Game Development - Advanced Programming</b>, seeking
+        to go deeper within the <b>web</b> or <b>game development</b> industry.
+      </p>
+    </Container>
+    <Container>
+      <h2>Key Skills</h2>
+      <ul class="columns-2">
+        <li>Quick-learner</li>
+        <li>Critical Thinker</li>
+        <li>Attention to Detail</li>
+        <li>Creative</li>
+        <li>Team-player</li>
+      </ul>
+    </Container>
+  </Section>
+
+  <!-- QUALIFICATIONS -->
+  <Section header="QUALIFICATIONS" class="flex flex-col">
+    {resumeCertifications.map((r) => <ResumeItem src={r} />)}
+  </Section>
+  <!-- QUALIFICATIONS -->
+
+  <!-- PROJECTS -->
+  <Section header="PROJECTS" class="flex flex-col">
+    <ProjectDisplay collection="webProjects" featured />
+    <ProjectDisplay collection="gameProjects" featured />
+  </Section>
+  <!-- PROJECTS -->
+
+  <!-- EXPERIENCE -->
+  <Section header="EXPERIENCES" class="flex flex-col">
+    {resumeExperience.map((r) => <ResumeItem src={r} />)}
+  </Section>
+  <!-- EXPERIENCE -->
+
+  <!-- CONTACT ME -->
+  <Section header="CONTACT ME">
+    <Container class="flex flex-col gap-2">
+      <ContactForm client:load>
+        <div slot="fallback">Loading...</div>
+      </ContactForm>
+    </Container>
+  </Section>
 </Layout>
+
+<!-- CONTACT ME -->

@@ -7,7 +7,8 @@ import FormattedDate from "./FormattedDate.astro";
 import GithubLink from "./Icons/GithubLink.astro";
 import SteamLink from "./Icons/SteamLink.astro";
 import ItchioLink from "./Icons/ItchioLink.astro";
-import Section from "./Section.astro";
+import Container from "./Container.astro";
+import FlexContainer from "./FlexContainer.astro";
 
 type Props = ProjectShowcaseType;
 
@@ -25,41 +26,47 @@ const {
 } = Astro.props;
 ---
 
-<Section
-  noMargin
-  noPadding
-  class="group relative w-full sm:w-2/3 md:w-3/4 overflow-hidden"
-  tabindex={0}
-  {...props}
->
-  <Image
-    class="opacity-45 group-hover:opacity-80 group-hover:-translate-y-1/4 mb-10 rounded-b-full object-contain transition-all"
-    src={coverImage}
-    alt={coverImageAlt}
-    width={1280}
-    height={720}
-  />
-  <div class="absolute bottom-0 flex p-4">
-    <div class="flex-grow">
-      <h1>{title}</h1>
+<a href={href}>
+  <Container
+    noMargin
+    noPadding
+    tabindex={0}
+    {...props}
+    class="group relative overflow-hidden sm:w-2/3 md:w-3/4"
+  >
+    <Image
+      class="opacity-25 group-hover:opacity-40 group-hover:-translate-y-12 group-hover:translate-x-8 mb-4 ml-4 rounded-bl-full object-contain shadow-slate-950 shadow-lg transition-all"
+      src={coverImage}
+      alt={coverImageAlt}
+      width={1280}
+      height={720}
+    />
+    <FlexContainer
+      row
+      noMedia
+      noMargin
+      class="absolute bottom-0 justify-between items-end p-4"
+    >
+      <div class="grow">
+        <h2 class="text-4xl! font-bold tracking-tight">{title}</h2>
+        {
+          published && (
+            <div class="text-sm">
+              <FormattedDate date={published} />
+            </div>
+          )
+        }
+        <p>{description}</p>
+      </div>
       {
-        published && (
-          <div class="text-sm">
-            <FormattedDate date={published} />
-          </div>
+        (itchioLink || steamLink || githubLink) && (
+          <FlexContainer row class="gap-2 justify-end items-end w-fit">
+            {itchioLink && <ItchioLink href={itchioLink} size={32} />}
+            {steamLink && <SteamLink href={steamLink} size={32} />}
+            {githubLink && <GithubLink href={githubLink} size={32} />}
+          </FlexContainer>
         )
       }
-      <p>{description}</p>
-      <a class="font-bold text-lg underline" href={href}>Read?</a>
-    </div>
-    {
-      (itchioLink || steamLink || githubLink) && (
-        <div class="flex flex-col gap-2 justify-end items-end w-24 p-1">
-          {itchioLink && <ItchioLink href={itchioLink} size={32} />}
-          {steamLink && <SteamLink href={steamLink} size={32} />}
-          {githubLink && <GithubLink href={githubLink} size={32} />}
-        </div>
-      )
-    }
-  </div>
-</Section>
+    </FlexContainer>
+  </Container>
+</a>

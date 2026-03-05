@@ -3,22 +3,22 @@
  * The base of the entire website.
  * It holds the metadata in the head, Navbars, and holds the main content.
  */
-import Footer from "../components/Footer.astro";
-import BaseHead from "../components/BaseHead.astro";
+import { Image } from "astro:assets";
 
-import NavbarDesktop from "../components/Navbar/NavbarDesktop.astro";
-import NavbarMobile from "../components/Navbar/NavbarMobile.astro";
+import Navbar from "../components/Navbar.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+
+import gridBg from "../assets/grid-bg.svg";
 
 const pathname = Astro.url.pathname;
-const currentPath = pathname;
 
 interface Props {
-  prevNav?: string;
   title: string;
   description: string;
 }
 
-const { title, description, prevNav } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,22 +26,19 @@ const { title, description, prevNav } = Astro.props;
   <head>
     <BaseHead title={"Matthew Ubalde | " + title} description={description} />
   </head>
-  <body
-    class="h-fit overflow-x-hidden bg-indigo-500 bg-gradient-to-b from-indigo-500 via-purple-400 to-indigo-500 text-cyan-50"
-  >
-    <NavbarMobile prev={prevNav} current={currentPath} class="md:hidden" />
-    <div class="flex flex-row md:m-0">
-      <NavbarDesktop
-        prev={prevNav}
-        current={currentPath}
-        class="hidden md:block flex-shrink-0"
-      />
-      <div class="flex flex-col justify-between">
-        <main>
-          <slot />
-        </main>
-        <Footer />
-      </div>
-    </div>
+  <body>
+    <Image
+      src={gridBg}
+      alt=""
+      class="fixed -left-1 -top-1 w-[200%] opacity-10 rotate-1 pointer-events-none"
+    />
+    <!-- HEADER / NAV SECTION -->
+    <Navbar />
+    <!-- HEADER / NAV SECTION -->
+    {Astro.slots.has("top") && <slot name="top" />}
+    <main class="lg:mx-auto lg:w-1/2">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

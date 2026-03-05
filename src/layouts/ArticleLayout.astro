@@ -3,21 +3,20 @@
  * Builds off from the BaseLayout and is used to create the articles.
  */
 
-import "../styles/article.css";
+// import "../styles/article.css";
 
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
 
 import ItchioLink from "../components/Icons/ItchioLink.astro";
 import SteamLink from "../components/Icons/SteamLink.astro";
 import GithubLink from "../components/Icons/GithubLink.astro";
 
 interface Props {
-  prevNav: string;
   title: string;
   description: string;
   coverImage: ImageMetadata;
@@ -31,7 +30,6 @@ interface Props {
 }
 
 const {
-  prevNav,
   title,
   description,
   coverImage,
@@ -45,20 +43,20 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout prevNav={prevNav} title={title} description={description}>
-  <!-- Title Section -->
-  <Section noPadding class="relative group overflow-hidden">
-      <div class="-z-10 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden">
+<BaseLayout title={title} description={description}>
+  <!-- Title Container -->
+  <Container noPadding class="group relative group overflow-hidden">
+      <div class="-z-10 group-hover:translate-y-0 group-hover:translate-x-32 absolute h-full left-64 top-0 rounded-bl-full overflow-hidden opacity-100 transition-all">
         <Image
-          class="object-cover h-full"
+          class="object-cover h-full opacity-45 group-hover:opacity-80 shadow-slate-950 shadow-lg transition-all"
           src={coverImage}
           alt={coverImageAlt}
           width="1280"
           height="720"
         />
       </div>
-      <div class="p-4 flex flex-row">
-        <div class="flex-grow">
+      <div class="z-50 p-4 flex flex-row ">
+        <div class="grow">
           <h1>{title}</h1>
           <div class="text-sm">
             <span>
@@ -72,7 +70,7 @@ const {
               )
             }
           </div>
-          <p>{description}</p>
+          <p class="w-96">{description}</p>
           <div class="mt-2">
           {
             summaryPoints && (
@@ -86,7 +84,7 @@ const {
           }
           </div>
         </div>
-        <div class="flex-shrink flex flex-col justify-end items-end gap-2">
+        <div class="shrink flex flex-col justify-end items-end gap-2">
           {
             itchio && (
               <ItchioLink
@@ -113,9 +111,9 @@ const {
           }
         </div>
       </div>
-  </Section>
+  </Container>
   <!-- Article Content -->
-  <Section noMargin articleContent class="md:w-3/4 m-4 md:mx-auto">
+  <Container noMargin articleContent class="md:w-3/4 m-4 md:mx-auto">
     <slot />
-  </Section>
+  </Container>
 </BaseLayout>

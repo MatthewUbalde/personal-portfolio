@@ -1,2 +1,5 @@
-/// <reference path="../.astro/types.d.ts" />
-/// <reference types="astro/client" />
+interface ImportMetaEnv {
+  readonly SERVICE_KEY: string;
+  readonly TEMPLATE_KEY: string;
+  readonly PUBLIC_KEY: string;
+}

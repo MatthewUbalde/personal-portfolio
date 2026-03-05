@@ -1,0 +1,66 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { MalleableComponentType, ResumeItemType } from "../types";
+import Container from "./Container.astro";
+import ResumeFormattedDate from "./ResumeFormattedDate.astro";
+import sharpService from "astro/assets/services/sharp";
+
+interface Props extends HTMLAttributes<"div">, MalleableComponentType {
+  src: ResumeItemType;
+}
+
+const { src, noMargin, noPadding, class: className } = Astro.props;
+---
+
+<Container noMargin={noMargin} noPadding={noPadding} class={className}>
+  <div class="flex">
+    <h2>{src.name}</h2>
+    {
+      src.link && (
+        <>
+          {" - "}
+          <h2>
+            <a>{src.link}</a>
+          </h2>
+        </>
+      )
+    }
+  </div>
+  <div class="flex justify-between">
+    <div class="flex-2">
+      <b>{src.company}</b> - {src.location}
+    </div>
+    {
+      src.dateStarted && (
+        <div class="flex-1 text-right">
+          <ResumeFormattedDate date={src.dateStarted} />
+          {src.dateEnded ? (
+            <>
+              {" "}
+              - <ResumeFormattedDate date={src.dateEnded} />{" "}
+            </>
+          ) : (
+            <> - Present</>
+          )}
+        </div>
+      )
+    }
+    {
+      src.dateEnded && !src.dateStarted && (
+        <div class="flex-1 text-right">
+          <ResumeFormattedDate date={src.dateEnded} />
+        </div>
+      )
+    }
+    {
+      src.dateExpected && !src.dateStarted && !src.dateEnded && (
+        <div class="flex-1 text-right">
+          Expected: <ResumeFormattedDate date={src.dateExpected} />
+        </div>
+      )
+    }
+  </div>
+  <ul>
+    {src.descriptions.map((d) => <li>{d}</li>)}
+  </ul>
+</Container>

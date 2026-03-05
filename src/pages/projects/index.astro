@@ -1,0 +1,47 @@
+---
+/**
+ * Showcasing the projects made
+ */
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/BaseLayout.astro";
+import Container from "../../components/Container.astro";
+
+import Section from "../../components/Section.astro";
+import ProjectDisplay from "../../components/ProjectDisplay.astro";
+
+const gameProjects = (await getCollection("gameProjects")).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
+const webProjects = (await getCollection("webProjects")).sort(
+  (a, b) => b.data.published.valueOf() - a.data.published.valueOf(),
+);
+---
+
+<Layout
+  title="Projects"
+  description="Ranging from Web and Game Development, and Creative Arts!"
+>
+  <Section header="PROJECTS">
+    <Container textContent>
+      <p>
+        Contains all of the projects that includes applications, websites, and
+        games.
+      </p>
+    </Container>
+  </Section>
+  {
+    gameProjects.length !== 0 && (
+      <Section header="GAMES">
+        <ProjectDisplay collection="gameProjects" />
+      </Section>
+    )
+  }
+  {
+    webProjects.length !== 0 && (
+      <Section header="WEBSITES">
+        <ProjectDisplay collection="webProjects" />
+      </Section>
+    )
+  }
+</Layout>
