@@ -7,22 +7,22 @@ const asPath = Astro.url.pathname;
 ---
 
 <header
-  class="z-50 pointer-events-auto group sticky inset-x-0 top-0 flex flex-row gap-2 px-2 py-2 from-gray-950 to-transparent bg-linear-to-b"
+  class="z-50 pointer-events-auto group sticky inset-x-0 top-0 p-2 from-gray-950 to-transparent bg-linear-to-b"
 >
-  <Image
-    src={portraitImg}
-    alt="Portrait of Matthew Ubalde"
-    class="bg-slate-900 size-16 rounded-xl"
-  />
-  <nav class="flex flex-col justify-center w-full h-full">
-    <h1><a href="/">Matthew Ubalde</a></h1>
-    <div class="flex flex-row items-start gap-1 text-xl text-sky-300">
-      <a href="/projects">Projects</a>
-      <div class="group/inner flex flex-row gap-1">
-        <a href="/career">Career</a>
-        <div
-          class="flex flex-row flex-wrap items-start gap-x-2 p-1 bg-slate-900 shadow-md rounded-md opacity-0 group-hover/inner:opacity-100 transition-opacity *:font-bold"
-        >
+  <div class="flex gap-2 mx-auto lg:w-2/3">
+    <Image
+      src={portraitImg}
+      alt="Portrait of Matthew Ubalde"
+      class="hidden sm:block bg-slate-900 size-16 rounded-xl"
+    />
+    <nav class="flex flex-col justify-center w-full h-full">
+      <h1><a href="/">Matthew Ubalde</a></h1>
+      <div
+        class="flex flex-wrap gap-2 text-3xl md:text-2xl text-sky-300 *:bg-slate-900 *:shadow-md *:rounded-md *:px-2"
+      >
+        <a href="/projects" class="font-bold">{"> "}Projects</a>
+        <div class="group/inner flex flex-wrap gap-2">
+          <a href="/career" class="font-bold">{"> "}Career</a>
           <a
             href="/career/software"
             class:list={[asPath.includes("software") && "opacity-50"]}
@@ -46,6 +46,6 @@ const asPath = Astro.url.pathname;
           >
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </header>
