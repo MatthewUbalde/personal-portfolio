@@ -31,6 +31,10 @@ env:
 jobs:
   build:
     name: Build
+    env:
+      PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
+      PUBLIC_SERVICE_KEY: ${{ secrets.PUBLIC_SERVICE_KEY }}
+      PUBLIC_TEMPLATE_KEY: ${{ secrets.PUBLIC_TEMPLATE_KEY }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -71,10 +75,6 @@ jobs:
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
-        env:
-          PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
-          PUBLIC_SERVICE_KEY: ${{ secrets.PUBLIC_SERVICE_KEY }}
-          PUBLIC_TEMPLATE_KEY: ${{ secrets.PUBLIC_TEMPLATE_KEY }}
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
