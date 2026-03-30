@@ -32,11 +32,20 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Secret Verification
+      - name: Check PUBLIC_KEY
+        if: ${{ env.PUBLIC_KEY == '' }}
         run: |
-          echo "one: ${#PUBLIC_KEY}"
-          echo "two: ${#PUBLIC_SEVICE_KEY}"
-          echo "three: ${#PUBLIC_TEMPLATE_KEY}"
+          echo "PUBLIC_KEY does not exists. Make sure that everything is configured in .yml and within the repo settings."
+          exit 0
+      - name: Check PUBLIC_SERVICE_KEY
+        if: ${{ env.PUBLIC_SERVICE_KEY == '' }}
+        run: |
+          echo "PUBLIC_SERVICE_KEY does not exists. Make sure that everything is configured in .yml and within the repo settings."
+          exit 0
+      - name: Check PUBLIC_TEMPLATE_KEY
+        if: ${{ env.PUBLIC_TEMPLATE_KEY == '' }}
+        run: |
+          echo "PUBLIC_TEMPLATE_KEY does not exists. Make sure that everything is configured in .yml and within the repo settings."
           exit 0
       - name: Checkout
         uses: actions/checkout@v6
