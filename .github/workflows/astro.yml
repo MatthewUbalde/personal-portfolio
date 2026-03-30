@@ -34,9 +34,9 @@ jobs:
     steps:
       - name: Secret Verification
         run: |
-          echo "one: ${#secrets.PUBLIC_KEY}"
-          echo "two: ${#secrets.PUBLIC_SEVICE_KEY}"
-          echo "three: ${#secrets.PUBLIC_TEMPLATE_KEY}"
+          echo "one: ${#PUBLIC_KEY}"
+          echo "two: ${#PUBLIC_SEVICE_KEY}"
+          echo "three: ${#PUBLIC_TEMPLATE_KEY}"
           exit 0
       - name: Checkout
         uses: actions/checkout@v6
